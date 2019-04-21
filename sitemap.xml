@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://typhomnt.github.io/categories/</loc>
-    <priority>0</priority>
+    <loc>http://typhomnt.github.io/</loc>
+    <lastmod>2019-02-20T16:29:59+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/</loc>
+    <loc>http://typhomnt.github.io/hmm_classification/</loc>
+    <lastmod>2019-02-20T16:22:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://typhomnt.github.io/raytracingpracts/</loc>
+    <lastmod>2019-02-20T16:22:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://typhomnt.github.io/teaching_ressources/</loc>
+    <lastmod>2019-02-20T16:22:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://typhomnt.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
