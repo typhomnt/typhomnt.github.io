@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Art Ressource</title>
+      <link>http://typhomnt.github.io/art/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/art/</guid>
+      <description> The Band of the Hawk by typhomnt on Sketchfab  </description>
+    </item>
+    
+    <item>
       <title>Laban Effort classification</title>
       <link>http://typhomnt.github.io/hmm_classification/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
@@ -22,11 +31,30 @@
     
     <item>
       <title>Ray Tracing Practicals Ressources</title>
-      <link>http://typhomnt.github.io/raytracingpracts/</link>
+      <link>http://typhomnt.github.io/raytracing_practs/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       
-      <guid>http://typhomnt.github.io/raytracingpracts/</guid>
-      <description>Physically Based Rendering</description>
+      <guid>http://typhomnt.github.io/raytracing_practs/</guid>
+      <description>This course is proposed to MSIAM M1 student and present an introduction to Ray casting, Ray tracing, Ray Marching and Physically Based Rendering methods.
+Physically Based Rendering Ray Marching</description>
+    </item>
+    
+    <item>
+      <title>Research Work</title>
+      <link>http://typhomnt.github.io/research_work/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/research_work/</guid>
+      <description>My main interest of research is to find an intuitive way of animating characters. During my thesis untitled &amp;ldquo;Performence Transfer: Animating Characters by Playing and Acting&amp;rdquo;, I&amp;rsquo;ve tried to find a method for creating expressive character animation sequences using 6D trajectories which contain position and orientation data of a physical prop trajectory (such as HTC Vive controllers). This work tackle three problems: Creating an animation sequence using one 6D trajectory, recognizing and transfering motion qualties and create multi character animations in a storytelling context.</description>
+    </item>
+    
+    <item>
+      <title>SkyEngine</title>
+      <link>http://typhomnt.github.io/skyengine/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/skyengine/</guid>
+      <description>SkyEngine is yet another game engine I am working on together with co-workers and former studend collegues. The main goal of the engine is to implement recent research work to make video game and animated movie content easier to create. I would like to thank Julien Daval, Guillaume Cordonnier,Valentin Touzeau, Pierre Casati and Remi Galan Alfonso for contributing to this framework.</description>
     </item>
     
     <item>
