@@ -17,7 +17,8 @@
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       
       <guid>http://typhomnt.github.io/animation_transfer/</guid>
-      <description>Space Time Doodle Transfer examples Below, I show transfered space-time doodles into animation sequences. It is important to note that all actions were learnt for the two first examples as well as for the garden example. I personnaly think that those modifiers do the job as long as the animation phases are correctly defined. Still there are ways of improvment: first foot sliding should be removed for light and strong modifiers; secondly I should find a way to avoid light and strong motion to be too fast for some animations.</description>
+      <description>One main goal of my thesis is to find a way to animate 3D characters using physical props as an animation tool. The motivation is to create an animation sequence from a play with figurines, trying to reproduce what the player was imagining.
+Space Time Doodle Transfer examples Below, I show transfered space-time doodles into animation sequences. It is important to note that all actions were learnt for the two first examples as well as for the garden example.</description>
     </item>
     
     <item>
