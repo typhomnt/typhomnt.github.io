@@ -31,6 +31,18 @@ Space Time Doodle Transfer examples Below, I show transfered space-time doodles 
     </item>
     
     <item>
+      <title>Functionnal Programming Resources</title>
+      <link>http://typhomnt.github.io/functionnal_programming_practs/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/functionnal_programming_practs/</guid>
+      <description>This course is proposed to DLST computer science Licence 1 students and presents an introduction to Functionnal Programming in OCaml.
+Practicals Fractals
+Fractals Solution
+Optional Project</description>
+    </item>
+    
+    <item>
       <title>Laban Effort Animation Transfer</title>
       <link>http://typhomnt.github.io/laban_transfer/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
@@ -40,13 +52,20 @@ Space Time Doodle Transfer examples Below, I show transfered space-time doodles 
     </item>
     
     <item>
-      <title>Ray Tracing Practicals Ressources</title>
+      <title>Ray Tracing Resources</title>
       <link>http://typhomnt.github.io/raytracing_practs/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       
       <guid>http://typhomnt.github.io/raytracing_practs/</guid>
-      <description>This course is proposed to MSIAM M1 student and present an introduction to Ray casting, Ray tracing, Ray Marching and Physically Based Rendering methods.
-Physically Based Rendering Ray Marching</description>
+      <description>This course is proposed to MSIAM M1 students and presents an introduction to Ray casting, Ray tracing, Ray Marching and Physically Based Rendering methods. I would like to thank Romain Vergne for his course slides and the two first practicals.
+Course Slides Ray Casting
+Ray Tracing/Ray Marching
+Physically Based Rendering
+Practicals Base Code
+Ray Casting
+Ray Tracing
+Physically Based Rendering
+Ray Marching</description>
     </item>
     
     <item>
@@ -68,12 +87,13 @@ Physically Based Rendering Ray Marching</description>
     </item>
     
     <item>
-      <title>Teaching Ressources</title>
+      <title>Teaching Resources</title>
       <link>http://typhomnt.github.io/teaching_ressources/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       
       <guid>http://typhomnt.github.io/teaching_ressources/</guid>
-      <description>Raytracing Practicals</description>
+      <description>Raytracing Ressources
+Functionnal Programming</description>
     </item>
     
   </channel>
