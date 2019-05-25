@@ -27,8 +27,7 @@ Space Time Doodle Transfer examples Below, I show transfered space-time doodles 
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       
       <guid>http://typhomnt.github.io/animation_transfer_two_chars/</guid>
-      <description>In the animation transfer article, I presented a method to create a animation sequence from a 6D trajectory. This method is centered around one character at a time. Here, I propose a way to extend it in order to take into account multiple characters and their interactions.
-Experiment 1: Don Juan and Ghost Scene This first experiment was done in the scope of an intership student&amp;rsquo;s project. The goal was to test our system in a context where the script was already written and where two chacters were &amp;ldquo;interacting&amp;rdquo; without any contact.</description>
+      <description>function passWord() { var testV = 1; var pass1 = prompt(&#39;Protected Page, Please Enter The Password&#39;,&#39; &#39;); while (testV passWord()  In the animation transfer article, I presented a method to create a animation sequence from a 6D trajectory. This method is centered around one character at a time. Here, I propose a way to extend it in order to take into account multiple characters and their interactions.</description>
     </item>
     
     <item>
@@ -56,16 +55,7 @@ Experiment 1: Don Juan and Ghost Scene This first experiment was done in the sco
       
       <guid>http://typhomnt.github.io/music/</guid>
       <description>Here are some of my piano recordings.
-Chopin Etude 5 Op 25 &amp;ldquo;Wrong Notes&amp;rdquo;</description>
-    </item>
-    
-    <item>
-      <title>Experiment TEST</title>
-      <link>http://typhomnt.github.io/test/</link>
-      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
-      
-      <guid>http://typhomnt.github.io/test/</guid>
-      <description>Test  Enter your password:   function checkPswd() { var confirmPassword = &amp;ldquo;admin&amp;rdquo;; var password = document.getElementById(&amp;ldquo;pswd&amp;rdquo;).value; if (password == confirmPassword) { window.location=&amp;ldquo;index.html&amp;rdquo;; } else{ alert(&amp;ldquo;Passwords do not match.&amp;rdquo;); } }</description>
+Chopin Etude 5 Op 25 &amp;ldquo;Wrong Notes&amp;rdquo; (Recorded in 2015)</description>
     </item>
     
     <item>
