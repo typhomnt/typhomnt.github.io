@@ -22,12 +22,50 @@ Space Time Doodle Transfer examples Below, I show transfered space-time doodles 
     </item>
     
     <item>
+      <title>Animation Transfer for two characters: Part 1</title>
+      <link>http://typhomnt.github.io/animation_transfer_two_chars/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/animation_transfer_two_chars/</guid>
+      <description>In the animation transfer article, I presented a method to create a animation sequence from a 6D trajectory. This method is centered around one character at a time. Here, I propose a way to extend it in order to take into account multiple characters and their interactions.
+Experiment 1: Don Juan and Ghost Scene This first experiment was done in the scope of an intership student&amp;rsquo;s project. The goal was to test our system in a context where the script was already written and where two chacters were &amp;ldquo;interacting&amp;rdquo; without any contact.</description>
+    </item>
+    
+    <item>
+      <title>Art Ressource</title>
+      <link>http://typhomnt.github.io/3d_art/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/3d_art/</guid>
+      <description> The Band of the Hawk by typhomnt on Sketchfab   SkyEngine Bob by typhomnt on Sketchfab   Phantasy Star Online 2 Ray Partizan by typhomnt on Sketchfab   Soul Calibur Fan Art First Attempt by typhomnt on Sketchfab   Soul Edge Fan art First Attempt by typhomnt on Sketchfab  </description>
+    </item>
+    
+    <item>
       <title>Art Ressource</title>
       <link>http://typhomnt.github.io/art/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       
       <guid>http://typhomnt.github.io/art/</guid>
-      <description> The Band of the Hawk by typhomnt on Sketchfab   SkyEngine Bob by typhomnt on Sketchfab   Phantasy Star Online 2 Ray Partizan by typhomnt on Sketchfab   Soul Calibur Fan Art First Attempt by typhomnt on Sketchfab   Soul Edge Fan art First Attempt by typhomnt on Sketchfab  </description>
+      <description>3D art Music</description>
+    </item>
+    
+    <item>
+      <title>Art Ressource</title>
+      <link>http://typhomnt.github.io/music/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/music/</guid>
+      <description>Here are some of my piano recordings.
+Chopin Etude 5 Op 25 &amp;ldquo;Wrong Notes&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Experiment TEST</title>
+      <link>http://typhomnt.github.io/test/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/test/</guid>
+      <description>Test  Enter your password:   function checkPswd() { var confirmPassword = &amp;ldquo;admin&amp;rdquo;; var password = document.getElementById(&amp;ldquo;pswd&amp;rdquo;).value; if (password == confirmPassword) { window.location=&amp;ldquo;index.html&amp;rdquo;; } else{ alert(&amp;ldquo;Passwords do not match.&amp;rdquo;); } }</description>
     </item>
     
     <item>
