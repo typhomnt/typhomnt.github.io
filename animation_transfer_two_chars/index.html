@@ -55,7 +55,7 @@
 
 <meta itemprop="datePublished" content="2019-02-20T16:22:09&#43;01:00" />
 <meta itemprop="dateModified" content="2019-02-20T16:22:09&#43;01:00" />
-<meta itemprop="wordCount" content="415">
+<meta itemprop="wordCount" content="482">
 
 
 
@@ -157,77 +157,63 @@ This method is centered around one character at a time. Here, I propose a way to
 <p>This first experiment was done in the scope of an intership student&rsquo;s project.
 The goal was to test our system in a context where the script was already written and where two chacters were &ldquo;interacting&rdquo;
 without any contact. We basically records the two Vive controller at the same time and compute one STD per character with our previous method.
-The scene we chose is extracted from Don Juan and corresponds to the act V scene V in which Don Juan is being threaten by a ghost.</p>
+The scene we chose is extracted from Don Juan and corresponds to the act V scene V in which Don Juan and his valet Sganarelle are arguing.
+The scene was played in 4 different versions, with different stagings and actions.</p>
 
 <table>
 <thead>
 <tr>
 <th>Don Juan</th>
-<th align="center">Ghost</th>
+<th align="center">Sganarelle</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>Attack Neutral</td>
-<td align="center">Pose</td>
-</tr>
-
-<tr>
-<td>Attack Panic</td>
-<td align="center">Stand</td>
-</tr>
-
-<tr>
-<td>Back Away</td>
+<td>Walk</td>
 <td align="center">Walk</td>
 </tr>
 
 <tr>
-<td>Crouch</td>
-<td align="center">Threaten</td>
+<td>Walk</td>
+<td align="center">Run</td>
 </tr>
 
 <tr>
-<td>Draw Sword</td>
+<td>Walk</td>
+<td align="center">Stopping</td>
+</tr>
+
+<tr>
+<td>Yell</td>
 <td align="center"></td>
 </tr>
 
 <tr>
-<td>Run</td>
+<td>Arm Gesture</td>
 <td align="center"></td>
 </tr>
 
 <tr>
-<td>Sit Iddle</td>
-<td align="center"></td>
-</tr>
-
-<tr>
-<td>Stand Up Neutral</td>
-<td align="center"></td>
-</tr>
-
-<tr>
-<td>Uncrouch</td>
-<td align="center"></td>
-</tr>
-
-<tr>
-<td>Walk Arms Forward</td>
-<td align="center"></td>
-</tr>
-
-<tr>
-<td>Walk Iddle</td>
-<td align="center"></td>
+<td>Walk</td>
+<td align="center">Walk</td>
 </tr>
 </tbody>
 </table>
 
-<p>Here is a preliminary animation, showing the first part of the scene.</p>
+<h2 id="version-1">Version 1</h2>
 
-<p><img src="/Images/Animation_Transfer/Anim_djs_eg1.gif" alt="DonJuan Spectre 1" /></p>
+<p><img src="/Images/Animation_Transfer/DJSga1.gif" alt="DonJuan Sganarelle 1" /></p>
+
+<h2 id="version-3">Version 3</h2>
+
+<p><img src="/Images/Animation_Transfer/DJSga3.gif" alt="DonJuan Sganarelle 3" /></p>
+
+<h3 id="experiment-2-fight-scene">Experiment 2: Fight Scene</h3>
+
+<p>While producing dramatic animation with different staging has proved efficient, I also tested the system on more dynamic scene
+such as a street fighter like fight.
+<img src="/Images/Animation_Transfer/Fight1.gif" alt="Fight 1" /></p>
 
 <h3 id="detecting-and-transferring-interactions">Detecting and Transferring Interactions</h3>
 
@@ -266,7 +252,7 @@ MathJax.Hub.Config({
 </script> -->
 
 <p>In the <a href="../animation_transfer">animation transfer</a> article, we introduced how we defined and recognize single character action. Moreover they are represented as regular expression of motion tokens.
-We propose to extend this formulation to character interactions. An interaction between n characters  is defined by two tuples $A_n $: a n-uplet of actions corresponding to the regular expression each sould execute to trigger the interaction and a t-uplet $C_t$ of additional conditions the characters should follow. In our case we consider two types of conditions : distance between two characters $|P_i - P_j| \leq \alpha $ and gaze angles between two characters $ R_i \cdot R_j \leq \beta  $ or $ (P_j - P_i) \cdot R_i \geq \gamma$ with $\gamma \geq 0$. Conditions can be interected or united. We note an interaction $I$ as an uplet $ \{ A_n,C_t \} $. Interaction recognition is perfomed as follows :</p>
+We propose to extend this formulation to character interactions. An interaction between n characters  is defined by two tuples $A_n $: a n-uplet of actions corresponding to the regular expression each should execute to trigger the interaction and a t-uplet $C_t$ of additional conditions the characters should follow. In our case we consider two types of conditions : distance between two characters $|P_i - P_j| \leq \alpha $ and gaze angles between two characters $ R_i \cdot R_j \leq \beta  $ or $ (P_j - P_i) \cdot R_i \geq \gamma$ with $\gamma \geq 0$. Conditions can be intersected or united. We note an interaction $I$ as an uplet $ \{ A_n,C_t \} $. Interaction recognition is perfomed as follows : each character doodle is read in parallel, while proceeding to the action recognition alogrithm for both independent doodles we look for token sequences matching interactions regular expression. Thus for each doodle a &ldquo;current&rdquo; interaction token sequence is stored and updated at each new read token tuple</p>
 
       </div>
     </article>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Maxime Garcia  | Base Mesh Creation</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.40.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Base Mesh Creation" />
+<meta property="og:description" content="This project is in fact a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://typhomnt.github.io/bmesh/" />
+
+
+
+<meta property="article:published_time" content="2019-02-20T16:22:09&#43;01:00"/>
+
+<meta property="article:modified_time" content="2019-02-20T16:22:09&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Base Mesh Creation">
+<meta itemprop="description" content="This project is in fact a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.">
+
+
+<meta itemprop="datePublished" content="2019-02-20T16:22:09&#43;01:00" />
+<meta itemprop="dateModified" content="2019-02-20T16:22:09&#43;01:00" />
+<meta itemprop="wordCount" content="116">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Base Mesh Creation"/>
+<meta name="twitter:description" content="This project is in fact a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://typhomnt.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      Maxime Garcia
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          
+        </p>
+        <h1 class="f1">
+          Base Mesh Creation
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        
+
+<p>This project is in fact a second attemp to implement a fast base mesh creation method from <a href="https://pdfs.semanticscholar.org/2009/3aea25b50e59c63998ba0377371c59bf007f.pdf">this paper</a>.
+The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices.
+This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.
+The resulting mesh is then refined through an iterative process, alternating subdivisions and evolutions. Finally, a an edge fairing optimazation is performed whose puporse is to prevent quad deformation as much as possible without changing the geometry.</p>
+
+<h3 id="bmesh-evolution-example">BMesh Evolution example</h3>
+
+<p><img src="/Images/BMesh/bmesh0.gif" alt="Example 1" />
+<img src="/Images/BMesh/B_Mesh_1.gif" alt="Example 2" /></p>
+
+      </div>
+    </article>
+  </div>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://typhomnt.github.io/" >
+    &copy; 2019 Maxime Garcia
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

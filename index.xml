@@ -59,6 +59,15 @@ Chopin Etude 5 Op 25 &amp;ldquo;Wrong Notes&amp;rdquo; (Recorded in 2015)</descr
     </item>
     
     <item>
+      <title>Base Mesh Creation</title>
+      <link>http://typhomnt.github.io/bmesh/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/bmesh/</guid>
+      <description>This project is in fact a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.</description>
+    </item>
+    
+    <item>
       <title>Functionnal Programming Resources</title>
       <link>http://typhomnt.github.io/functionnal_programming_practs/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
@@ -77,6 +86,15 @@ Optional Project</description>
       
       <guid>http://typhomnt.github.io/laban_transfer/</guid>
       <description>One important aspect of my thesis work is adding expressivity to an input &amp;ldquo;neutral&amp;rdquo; animation. In our work, we decided to take the Laban Effort space as the main representation of the expressivity. This 4D space is divided into Space, Time, Weight and Flow axis. The Space axis describes how direct or indirect a movment is, Time describes if a movment is rather sudden or sustained while Weight differenciate Light from Strong motions.</description>
+    </item>
+    
+    <item>
+      <title>Portfolio Enseignement Label RES</title>
+      <link>http://typhomnt.github.io/teaching_portfolio/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/teaching_portfolio/</guid>
+      <description>function passWord() { var testV = 1; var pass1 = prompt(&#39;Protected Page, Please Enter The Password&#39;,&#39; &#39;); while (testV passWord()  Concevoir des enseignements qui favorisent l&amp;rsquo;apprentissage de chacun Objectif De Janvier à Mai 2017 (de même en 2018), j&amp;rsquo;ai enseigné la programmation fonctionnelle en Licence 1. Je me suis donné pour objectif de proposer un enseignement adapté à chacun de mes élèves, permettant aux plus à l&amp;rsquo;aise d’aller plus loin tout en apportant un soutien à ceux qui étaient le plus en difficulté.</description>
     </item>
     
     <item>
@@ -121,7 +139,8 @@ Ray Marching</description>
       
       <guid>http://typhomnt.github.io/teaching_ressources/</guid>
       <description>Raytracing Ressources
-Functionnal Programming</description>
+Functionnal Programming
+Label RES Portfolio</description>
     </item>
     
   </channel>
