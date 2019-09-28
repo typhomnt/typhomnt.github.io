@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Animation Target Constraint</title>
+      <link>http://typhomnt.github.io/animation_target_ctr/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/animation_target_ctr/</guid>
+      <description> As-rigid-as-possible target constraint </description>
+    </item>
+    
+    <item>
       <title>Animation Transfer</title>
       <link>http://typhomnt.github.io/animation_transfer/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
@@ -77,6 +86,15 @@ Chopin Etude 5 Op 25 &amp;ldquo;Wrong Notes&amp;rdquo; (Recorded in 2015)</descr
     </item>
     
     <item>
+      <title>Bloom Effect</title>
+      <link>http://typhomnt.github.io/bloom_effect/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/bloom_effect/</guid>
+      <description>Bloom effect Here is an example of Bloom post process effect</description>
+    </item>
+    
+    <item>
       <title>Functionnal Programming Resources</title>
       <link>http://typhomnt.github.io/functionnal_programming_practs/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
@@ -139,7 +157,7 @@ Ray Marching</description>
       
       <guid>http://typhomnt.github.io/skyengine/</guid>
       <description>SkyEngine is yet another game engine I am working on together with co-workers and former collegues. The main goal of this engine is to implement recent research work, to make video game and animated movie content easier to create. I would like to thank Julien Daval, Guillaume Cordonnier, Valentin Touzeau, Pierre Casati and Remi Galan Alfonso for contributing to this framework.
-Basic Toon Shading |</description>
+Basic Toon Shading | Animation Target Ctr| Bloom Effect</description>
     </item>
     
     <item>
