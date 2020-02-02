@@ -36,7 +36,7 @@ Space Time Doodle Transfer examples Below, I show transfered space-time doodles 
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       
       <guid>http://typhomnt.github.io/animation_transfer_two_chars/</guid>
-      <description>function passWord() { var testV = 1; var pass1 = prompt(&#39;Protected Page, Please Enter The Password&#39;,&#39; &#39;); while (testV passWord()  In the animation transfer article, I presented a method to create a animation sequence from a 6D trajectory. This method is centered around one character at a time. Here, I propose a way to extend it in order to take into account multiple characters and their interactions.</description>
+      <description>#  function passWord() { var testV = 1; var pass1 = prompt(&#39;Protected Page, Please Enter The Password&#39;,&#39; &#39;); while (testV passWord()  In the animation transfer article, I presented a method to create a animation sequence from a 6D trajectory. This method is centered around one character at a time. Here, I propose a way to extend it in order to take into account multiple characters and their interactions.</description>
     </item>
     
     <item>
@@ -116,15 +116,6 @@ Optional Project</description>
     </item>
     
     <item>
-      <title>Portfolio Enseignement Label RES</title>
-      <link>http://typhomnt.github.io/teaching_portfolio/</link>
-      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
-      
-      <guid>http://typhomnt.github.io/teaching_portfolio/</guid>
-      <description>function passWord() { var testV = 1; var pass1 = prompt(&#39;Protected Page, Please Enter The Password&#39;,&#39; &#39;); while (testV passWord()  Concevoir des enseignements qui favorisent l&amp;rsquo;apprentissage de chacun Objectif De Janvier à Mai 2017 (de même en 2018), j&amp;rsquo;ai enseigné la programmation fonctionnelle en Licence 1. Je me suis donné pour objectif de proposer un enseignement adapté à chacun de mes élèves, permettant aux plus à l&amp;rsquo;aise d’aller plus loin tout en apportant un soutien à ceux qui étaient le plus en difficulté.</description>
-    </item>
-    
-    <item>
       <title>Ray Tracing Resources</title>
       <link>http://typhomnt.github.io/raytracing_practs/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
@@ -147,7 +138,7 @@ Ray Marching</description>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       
       <guid>http://typhomnt.github.io/research_work/</guid>
-      <description>My main interest of research is to find an intuitive way of animating characters. During my thesis untitled &amp;ldquo;Performence Transfer: Animating Characters by Playing and Acting&amp;rdquo;, I&amp;rsquo;ve tried to find a method for creating expressive character animation sequences using 6D trajectories which contain position and orientation data of a physical prop trajectory (such as HTC Vive controllers). This work tackle three problems: Creating an animation sequence using one 6D trajectory, recognizing and transfering motion qualties and create multi character animations in a storytelling context.</description>
+      <description>My main interest of research is to find an intuitive way of animating characters. During my thesis entitled &amp;ldquo;Performance Transfer: Animating Characters by Playing and Acting&amp;rdquo;, I&amp;rsquo;ve tried to find a method for creating expressive character animation sequences from Figurines plays. Moreover, we intrumented 3D printed figurines with HTC Vive trackers and capture their 6D trajectories, containning position and orientation data. This work tackle three problems: Creating an animation sequence using one 6D trajectory, recognizing and transfering motion qualties and create multi character animations in a storytelling context.</description>
     </item>
     
     <item>
@@ -161,14 +152,27 @@ Basic Toon Shading | Animation Target Ctr| Bloom Effect</description>
     </item>
     
     <item>
+      <title>Spatial Motion Doodles: Sketching Animation in VR Using Hand Gestures and Laban Motion Analysis</title>
+      <link>http://typhomnt.github.io/spatial_motion_doodle/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      
+      <guid>http://typhomnt.github.io/spatial_motion_doodle/</guid>
+      <description>ACM Motion, Interaction and Games 2019 (MIG &amp;lsquo;19)
+Authors Maxime Garcia (Inria / LJK / Universite Grenoble Alpes)
+Remi Ronfard (Inria / LJK / Universite Grenoble Alpes)
+Marie-Paule Cani (Ecole Polythecnique / LIX)
+Abstract We present a method for easily drafting expressive character animation by playing with instrumented rigid objects. We parse the input 6D trajectories (position and orientation over time) – called spatial motion doodles – into sequences of actions and convert them into detailed character animations using a dataset of parameterized motion clips which are automatically fitted to the doodles in terms of global trajectory and timing.</description>
+    </item>
+    
+    <item>
       <title>Teaching Resources</title>
       <link>http://typhomnt.github.io/teaching_ressources/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       
       <guid>http://typhomnt.github.io/teaching_ressources/</guid>
-      <description>Raytracing Ressources
-Functionnal Programming
-Label RES Portfolio</description>
+      <description>3D Graphics Resources
+Raytracing Resources
+Functionnal Programming</description>
     </item>
     
   </channel>
