@@ -125,6 +125,7 @@ Optional Project</description>
 Course Slides Ray Casting
 Ray Tracing/Ray Marching
 Physically Based Rendering
+Tutorials Physically Based Rendering
 Practicals Base Code
 Ray Casting
 Ray Tracing
@@ -173,6 +174,15 @@ Abstract We present a method for easily drafting expressive character animation 
       <description>3D Graphics Resources
 Raytracing Resources
 Functionnal Programming</description>
+    </item>
+    
+    <item>
+      <title>An Introduction to Physically Based Rendering</title>
+      <link>http://typhomnt.github.io/pbr_intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://typhomnt.github.io/pbr_intro/</guid>
+      <description>MathJax.Hub.Config({ tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]], processEscapes: true, processEnvironments: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;], TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; }, extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] } } });  MathJax.Hub.Queue(function() { // Fix  tags after MathJax finishes running. This is a // hack to overcome a shortcoming of Markdown. Discussion at // https://github.com/mojombo/jekyll/issues/199 var all = MathJax.Hub.getAllJax(), i; for(i = 0; i  This tutorial is inspired from https://learnopengl.</description>
     </item>
     
   </channel>
