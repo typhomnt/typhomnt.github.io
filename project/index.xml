@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects | Maxime Garcia</title>
+    <link>http://typhomnt.github.io/project/</link>
+      <atom:link href="http://typhomnt.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Projects</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 Feb 2019 16:22:09 +0100</lastBuildDate>
+    <image>
+      <url>http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png</url>
+      <title>Projects</title>
+      <link>http://typhomnt.github.io/project/</link>
+    </image>
+    
+    <item>
+      <title>SkyEngine</title>
+      <link>http://typhomnt.github.io/project/skyengine/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/project/skyengine/</guid>
+      <description>&lt;!--&lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/SkyLogoMob.png&#34; alt=&#34;SkyLogo&#34; style=&#34;width:200px;&#34;/&gt;&lt;/p&gt; --&gt;
+&lt;p&gt;SkyEngine is yet another game engine I am working on together with co-workers and former collegues. The main goal of this engine is to implement recent research work, to make video game and animated movie content easier to create. I would like to thank Julien Daval, Guillaume Cordonnier, Valentin Touzeau, Pierre Casati and Remi Galan Alfonso for contributing to this framework.&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;../basic_toon_shading&#34;&gt;Basic Toon Shading&lt;/a&gt; | 
+&lt;a href=&#34;../animation_target_ctr&#34;&gt;Animation Target Ctr&lt;/a&gt;| 
+&lt;a href=&#34;../bloom_effect&#34;&gt;Bloom Effect&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

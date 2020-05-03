@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -8,22 +8,22 @@
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/animation_target_ctr/</loc>
+    <loc>http://typhomnt.github.io/art/3d_art/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/animation_transfer/</loc>
+    <loc>http://typhomnt.github.io/post/animation_target_ctr/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/animation_transfer_two_chars/</loc>
+    <loc>http://typhomnt.github.io/post/animation_transfer/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/3d_art/</loc>
+    <loc>http://typhomnt.github.io/post/animation_transfer_two_chars/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
@@ -33,72 +33,87 @@
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/music/</loc>
+    <loc>http://typhomnt.github.io/post/bmesh/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/bmesh/</loc>
+    <loc>http://typhomnt.github.io/post/bloom_effect/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/basic_toon_shading/</loc>
+    <loc>http://typhomnt.github.io/teaching/functionnal_programming/functionnal_programming_practs/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/bloom_effect/</loc>
+    <loc>http://typhomnt.github.io/post/laban_transfer/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/functionnal_programming_practs/</loc>
+    <loc>http://typhomnt.github.io/art/music/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/laban_transfer/</loc>
+    <loc>http://typhomnt.github.io/post/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/raytracing_practs/</loc>
+    <loc>http://typhomnt.github.io/project/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/research_work/</loc>
+    <loc>http://typhomnt.github.io/research/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/skyengine/</loc>
+    <loc>http://typhomnt.github.io/teaching/ray_tracing/raytracing_practs/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/spatial_motion_doodle/</loc>
+    <loc>http://typhomnt.github.io/project/skyengine/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/teaching_ressources/</loc>
+    <loc>http://typhomnt.github.io/research/spatial_motion_doodle/</loc>
     <lastmod>2019-02-20T16:22:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://typhomnt.github.io/pbr_intro/</loc>
+    <loc>http://typhomnt.github.io/teaching/</loc>
+    <lastmod>2019-02-20T16:22:09+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://typhomnt.github.io/authors/admin/</loc>
+  </url>
+  
+  <url>
+    <loc>http://typhomnt.github.io/teaching/ray_tracing/pbr_intro/</loc>
+  </url>
+  
+  <url>
+    <loc>http://typhomnt.github.io/teaching/ray_tracing/raymarching_intro/</loc>
+  </url>
+  
+  <url>
+    <loc>http://typhomnt.github.io/authors/</loc>
   </url>
   
   <url>
     <loc>http://typhomnt.github.io/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://typhomnt.github.io/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>

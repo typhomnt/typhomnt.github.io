@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts | Maxime Garcia</title>
+    <link>http://typhomnt.github.io/post/</link>
+      <atom:link href="http://typhomnt.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 Feb 2019 16:22:09 +0100</lastBuildDate>
+    <image>
+      <url>http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png</url>
+      <title>Posts</title>
+      <link>http://typhomnt.github.io/post/</link>
+    </image>
+    
+    <item>
+      <title>Animation Target Constraint</title>
+      <link>http://typhomnt.github.io/post/animation_target_ctr/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/post/animation_target_ctr/</guid>
+      <description>&lt;h3 id=&#34;as-rigid-as-possible-target-constraint--&#34;&gt;As-rigid-as-possible target constraint &lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/Kick_LaplacianEdit.gif&#34; alt=&#34;Example 1&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/CrecentKick_LaplacianEdit.gif&#34; alt=&#34;Example 2&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/Slap_LaplacianEdit.gif&#34; alt=&#34;Example 2&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Animation Transfer</title>
+      <link>http://typhomnt.github.io/post/animation_transfer/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/post/animation_transfer/</guid>
+      <description>&lt;p&gt;One main goal of my thesis is to find a way to animate 3D characters using physical props as an animation tool. The motivation is to create an animation sequence from a play with figurines, trying to reproduce what the player was imagining.&lt;/p&gt;
+ &lt;!--- (I actually tried to tackle this task when I was still an ENSIMAG student during a 3 weeks project. At that time my first idea was to segment the curve using singular points and try to identify which action was performed by looking at the speed norm and direction. Basically, horizontal motions represented wlaking or running action while the other represented jumps and flying actions.
+It is easy to identify the weaknesses of such an approach, it is limited to few actions and above all it is not really accurate, tweaking and thresholding is often needed for identifying singular points.
+During my thesis I took inspiration from the paper untitled Motion Doodle where the authors were using 2D curves to created animation sequences . More particulary a given input curve, it was segmented into horizontal, vertical and oblic bins and animation were defined as a regular expression of curve bins. 
+At that moment, I took a step back and told myself that they were creating a kind of motion language characterizing the curve by its different direction changes.) --&gt;
+&lt;h3 id=&#34;space-time-doodle-transfer-examples--&#34;&gt;Space Time Doodle Transfer examples &lt;/h3&gt;
+&lt;p&gt;Below, I show transfered space-time doodles into animation sequences. It is important to note that all actions were learnt for the two first examples as well as for the garden example.
+&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/Anim_eg1.gif&#34; alt=&#34;Example 1&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/Anim_eg2.gif&#34; alt=&#34;Example 2&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/Anim_eg3.gif&#34; alt=&#34;Example 3&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Animation Transfer for two characters: Part 1</title>
+      <link>http://typhomnt.github.io/post/animation_transfer_two_chars/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/post/animation_transfer_two_chars/</guid>
+      <description>&lt;p&gt;#&lt;head&gt;
+&lt;script&gt;
+
+function passWord() {
+var testV = 1;
+var pass1 = prompt(&#39;Protected Page, Please Enter The Password&#39;,&#39; &#39;);
+while (testV &lt; 3) {
+if (!pass1)
+history.go(-1);
+
+const crypt = pass1.toLowerCase()
+if (crypt  == &#39;imagine&#39;) 
+{
+
+break;
+}
+testV+=1;
+var pass1 =
+prompt(&#39;Access Denied - Password Incorrect, Please Try Again.&#39;,&#39;Password&#39;);
+}
+if (pass1.toLowerCase()!=&#34;password&#34; &amp; testV ==3)
+history.go(-1);
+return &#34; &#34;;
+} 
+
+&lt;/script&gt;
+
+&lt;param id=&#34;Name&#34; value=&#34;.&#34;&gt;
+&lt;script&gt;passWord()&lt;/script&gt;
+&lt;/head&gt; 
+
+
+
+&lt;/p&gt;
+&lt;p&gt;In the 
+&lt;a href=&#34;../animation_transfer&#34;&gt;animation transfer&lt;/a&gt; article, I presented a method to create a animation sequence from a 6D trajectory.
+This method is centered around one character at a time. Here, I propose a way to extend it in order to take into account multiple characters and their interactions.&lt;/p&gt;
+&lt;h3 id=&#34;experiment-1-don-juan-and-ghost-scene--&#34;&gt;Experiment 1: Don Juan and Ghost Scene &lt;/h3&gt;
+&lt;p&gt;This first experiment was done in the scope of an intership student&amp;rsquo;s project.
+The goal was to test our system in a context where the script was already written and where two chacters were &amp;ldquo;interacting&amp;rdquo;
+without any contact. We basically records the two Vive controller at the same time and compute one STD per character with our previous method.
+The scene we chose is extracted from Don Juan and corresponds to the act V scene V in which Don Juan and his valet Sganarelle are arguing.
+The scene was played in 4 different versions, with different stagings and actions.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Don Juan&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Sganarelle&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Walk&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Walk&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Walk&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Run&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Walk&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Stopping&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Yell&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Arm Gesture&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Walk&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Walk&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;version-1-&#34;&gt;Version 1&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/DJSga1.gif&#34; alt=&#34;DonJuan Sganarelle 1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;version-3-&#34;&gt;Version 3&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/DJSga3.gif&#34; alt=&#34;DonJuan Sganarelle 3&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;experiment-2-fight-scene&#34;&gt;Experiment 2: Fight Scene###&lt;/h3&gt;
+&lt;p&gt;While producing dramatic animation with different staging has proved efficient, I also tested the system on more dynamic scene
+such as a street fighter like fight.
+&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/Fight1.gif&#34; alt=&#34;Fight 1&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;detecting-and-transferring-interactions-&#34;&gt;Detecting and Transferring Interactions&lt;/h3&gt;
+&lt;script type=&#34;text/x-mathjax-config&#34;&gt;
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],
+    displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],
+    TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },
+         extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }
+  }
+});
+&lt;/script&gt;
+&lt;script type=&#34;text/x-mathjax-config&#34;&gt;
+  MathJax.Hub.Queue(function() {
+    // Fix &lt;code&gt; tags after MathJax finishes running. This is a
+    // hack to overcome a shortcoming of Markdown. Discussion at
+    // https://github.com/mojombo/jekyll/issues/199
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i &lt; all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += &#39; has-jax&#39;;
+    }
+});
+&lt;/script&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt;
+&lt;/script&gt;
+&lt;!--- for offline
+&lt;script type=&#34;text/javascript&#34;
+   src=&#34;http://typhomnt.github.io/Utils/MathJax/MathJax.js&#34;&gt;
+&lt;/script&gt; --&gt;
+&lt;p&gt;In the 
+&lt;a href=&#34;../animation_transfer&#34;&gt;animation transfer&lt;/a&gt; article, we introduced how we defined and recognize single character action. Moreover they are represented as regular expression of motion tokens.
+We propose to extend this formulation to character interactions. An interaction between n characters  is defined by two tuples $A_n $: a n-uplet of actions corresponding to the regular expression each should execute to trigger the interaction and a t-uplet $C_t$ of additional conditions the characters should follow. In our case we consider two types of conditions : distance between two characters $|P_i - P_j| \leq \alpha $ and gaze angles between two characters $ R_i \cdot R_j \leq \beta  $ or $ (P_j - P_i) \cdot R_i \geq \gamma$ with $\gamma \geq 0$. Conditions can be intersected or united. We note an interaction $I$ as an uplet $ \{ A_n,C_t \} $. Interaction recognition is perfomed as follows : each character doodle is read in parallel, while proceeding to the action recognition alogrithm for both independent doodles we look for token sequences matching interactions regular expression. Thus for each doodle a &amp;ldquo;current&amp;rdquo; interaction token sequence is stored and updated at each new read token tuple.
+Then for each interaction $I$ between n characters, we search for all n-uplets satifying the interaction cues and regular expressions, testing the $n!*(k-n)$ configurations, $k being the number of characters$. In practice $n,k \leq 4$. When testing if a combinaison of $T_n$ token sequences matches an interaction regular expressions, several ordering might satifsfy them. In that case, for each regular expression $R_i$ of $I$ we keep the longest sequence $S_j$ matching it. When all sequences ${S_i}$ as well as all cues ${C_i}$ are satisfied, each characater with sequence $S_j$ will execute the related action of the corresponding matched regular expression $R_i$.&lt;/p&gt;
+&lt;p&gt;Below we show an example of a Kiss interaction whose regular expressions is identical to the Stomp action of each character. The Kiss interaction presented has three cues to be satisfied: the two characters must see each others (2 conditions) and they must be close enough (in the intimate space). The trajectory of the two examples are exactly the same, only the character sizes differ, that&amp;rsquo;s why in the second example the Kiss interaction is not detected, the proximity cue fails.&lt;/p&gt;
+&lt;h2 id=&#34;kiss-interaction-&#34;&gt;Kiss Interaction&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/Bots_Kiss.gif&#34; alt=&#34;Bots Kiss&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;kiss-fail---stomps-&#34;&gt;Kiss Fail -&amp;gt; Stomps&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/Bots_Stomp.gif&#34; alt=&#34;Bots Stomp&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Base Mesh Creation</title>
+      <link>http://typhomnt.github.io/post/bmesh/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/post/bmesh/</guid>
+      <description>&lt;p&gt;This project is in fact a second attemp to implement a fast base mesh creation method from 
+&lt;a href=&#34;https://pdfs.semanticscholar.org/2009/3aea25b50e59c63998ba0377371c59bf007f.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this paper&lt;/a&gt;.
+The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices.
+This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.
+The resulting mesh is then refined through an iterative process, alternating subdivisions and evolutions. Finally, a an edge fairing optimazation is performed whose puporse is to prevent quad deformation as much as possible without changing the geometry.&lt;/p&gt;
+&lt;h3 id=&#34;bmesh-evolution-example--&#34;&gt;BMesh Evolution example &lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/BMesh/bmesh0.gif&#34; alt=&#34;Example 1&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/BMesh/B_Mesh_1.gif&#34; alt=&#34;Example 2&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bloom Effect</title>
+      <link>http://typhomnt.github.io/post/bloom_effect/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/post/bloom_effect/</guid>
+      <description>&lt;h3 id=&#34;bloom-effect&#34;&gt;Bloom effect###&lt;/h3&gt;
+&lt;p&gt;Here is an example of Bloom post process effect&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/BloomEffect.gif&#34; alt=&#34;Example 1&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Laban Effort Animation Transfer</title>
+      <link>http://typhomnt.github.io/post/laban_transfer/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/post/laban_transfer/</guid>
+      <description>&lt;p&gt;One important aspect of my thesis work is adding expressivity to an input &amp;ldquo;neutral&amp;rdquo; animation. In our work, we decided to take the Laban Effort space as the main representation of the expressivity.
+This 4D space is divided into Space, Time, Weight and Flow axis. The Space axis describes how direct or indirect a movment is, Time describes if a movment is rather sudden or sustained while Weight differenciate Light from Strong motions. Finally Flow describes if a motion sequence is free or bound. In this article, I will only present how to transfer Time and Weight to a neutral animation.
+To do so, I will first introduce three animation operators: scaling, retiming and shaping operators.&lt;/p&gt;
+&lt;h3 id=&#34;scaling-&#34;&gt;Scaling&lt;/h3&gt;
+&lt;h3 id=&#34;efforts-comparison--&#34;&gt;Efforts Comparison &lt;/h3&gt;
+&lt;p&gt;Finally, I show below the comparison of the 4 efforts for several animations of the Mixamo database
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/kick_laban.gif&#34; alt=&#34;Kick Laban&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/punch_laban.gif&#34; alt=&#34;Punch Laban&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/stomp_laban.gif&#34; alt=&#34;Stomp Laban&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/throw_laban.gif&#34; alt=&#34;Throw Laban&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I personnaly think that those modifiers do the job as Laban Effort qualities are recognizable. That remains true as long as the animation phases are correctly defined. Still there are ways of improvment: first, foot sliding should be removed for light and strong modifiers; secondly, light and strong motions are sometimes too fast for some animations. This is due to the fact that some animations present long moments where there is no speed.&lt;/p&gt;
+&lt;!---In furture experimentations, I will try to use the equi-affine speed instead of the speed for the retiming operator, taking into account animation breakdowns.--&gt;
+&lt;p&gt;Comparisons:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Arm_Gesture_Light.mp4.gif&#34; alt=&#34;Raise Light&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Arm_Gesture_Strong.mp4.gif&#34; alt=&#34;Raise Strong&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Arm_Gesture_Sudden.mp4.gif&#34; alt=&#34;Raise Sudden&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Arm_Gesture_Sustained.mp4.gif&#34; alt=&#34;Raise Sustained&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Punch_Light.mp4.gif&#34; alt=&#34;Punch Light&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Punch_Strong.mp4.gif&#34; alt=&#34;Punch Strong&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Punch_Sudden.mp4.gif&#34; alt=&#34;Punch Sudden&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Punch_Sustained.mp4.gif&#34; alt=&#34;Punch Sustained&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Jump_Light.mp4.gif&#34; alt=&#34;Jump Light&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Jump_Strong.mp4.gif&#34; alt=&#34;Jump Strong&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Jump_Sudden.mp4.gif&#34; alt=&#34;Jump Sudden&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Jump_Sustained.mp4.gif&#34; alt=&#34;Jump Sustained&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Flip_Light.mp4.gif&#34; alt=&#34;Flip Light&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Flip_Strong.mp4.gif&#34; alt=&#34;Flip Strong&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Flip_Sudden.mp4.gif&#34; alt=&#34;Flip Sudden&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Flip_Sustained.mp4.gif&#34; alt=&#34;RaFlipise Sustained&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Stomp_Light.mp4.gif&#34; alt=&#34;Stomp Light&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Stomp_Strong.mp4.gif&#34; alt=&#34;Stomp Strong&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Stomp_Sudden.mp4.gif&#34; alt=&#34;Stomp Sudden&#34;&gt;
+&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/Stomp_Sustained.mp4.gif&#34; alt=&#34;Stomp Sustained&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
