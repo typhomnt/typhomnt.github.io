@@ -27,7 +27,8 @@
   
     
   
-  <meta name="description" content="As-rigid-as-possible target constraint  ">
+  <meta name="description" content="One common problem game developers come across when using animated characters is to modify them in real-time in order to satisfy a given task. More particularly, re-using the same grab/take animation or push/punch/kick animation to target a specific object is a feature every programmer want and may have to implement.
+When dealing with targets in animation, the first word that came into our mind is Inverse Kinematic (IK). And actually, that is a good start to tackle our problem.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://typhomnt.github.io/post/animation_target_ctr/">
@@ -42,6 +43,9 @@
   
 
   
+  
+  
+  <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -173,9 +177,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -235,7 +239,8 @@
   <meta property="og:site_name" content="Maxime Garcia">
   <meta property="og:url" content="http://typhomnt.github.io/post/animation_target_ctr/">
   <meta property="og:title" content="Animation Target Constraint | Maxime Garcia">
-  <meta property="og:description" content="As-rigid-as-possible target constraint  "><meta property="og:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png">
+  <meta property="og:description" content="One common problem game developers come across when using animated characters is to modify them in real-time in order to satisfy a given task. More particularly, re-using the same grab/take animation or push/punch/kick animation to target a specific object is a feature every programmer want and may have to implement.
+When dealing with targets in animation, the first word that came into our mind is Inverse Kinematic (IK). And actually, that is a good start to tackle our problem."><meta property="og:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png">
   <meta property="twitter:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -280,7 +285,7 @@
       "url": "http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_2.png"
     }
   },
-  "description": "As-rigid-as-possible target constraint  "
+  "description": "One common problem game developers come across when using animated characters is to modify them in real-time in order to satisfy a given task. More particularly, re-using the same grab/take animation or push/punch/kick animation to target a specific object is a feature every programmer want and may have to implement.\nWhen dealing with targets in animation, the first word that came into our mind is Inverse Kinematic (IK). And actually, that is a good start to tackle our problem."
 }
 </script>
 
@@ -634,7 +639,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 min read
+    3 min read
   </span>
   
 
@@ -670,10 +675,149 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h3 id="as-rigid-as-possible-target-constraint--">As-rigid-as-possible target constraint </h3>
-<p><img src="/Images/SkyEngine/Kick_LaplacianEdit.gif" alt="Example 1">
-<img src="/Images/SkyEngine/CrecentKick_LaplacianEdit.gif" alt="Example 2">
-<img src="/Images/SkyEngine/Slap_LaplacianEdit.gif" alt="Example 2"></p>
+      <p>One common problem game developers come across when using animated characters is to modify them in real-time in order to satisfy a given task.
+More particularly, re-using the same grab/take animation or push/punch/kick animation to target a specific object is a feature every programmer want and may have to implement.</p>
+<p>When dealing with targets in animation, the first word that came into our mind is Inverse Kinematic (IK). And actually, that is a good start to tackle our problem. Indeed, for instance when a character has to grab an item, IK automatically find rotations and positions of the elbow and shoulder (can be more than that) so that the hand reach the target.</p>
+<p>Let&rsquo;s now define our problem more accurately. At a given frame of one animation, we want some body part of our character to reach a given target.
+As I like to consider an animation as a time function instead of a function of frame, we define $t_t$ our target time and $p_t$ the position of the given target.</p>
+<p>For a given bone, let&rsquo;s say the hand, we compute its trajectory $p(t)$ or ${p_i}$ (discretized) during the whole animation.
+One could say that our problem is solved as we just have to call our IK solver at time $t_t$ so that $p(t_t) = p_t$.
+However, this solution while satisfying our constraint, induce a high discontinuity in the animation. Moreover, the character&rsquo;s hand reach the target at the given frame without actually taking the trajectory to reach it as the rest of the animation remains unchanged.
+Our goal is then to change the overall hand motion so that it feels like the character aims to reach our target.
+One formulation of this problem is to also impose that while satisfying the target constraint, our initial animation remains as consistent as possible with respect to the original.
+This can be formulated as an as-rigid-as-possible (ARAP) deformation of the hand trajectory. While it was first used to 
+<a href="https://igl.ethz.ch/projects/ARAP/" target="_blank" rel="noopener">deform 3D models</a>, 
+<a href="https://dl.acm.org/doi/10.1145/1531326.1531385" target="_blank" rel="noopener">this paper</a> used the same principle but for bones trajectories by noticing each point of one trajectory could be expressed in a local frame of defined by its neighbours:</p>
+<p>$$
+\forall i, p_i = p_{i-1} + \alpha_i \vec{A_i} + \beta_i \vec{B_i}
+$$</p>
+<p>$$
+\text{with } \vec{A_i} = \frac{p_{i+1} - p_{i-1}}{\left \lVert p_{i+1} - p_{i-1} \right \rVert}
+$$</p>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-expressing-a-point-curve-p_i-with-respect-to-its-two-neighbors-this-point-is-computed-in-its-previous-neighbor-local-frame-directed-by-the-p_i-1p_i1-vector">
+
+
+  <a data-fancybox="" href="/img/Images/ARAP_Anim/Laplacian_formulation.png" data-caption="Expressing a point curve $P_i$ with respect to its two neighbors. This point is computed in its previous neighbor local frame directed by the $P_{i-1}P_{i&#43;1}$ vector.">
+
+
+  <img src="/img/Images/ARAP_Anim/Laplacian_formulation.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption>
+    Expressing a point curve $P_i$ with respect to its two neighbors. This point is computed in its previous neighbor local frame directed by the $P_{i-1}P_{i+1}$ vector.
+  </figcaption>
+
+
+</figure>
+
+<p>This formulation translates the fact that $p_i$ can be expressed in a frame in which the frontal vector $\vec{A_i}$ and left vector $\vec{B_i}$ are contained in the $\hat{ p_{i-1}p_ip_{i+1}}$ plane, with $p_i$ being expressed with respect to its neighbors. Using simple trigonometry it is quite simple to compute $\alpha_i$ and $\beta_i$:</p>
+<p>$$
+\alpha_i = dot(p_i - p_{i-1}\vec{A_i})
+$$</p>
+<p>$$
+\beta_i = \left \lVert cross(p_i - p_{i-1}\vec{A_i}) \right \rVert
+$$</p>
+<p>Finally, we can deduce:</p>
+<p>$$
+\vec{B_i} = \frac{p_{i} - p_{i-1} - \alpha_i\vec{A_i}}{\beta_i}
+$$</p>
+<p>Using this characterization of each point of the bone&rsquo;s trajectory with respect to its neighbors, we seek to conserve each original $\alpha_i$ and $\beta_i$ when deforming the trajectory to address the $ p(t_t) = p_t $ constraint. Let&rsquo;s consider that $p(t_t) = p_k$ for $k \in [1:n]$. We then compute the new bone trajectory as an optimization process minimizing the cost function $L_i$:</p>
+<p>$$ L_i(p_0,&hellip;,p_n) = \sum\limits_j {\left\lVert (\alpha^{init}_j,\beta^{init}_j) - (\alpha_j,\beta_j) \right\rVert}^2 + \gamma {\left\lVert p_k - p_t \right\rVert}^2 $$</p>
+<p>Using a gradient descent method we can update the ${p_i}$ trajectory at each step of the optimization process in which: $\forall j, p_j = p_j -\epsilon\nabla L_i(p_0,&hellip;,p_n)_j$.</p>
+<p>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-default-slap-animation-which-do-not-reach-the-green-target">
+
+
+  <a data-fancybox="" href="/img/Images/ARAP_Anim/Arlequin_Target_Fail.png" data-caption="Default Slap animation which do not reach the green target.">
+
+
+  <img src="/img/Images/ARAP_Anim/Arlequin_Target_Fail.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption>
+    Default Slap animation which do not reach the green target.
+  </figcaption>
+
+
+</figure>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure id="figure-deformed-slap-animation-using-our-optimization-algorithm-making-the-character-reach-the-green-target">
+
+
+  <a data-fancybox="" href="/img/Images/ARAP_Anim/Arlequin_Target_Reach.png" data-caption="Deformed Slap animation using our optimization algorithm making the character reach the green target.">
+
+
+  <img src="/img/Images/ARAP_Anim/Arlequin_Target_Reach.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption>
+    Deformed Slap animation using our optimization algorithm making the character reach the green target.
+  </figcaption>
+
+
+</figure>
+</p>
+<p><img src="/Images/SkyEngine/Slap_LaplacianEdit.gif" alt="Example 2"></p>
+<p><img src="/Images/SkyEngine/Kick_LaplacianEdit.gif" alt="Example 1"></p>
 
     </div>
 

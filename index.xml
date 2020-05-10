@@ -60,10 +60,149 @@
       <link>http://typhomnt.github.io/post/animation_target_ctr/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       <guid>http://typhomnt.github.io/post/animation_target_ctr/</guid>
-      <description>&lt;h3 id=&#34;as-rigid-as-possible-target-constraint--&#34;&gt;As-rigid-as-possible target constraint &lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/Kick_LaplacianEdit.gif&#34; alt=&#34;Example 1&#34;&gt;
-&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/CrecentKick_LaplacianEdit.gif&#34; alt=&#34;Example 2&#34;&gt;
-&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/Slap_LaplacianEdit.gif&#34; alt=&#34;Example 2&#34;&gt;&lt;/p&gt;
+      <description>&lt;p&gt;One common problem game developers come across when using animated characters is to modify them in real-time in order to satisfy a given task.
+More particularly, re-using the same grab/take animation or push/punch/kick animation to target a specific object is a feature every programmer want and may have to implement.&lt;/p&gt;
+&lt;p&gt;When dealing with targets in animation, the first word that came into our mind is Inverse Kinematic (IK). And actually, that is a good start to tackle our problem. Indeed, for instance when a character has to grab an item, IK automatically find rotations and positions of the elbow and shoulder (can be more than that) so that the hand reach the target.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s now define our problem more accurately. At a given frame of one animation, we want some body part of our character to reach a given target.
+As I like to consider an animation as a time function instead of a function of frame, we define $t_t$ our target time and $p_t$ the position of the given target.&lt;/p&gt;
+&lt;p&gt;For a given bone, let&amp;rsquo;s say the hand, we compute its trajectory $p(t)$ or ${p_i}$ (discretized) during the whole animation.
+One could say that our problem is solved as we just have to call our IK solver at time $t_t$ so that $p(t_t) = p_t$.
+However, this solution while satisfying our constraint, induce a high discontinuity in the animation. Moreover, the character&amp;rsquo;s hand reach the target at the given frame without actually taking the trajectory to reach it as the rest of the animation remains unchanged.
+Our goal is then to change the overall hand motion so that it feels like the character aims to reach our target.
+One formulation of this problem is to also impose that while satisfying the target constraint, our initial animation remains as consistent as possible with respect to the original.
+This can be formulated as an as-rigid-as-possible (ARAP) deformation of the hand trajectory. While it was first used to 
+&lt;a href=&#34;https://igl.ethz.ch/projects/ARAP/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;deform 3D models&lt;/a&gt;, 
+&lt;a href=&#34;https://dl.acm.org/doi/10.1145/1531326.1531385&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this paper&lt;/a&gt; used the same principle but for bones trajectories by noticing each point of one trajectory could be expressed in a local frame of defined by its neighbours:&lt;/p&gt;
+&lt;p&gt;$$
+\forall i, p_i = p_{i-1} + \alpha_i \vec{A_i} + \beta_i \vec{B_i}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\text{with } \vec{A_i} = \frac{p_{i+1} - p_{i-1}}{\left \lVert p_{i+1} - p_{i-1} \right \rVert}
+$$&lt;/p&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-expressing-a-point-curve-p_i-with-respect-to-its-two-neighbors-this-point-is-computed-in-its-previous-neighbor-local-frame-directed-by-the-p_i-1p_i1-vector&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;http://typhomnt.github.io/img/Images/ARAP_Anim/Laplacian_formulation.png&#34; data-caption=&#34;Expressing a point curve $P_i$ with respect to its two neighbors. This point is computed in its previous neighbor local frame directed by the $P_{i-1}P_{i&amp;#43;1}$ vector.&#34;&gt;
+
+
+  &lt;img src=&#34;http://typhomnt.github.io/img/Images/ARAP_Anim/Laplacian_formulation.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Expressing a point curve $P_i$ with respect to its two neighbors. This point is computed in its previous neighbor local frame directed by the $P_{i-1}P_{i+1}$ vector.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;This formulation translates the fact that $p_i$ can be expressed in a frame in which the frontal vector $\vec{A_i}$ and left vector $\vec{B_i}$ are contained in the $\hat{ p_{i-1}p_ip_{i+1}}$ plane, with $p_i$ being expressed with respect to its neighbors. Using simple trigonometry it is quite simple to compute $\alpha_i$ and $\beta_i$:&lt;/p&gt;
+&lt;p&gt;$$
+\alpha_i = dot(p_i - p_{i-1}\vec{A_i})
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\beta_i = \left \lVert cross(p_i - p_{i-1}\vec{A_i}) \right \rVert
+$$&lt;/p&gt;
+&lt;p&gt;Finally, we can deduce:&lt;/p&gt;
+&lt;p&gt;$$
+\vec{B_i} = \frac{p_{i} - p_{i-1} - \alpha_i\vec{A_i}}{\beta_i}
+$$&lt;/p&gt;
+&lt;p&gt;Using this characterization of each point of the bone&amp;rsquo;s trajectory with respect to its neighbors, we seek to conserve each original $\alpha_i$ and $\beta_i$ when deforming the trajectory to address the $ p(t_t) = p_t $ constraint. Let&amp;rsquo;s consider that $p(t_t) = p_k$ for $k \in [1:n]$. We then compute the new bone trajectory as an optimization process minimizing the cost function $L_i$:&lt;/p&gt;
+&lt;p&gt;$$ L_i(p_0,&amp;hellip;,p_n) = \sum\limits_j {\left\lVert (\alpha^{init}_j,\beta^{init}_j) - (\alpha_j,\beta_j) \right\rVert}^2 + \gamma {\left\lVert p_k - p_t \right\rVert}^2 $$&lt;/p&gt;
+&lt;p&gt;Using a gradient descent method we can update the ${p_i}$ trajectory at each step of the optimization process in which: $\forall j, p_j = p_j -\epsilon\nabla L_i(p_0,&amp;hellip;,p_n)_j$.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-default-slap-animation-which-do-not-reach-the-green-target&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;http://typhomnt.github.io/img/Images/ARAP_Anim/Arlequin_Target_Fail.png&#34; data-caption=&#34;Default Slap animation which do not reach the green target.&#34;&gt;
+
+
+  &lt;img src=&#34;http://typhomnt.github.io/img/Images/ARAP_Anim/Arlequin_Target_Fail.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Default Slap animation which do not reach the green target.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-deformed-slap-animation-using-our-optimization-algorithm-making-the-character-reach-the-green-target&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;http://typhomnt.github.io/img/Images/ARAP_Anim/Arlequin_Target_Reach.png&#34; data-caption=&#34;Deformed Slap animation using our optimization algorithm making the character reach the green target.&#34;&gt;
+
+
+  &lt;img src=&#34;http://typhomnt.github.io/img/Images/ARAP_Anim/Arlequin_Target_Reach.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption&gt;
+    Deformed Slap animation using our optimization algorithm making the character reach the green target.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/Slap_LaplacianEdit.gif&#34; alt=&#34;Example 2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/Kick_LaplacianEdit.gif&#34; alt=&#34;Example 1&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
