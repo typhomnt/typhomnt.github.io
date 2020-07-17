@@ -56,67 +56,6 @@
     </item>
     
     <item>
-      <title>A Introspection on Non-Photorealistic Rendering</title>
-      <link>http://typhomnt.github.io/post/npr_shading/</link>
-      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
-      <guid>http://typhomnt.github.io/post/npr_shading/</guid>
-      <description>&lt;p&gt;As I dived into the NPR world, I came across several problems and questions.
-The first one was, of course, what is NPR ? Looking at the wikipedia page at this date (April 2020), NPR &amp;ldquo;focuses on enabling a wide variety of expressive styles for digital art&amp;rdquo; like  &amp;ldquo;painting, drawing, technical illustration, and animated cartoons&amp;rdquo;. The main idea is to repoduce expressive styles like cartoons using computers. But this definition also suggests that the goal of NPR is also to go futher than expressing existing traditional styles, meaning that we can create new styles with the new tools we have in our hands. And this can be done either in 2D or in 3D using our powerful computers.&lt;/p&gt;
-&lt;p&gt;In my main reseach, I particularly focus on  expressing those styles through 3D content. The main reason I chose this path is because, while I am constantly mesmerised by what 2D digital artist like WLOP or Kuvshinov Ilya are producing, I always find 2D content as &amp;ldquo;incomplete&amp;rdquo; somehow. To be more specific, I feel like the integrety of what 2D artist are creating only belongs to their creators as their are the only one who can draw faithfully their characters, buildings, landscapes and environment. I know that this assertion is not completly true, because this skill can be transmitted like it as been done for series like Asterix and Obelix. Still, in comparison building 3D scene with models, illumination scheme, materials, textures, etc&amp;hellip; better ensures the faithfullness of one universe and manipulate contents that are highly reusable. In fact, this comparison between 2D and 3D came clearer to me when I learned how video games and 3D animated movies were made. Indeed, one of the first step is to draw concept art of characters, weapons, environment and so on. Then 3D artists build 3D content from those concepts. While studios prefer 3D content over 2D for financial reasons and because skilled 2D animators are difficult to find, I believe that the overall integrety is better preserved.&lt;/p&gt;
-&lt;p&gt;Closing this paranthesis, lets go back to the objective of NPR I described above and which is still quite vague. Thus, I wanted to be more precise on the styles I want to express especially through references. In the litterature and on the web we can find tons of different styles so I had to classify them. Actually, a lot of them are referenced by the tool used to create the paintings or the drawings, like Watercolor, Stippling, Pastel and so on.&lt;/p&gt;
-&lt;p&gt;The tool is actually composed of three components: the drawing material (paint, ink , charcoal), the brush stroke (pen, pencil, brushes) and the texture of the support. At this point I have to mention that I consider digital painting as providing new elements to those components.&lt;/p&gt;
-&lt;p&gt;These tool are then the mean of creating 2D content but it does not define the actual composition of what we can find on these drawings.
-In my current research I decided to decompose the actual content as a combination of Line Arting, Shading and Brushing.&lt;/p&gt;
-&lt;h3 id=&#34;line-art-&#34;&gt;Line art&lt;/h3&gt;
-&lt;p&gt;Line Art depicts object silhouette and inner details with a varying thickness. While 2D cartoons use them a lot, many other styles do not include line art at all.
-In our 3D context, there are various ways of computing silhouttes and inner contour lines. Many of those techniques are referenced in the survey of 
-&lt;a href=&#34;https://hal.inria.fr/hal-02189483/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Benard et al&lt;/a&gt; explaining how to extract line drawings from 3D models.&lt;/p&gt;
-&lt;h3 id=&#34;shading-&#34;&gt;Shading&lt;/h3&gt;
-&lt;p&gt;Shading refers to how light interact with object surfaces and is actually a notion that has various mathematical representations like the one I present in this article on 
-&lt;a href=&#34;&#34;&gt;Physically-Based Rendering&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Shading described the color and intensity of light that goes into our eye is the result of different contributions. Here, I cornered them to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Diffusion&lt;/li&gt;
-&lt;li&gt;Reflection (specular)&lt;/li&gt;
-&lt;li&gt;Metalness&lt;/li&gt;
-&lt;li&gt;Roughness&lt;/li&gt;
-&lt;li&gt;Ambient Occlusion&lt;/li&gt;
-&lt;li&gt;Ambient/environment/Indirect Lighting&lt;/li&gt;
-&lt;li&gt;Subsurface scattering&lt;/li&gt;
-&lt;li&gt;Emission&lt;/li&gt;
-&lt;li&gt;Absorption&lt;/li&gt;
-&lt;li&gt;Transparency&lt;/li&gt;
-&lt;li&gt;Rim lighting&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I deliberatly merged material properties with light behavior functions because I also consider the functions as a property of the surface we want to represent. Ideally, these functions are all identical for each object of one drawing to ensure consistency. Those different lighting components have been quite studied for Photorealistic rendering which makes the link between physic representation and 3D graphics.
-However, I believe that NPR has still quite a room for improvment for integrating all those components which are taken into account by artists in many different ways.
-I even believe that there is something like a continuity between NPR and Photorealistic rendering. This is exatcly what I will focus on try to introduce in this article.&lt;/p&gt;
-&lt;p&gt;To do so, we need a generic shading model that will allow us to cover a wide range of artistic styles while being able to generate more photorealitic renderings. In this article, I will narrow the problem for a real-time rendering pipeline and thus focus on a model that works on G-Buffers and on screen-space versions of the light components I described above.&lt;/p&gt;
-&lt;p&gt;To achieve our goal, I will detail how each light conponent is computed and how we can create a continuum from NPR to Photorealism (or the other way around). In addition, I want to highlight the fact that tweaking the light component will not be sufficient enough to obtain a large range of NPR styles, we also need to be able to simplify the geometry and to apply different blending modes.&lt;/p&gt;
-&lt;h2 id=&#34;inspiration-examples--&#34;&gt;Inspiration Examples &lt;/h2&gt;
-&lt;p&gt;Before diving into the technical part, let me show you some examples of the range of artisic styles we want achieve and point out what they have in common and their differences. First, let&amp;rsquo;s look at traditionnal style before seeing how humans tried to reproduce them using computers.&lt;/p&gt;
-&lt;h2 id=&#34;lighting-components-&#34;&gt;Lighting Components&lt;/h2&gt;
-&lt;p&gt;It is time to dive into the math and physics of each lighting component as well as their simplification. Like I introduced in the 
-&lt;a href=&#34;&#34;&gt;Physically-Based Rendering&lt;/a&gt; the amount of outgoing light at a specific point of one surface and at a specific point of view if given by the light equation itself described by a light function that we called a BRDF in the tutorial.&lt;/p&gt;
-&lt;h1 id=&#34;simplifying-the-geometry-&#34;&gt;Simplifying the geometry&lt;/h1&gt;
-&lt;p&gt;One main limitation of tweaking the lighting component as we did in the previous section is that we tweak only a very local information whereas some styles need to take into account neighbouring regions.
-Let me show you why.
-Normal Bilateral filtering.&lt;/p&gt;
-&lt;h2 id=&#34;parameter-control-&#34;&gt;Parameter Control&lt;/h2&gt;
-&lt;h2 id=&#34;color-blending--&#34;&gt;Color Blending &lt;/h2&gt;
-&lt;h3 id=&#34;brushing-&#34;&gt;Brushing&lt;/h3&gt;
-&lt;p&gt;When drawing in 2D, being digitaly or traditionnaly, the shading and the texture of the brush are drawn at the same time. Here, I allow myself to decompose those two aspect and define brushing as applying a brush stroke (texture) colored either with a specific color or with a more sophisticated shading (brush strokes can be also shaded themselves).&lt;/p&gt;
-&lt;h2 id=&#34;canvas-texture-&#34;&gt;Canvas Texture&lt;/h2&gt;
-&lt;p&gt;Brush are applied to textured canvas which play a role&lt;/p&gt;
-&lt;h3 id=&#34;tone-mapping-and-adjustments-&#34;&gt;Tone mapping and Adjustments&lt;/h3&gt;
-&lt;h3 id=&#34;npr-in-animation--&#34;&gt;NPR in animation &lt;/h3&gt;
-&lt;p&gt;Here is an example of toon shading during an uppercut jab animation downsampled at 15 fps&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/Toon_shading.gif&#34; alt=&#34;Example 1&#34;&gt;
-&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/Toon_Shading_Shadow.gif&#34; alt=&#34;Example 2&#34;&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Animation Target Constraint</title>
       <link>http://typhomnt.github.io/post/animation_target_ctr/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
