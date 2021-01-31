@@ -335,7 +335,7 @@ The resulting mesh is then refined through an iterative process, alternating sub
       <link>http://typhomnt.github.io/post/bloom_effect/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       <guid>http://typhomnt.github.io/post/bloom_effect/</guid>
-      <description>&lt;h3 id=&#34;bloom-effect&#34;&gt;Bloom effect###&lt;/h3&gt;
+      <description>&lt;h3 id=&#34;bloom-effect-&#34;&gt;Bloom effect&lt;/h3&gt;
 &lt;p&gt;Here is an example of Bloom post process effect&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/BloomEffect.gif&#34; alt=&#34;Example 1&#34;&gt;&lt;/p&gt;
 </description>
