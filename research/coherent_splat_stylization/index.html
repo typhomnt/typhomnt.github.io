@@ -27,10 +27,17 @@
   
     
   
-  <meta name="description" content="#  function passWord() { var testV = 1; var pass1 = prompt(&#39;Protected Page, Please Enter The Password&#39;,&#39; &#39;); while (testV passWord()  In the animation transfer article, I presented a method to create a animation sequence from a 6D trajectory. This method is centered around one character at a time. Here, I propose a way to extend it in order to take into account multiple characters and their interactions.">
+  <meta name="description" content="Comptuer Graphics Forum, Eurographics 2021. Article available here.
+Authors Maxime Garcia (Inria / LJK / Universite Grenoble Alpes)
+Romain Vergne (Inria / LJK / Universite Grenoble Alpes)
+Mohamed-Amine Farhat (Inria / LJK / Universite Grenoble Alpes)
+Pierre Benard (Inria / LaBRI)
+Camille Nous (Laboratoire Cogitamus)
+Joelle Thollot (Inria / LJK / Universite Grenoble Alpes)
+Abstract We present a novel temporally coherent stylized rendering technique working entirely at the compositing stage. We first generate a distribution of 3D anchor points using an implicit grid based on the local object positions stored in a G-buffer, hence following object motion.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://typhomnt.github.io/post/animation_transfer_two_chars/">
+  <link rel="alternate" hreflang="en-us" href="http://typhomnt.github.io/research/coherent_splat_stylization/">
 
   
 
@@ -217,7 +224,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_box_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_2.png">
 
-  <link rel="canonical" href="http://typhomnt.github.io/post/animation_transfer_two_chars/">
+  <link rel="canonical" href="http://typhomnt.github.io/research/coherent_splat_stylization/">
 
   
   
@@ -233,9 +240,16 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Maxime Garcia">
-  <meta property="og:url" content="http://typhomnt.github.io/post/animation_transfer_two_chars/">
-  <meta property="og:title" content="Animation Transfer for two characters: Part 1 | Maxime Garcia">
-  <meta property="og:description" content="#  function passWord() { var testV = 1; var pass1 = prompt(&#39;Protected Page, Please Enter The Password&#39;,&#39; &#39;); while (testV passWord()  In the animation transfer article, I presented a method to create a animation sequence from a 6D trajectory. This method is centered around one character at a time. Here, I propose a way to extend it in order to take into account multiple characters and their interactions."><meta property="og:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png">
+  <meta property="og:url" content="http://typhomnt.github.io/research/coherent_splat_stylization/">
+  <meta property="og:title" content="Coherent Mark-based Stylization of 3D Scenes at the Compositing Stage | Maxime Garcia">
+  <meta property="og:description" content="Comptuer Graphics Forum, Eurographics 2021. Article available here.
+Authors Maxime Garcia (Inria / LJK / Universite Grenoble Alpes)
+Romain Vergne (Inria / LJK / Universite Grenoble Alpes)
+Mohamed-Amine Farhat (Inria / LJK / Universite Grenoble Alpes)
+Pierre Benard (Inria / LaBRI)
+Camille Nous (Laboratoire Cogitamus)
+Joelle Thollot (Inria / LJK / Universite Grenoble Alpes)
+Abstract We present a novel temporally coherent stylized rendering technique working entirely at the compositing stage. We first generate a distribution of 3D anchor points using an implicit grid based on the local object positions stored in a G-buffer, hence following object motion."><meta property="og:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png">
   <meta property="twitter:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -247,44 +261,6 @@
   
 
 
-    
-
-
-
-
-
-
-  
-
-
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://typhomnt.github.io/post/animation_transfer_two_chars/"
-  },
-  "headline": "Animation Transfer for two characters: Part 1",
-  
-  "datePublished": "2019-02-20T16:22:09+01:00",
-  "dateModified": "2019-02-20T16:22:09+01:00",
-  
-  "publisher": {
-    "@type": "Organization",
-    "name": "Maxime Garcia",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_2.png"
-    }
-  },
-  "description": "#  function passWord() { var testV = 1; var pass1 = prompt('Protected Page, Please Enter The Password',' '); while (testV passWord()  In the animation transfer article, I presented a method to create a animation sequence from a 6D trajectory. This method is centered around one character at a time. Here, I propose a way to extend it in order to take into account multiple characters and their interactions."
-}
-</script>
-
-  
 
   
 
@@ -298,7 +274,7 @@
 
 
 
-  <title>Animation Transfer for two characters: Part 1 | Maxime Garcia</title>
+  <title>Coherent Mark-based Stylization of 3D Scenes at the Compositing Stage | Maxime Garcia</title>
 
 </head>
 
@@ -417,7 +393,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link  active" href="/post"><span>Posts</span></a>
+          <a class="nav-link " href="/post"><span>Posts</span></a>
         </li>
 
         
@@ -468,7 +444,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/research"><span>Research</span></a>
+          <a class="nav-link  active" href="/research"><span>Research</span></a>
         </li>
 
         
@@ -606,7 +582,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Animation Transfer for two characters: Part 1</h1>
+  <h1>Coherent Mark-based Stylization of 3D Scenes at the Compositing Stage</h1>
 
   
 
@@ -631,11 +607,6 @@
 
   
 
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    4 min read
-  </span>
   
 
   
@@ -670,131 +641,30 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>#<head>
-<script>
-
-function passWord() {
-var testV = 1;
-var pass1 = prompt('Protected Page, Please Enter The Password',' ');
-while (testV < 3) {
-if (!pass1)
-history.go(-1);
-
-const crypt = pass1.toLowerCase()
-if (crypt  == 'imagine') 
-{
-
-break;
-}
-testV+=1;
-var pass1 =
-prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
-}
-if (pass1.toLowerCase()!="password" & testV ==3)
-history.go(-1);
-return " ";
-} 
-
-</script>
-
-<param id="Name" value=".">
-<script>passWord()</script>
-</head> 
-
-
-
-</p>
-<p>In the 
-<a href="../animation_transfer">animation transfer</a> article, I presented a method to create a animation sequence from a 6D trajectory.
-This method is centered around one character at a time. Here, I propose a way to extend it in order to take into account multiple characters and their interactions.</p>
-<h3 id="experiment-1-don-juan-and-ghost-scene--">Experiment 1: Don Juan and Ghost Scene </h3>
-<p>This first experiment was done in the scope of an intership student&rsquo;s project.
-The goal was to test our system in a context where the script was already written and where two chacters were &ldquo;interacting&rdquo;
-without any contact. We basically records the two Vive controller at the same time and compute one STD per character with our previous method.
-The scene we chose is extracted from Don Juan and corresponds to the act V scene V in which Don Juan and his valet Sganarelle are arguing.
-The scene was played in 4 different versions, with different stagings and actions.</p>
-<table>
-<thead>
-<tr>
-<th>Don Juan</th>
-<th align="center">Sganarelle</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Walk</td>
-<td align="center">Walk</td>
-</tr>
-<tr>
-<td>Walk</td>
-<td align="center">Run</td>
-</tr>
-<tr>
-<td>Walk</td>
-<td align="center">Stopping</td>
-</tr>
-<tr>
-<td>Yell</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td>Arm Gesture</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td>Walk</td>
-<td align="center">Walk</td>
-</tr>
-</tbody>
-</table>
-<h2 id="version-1-">Version 1</h2>
-<p><img src="/Images/Animation_Transfer/DJSga1.gif" alt="DonJuan Sganarelle 1"></p>
-<h2 id="version-3-">Version 3</h2>
-<p><img src="/Images/Animation_Transfer/DJSga3.gif" alt="DonJuan Sganarelle 3"></p>
-<h3 id="experiment-2-fight-scene">Experiment 2: Fight Scene###</h3>
-<p>While producing dramatic animation with different staging has proved efficient, I also tested the system on more dynamic scene
-such as a street fighter like fight.
-<img src="/Images/Animation_Transfer/Fight1.gif" alt="Fight 1"></p>
-<h3 id="detecting-and-transferring-interactions-">Detecting and Transferring Interactions</h3>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    displayMath: [['$$','$$'], ['\[','\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-    TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
-});
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    // Fix <code> tags after MathJax finishes running. This is a
-    // hack to overcome a shortcoming of Markdown. Discussion at
-    // https://github.com/mojombo/jekyll/issues/199
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
-</script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<!--- for offline
-<script type="text/javascript"
-   src="/Utils/MathJax/MathJax.js">
-</script> -->
-<p>In the 
-<a href="../animation_transfer">animation transfer</a> article, we introduced how we defined and recognize single character action. Moreover they are represented as regular expression of motion tokens.
-We propose to extend this formulation to character interactions. An interaction between n characters  is defined by two tuples $A_n $: a n-uplet of actions corresponding to the regular expression each should execute to trigger the interaction and a t-uplet $C_t$ of additional conditions the characters should follow. In our case we consider two types of conditions : distance between two characters $|P_i - P_j| \leq \alpha $ and gaze angles between two characters $ R_i \cdot R_j \leq \beta  $ or $ (P_j - P_i) \cdot R_i \geq \gamma$ with $\gamma \geq 0$. Conditions can be intersected or united. We note an interaction $I$ as an uplet $ \{ A_n,C_t \} $. Interaction recognition is perfomed as follows : each character doodle is read in parallel, while proceeding to the action recognition alogrithm for both independent doodles we look for token sequences matching interactions regular expression. Thus for each doodle a &ldquo;current&rdquo; interaction token sequence is stored and updated at each new read token tuple.
-Then for each interaction $I$ between n characters, we search for all n-uplets satifying the interaction cues and regular expressions, testing the $n!*(k-n)$ configurations, $k being the number of characters$. In practice $n,k \leq 4$. When testing if a combinaison of $T_n$ token sequences matches an interaction regular expressions, several ordering might satifsfy them. In that case, for each regular expression $R_i$ of $I$ we keep the longest sequence $S_j$ matching it. When all sequences ${S_i}$ as well as all cues ${C_i}$ are satisfied, each characater with sequence $S_j$ will execute the related action of the corresponding matched regular expression $R_i$.</p>
-<p>Below we show an example of a Kiss interaction whose regular expressions is identical to the Stomp action of each character. The Kiss interaction presented has three cues to be satisfied: the two characters must see each others (2 conditions) and they must be close enough (in the intimate space). The trajectory of the two examples are exactly the same, only the character sizes differ, that&rsquo;s why in the second example the Kiss interaction is not detected, the proximity cue fails.</p>
-<h2 id="kiss-interaction-">Kiss Interaction</h2>
-<p><img src="/Images/Animation_Transfer/Bots_Kiss.gif" alt="Bots Kiss"></p>
-<h2 id="kiss-fail---stomps-">Kiss Fail -&gt; Stomps</h2>
-<p><img src="/Images/Animation_Transfer/Bots_Stomp.gif" alt="Bots Stomp"></p>
+      <p><img src="/Images/NPR/splat_teaser.jpg" alt="Teaser"></p>
+<p>Comptuer Graphics Forum, Eurographics 2021. Article available 
+<a href="https://hal.inria.fr/hal-03143244" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="authors-">Authors</h2>
+<p>Maxime Garcia
+(Inria / LJK / Universite Grenoble Alpes)</p>
+<p>Romain Vergne
+(Inria / LJK / Universite Grenoble Alpes)</p>
+<p>Mohamed-Amine Farhat
+(Inria / LJK / Universite Grenoble Alpes)</p>
+<p>Pierre Benard
+(Inria / LaBRI)</p>
+<p>Camille Nous
+(Laboratoire Cogitamus)</p>
+<p>Joelle Thollot
+(Inria / LJK / Universite Grenoble Alpes)</p>
+<h3 id="abstract-">Abstract</h3>
+<p>We present a novel temporally coherent stylized rendering technique working entirely at the compositing stage. We first generate a distribution of 3D anchor points using an implicit grid based on the local object positions stored in a G-buffer, hence following object motion. We then draw splats in screen space anchored to these points so as to be motion coherent. To increase the perceived flatness of the style, we adjust the anchor points density using a fractalization mechanism. Sudden changes are prevented by controlling the anchor points opacity and introducing a new order-independent blending function. We demonstrate the versatility of our method by showing a large variety of styles thanks to the freedom offered by the splats content and their attributes that can be controlled by any G-buffer.</p>
+<h4 id="main-video-">Main Video</h4>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/466IoPKs0p0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<h4 id="supplementals-">Supplementals</h4>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/sxU_ZEjwwjI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<h4 id="app-and-turorial-">App and Turorial</h4>
+<p>Available soon !</p>
 
     </div>
 
@@ -817,7 +687,7 @@ Then for each interaction $I$ between n characters, we search for all n-uplets s
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=http://typhomnt.github.io/post/animation_transfer_two_chars/&amp;text=Animation%20Transfer%20for%20two%20characters:%20Part%201" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=http://typhomnt.github.io/research/coherent_splat_stylization/&amp;text=Coherent%20Mark-based%20Stylization%20of%203D%20Scenes%20at%20the%20Compositing%20Stage" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -830,7 +700,7 @@ Then for each interaction $I$ between n characters, we search for all n-uplets s
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=http://typhomnt.github.io/post/animation_transfer_two_chars/&amp;t=Animation%20Transfer%20for%20two%20characters:%20Part%201" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=http://typhomnt.github.io/research/coherent_splat_stylization/&amp;t=Coherent%20Mark-based%20Stylization%20of%203D%20Scenes%20at%20the%20Compositing%20Stage" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -843,7 +713,7 @@ Then for each interaction $I$ between n characters, we search for all n-uplets s
       
       
       <li>
-        <a href="mailto:?subject=Animation%20Transfer%20for%20two%20characters:%20Part%201&amp;body=http://typhomnt.github.io/post/animation_transfer_two_chars/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Coherent%20Mark-based%20Stylization%20of%203D%20Scenes%20at%20the%20Compositing%20Stage&amp;body=http://typhomnt.github.io/research/coherent_splat_stylization/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -856,7 +726,7 @@ Then for each interaction $I$ between n characters, we search for all n-uplets s
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=http://typhomnt.github.io/post/animation_transfer_two_chars/&amp;title=Animation%20Transfer%20for%20two%20characters:%20Part%201" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=http://typhomnt.github.io/research/coherent_splat_stylization/&amp;title=Coherent%20Mark-based%20Stylization%20of%203D%20Scenes%20at%20the%20Compositing%20Stage" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -869,7 +739,7 @@ Then for each interaction $I$ between n characters, we search for all n-uplets s
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Animation%20Transfer%20for%20two%20characters:%20Part%201%20http://typhomnt.github.io/post/animation_transfer_two_chars/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Coherent%20Mark-based%20Stylization%20of%203D%20Scenes%20at%20the%20Compositing%20Stage%20http://typhomnt.github.io/research/coherent_splat_stylization/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -882,7 +752,7 @@ Then for each interaction $I$ between n characters, we search for all n-uplets s
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=http://typhomnt.github.io/post/animation_transfer_two_chars/&amp;title=Animation%20Transfer%20for%20two%20characters:%20Part%201" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=http://typhomnt.github.io/research/coherent_splat_stylization/&amp;title=Coherent%20Mark-based%20Stylization%20of%203D%20Scenes%20at%20the%20Compositing%20Stage" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>

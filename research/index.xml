@@ -13,6 +13,38 @@
     </image>
     
     <item>
+      <title>Coherent Mark-based Stylization of 3D Scenes at the Compositing Stage</title>
+      <link>http://typhomnt.github.io/research/coherent_splat_stylization/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/research/coherent_splat_stylization/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/splat_teaser.jpg&#34; alt=&#34;Teaser&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Comptuer Graphics Forum, Eurographics 2021. Article available 
+&lt;a href=&#34;https://hal.inria.fr/hal-03143244&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;authors-&#34;&gt;Authors&lt;/h2&gt;
+&lt;p&gt;Maxime Garcia
+(Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
+&lt;p&gt;Romain Vergne
+(Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
+&lt;p&gt;Mohamed-Amine Farhat
+(Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
+&lt;p&gt;Pierre Benard
+(Inria / LaBRI)&lt;/p&gt;
+&lt;p&gt;Camille Nous
+(Laboratoire Cogitamus)&lt;/p&gt;
+&lt;p&gt;Joelle Thollot
+(Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
+&lt;h3 id=&#34;abstract-&#34;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;We present a novel temporally coherent stylized rendering technique working entirely at the compositing stage. We first generate a distribution of 3D anchor points using an implicit grid based on the local object positions stored in a G-buffer, hence following object motion. We then draw splats in screen space anchored to these points so as to be motion coherent. To increase the perceived flatness of the style, we adjust the anchor points density using a fractalization mechanism. Sudden changes are prevented by controlling the anchor points opacity and introducing a new order-independent blending function. We demonstrate the versatility of our method by showing a large variety of styles thanks to the freedom offered by the splats content and their attributes that can be controlled by any G-buffer.&lt;/p&gt;
+&lt;h4 id=&#34;main-video-&#34;&gt;Main Video&lt;/h4&gt;
+&lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/466IoPKs0p0&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
+&lt;h4 id=&#34;supplementals-&#34;&gt;Supplementals&lt;/h4&gt;
+&lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/sxU_ZEjwwjI&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
+&lt;h4 id=&#34;app-and-turorial-&#34;&gt;App and Turorial&lt;/h4&gt;
+&lt;p&gt;Available soon !&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Spatial Motion Doodles: Sketching Animation in VR Using Hand Gestures and Laban Motion Analysis</title>
       <link>http://typhomnt.github.io/research/spatial_motion_doodle/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
