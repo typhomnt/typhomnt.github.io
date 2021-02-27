@@ -455,6 +455,24 @@ I would like to thank Romain Vergne for his course slides and the two first prac
     </item>
     
     <item>
+      <title>Recognition of Laban Effort Qualities from Hand Motion</title>
+      <link>http://typhomnt.github.io/research/recognition_laban_hand/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/research/recognition_laban_hand/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Classification/effort_cube.jpg&#34; alt=&#34;Teaser&#34;&gt;&lt;/p&gt;
+&lt;p&gt;MOCO&amp;rsquo;20 - 7th International Conference on Movement and Computing, Jul 2020, Jersey City/ Virtual, United States. Article available 
+&lt;a href=&#34;https://hal.inria.fr/hal-02899999&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;authors-&#34;&gt;Authors&lt;/h2&gt;
+&lt;p&gt;Maxime Garcia
+(Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
+&lt;p&gt;Remi Ronfard
+(Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
+&lt;h3 id=&#34;abstract-&#34;&gt;Abstract&lt;/h3&gt;
+&lt;p&gt;In this paper, we conduct a study for recognizing motion qualities in hand gestures using virtual reality trackers attached to the hand. From this 6D signal, we extract Euclidean, equi-affine and moving frame features and compare their effectiveness in the task of recognizing Laban Effort qualities. Our experimental results reveal that equi-affine features are highly discriminant features for this task. We also compare two classification methods on this task. In the first method, we trained separate HMM models for the 6 Laban Effort qualities (light, strong, sudden, sustained, direct, indirect). In the second method, we trained separate HMM models for the 8 Laban motion verbs (dab, glide, float, flick, thrust, press, wring, slash) and combined them to recognize individual qualities. In our experiments, the second method gives improved results. Together, those findings suggest that low-dimensional signals from VR trackers can be used to predict motion qualities with reasonable precision.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>SkyEngine</title>
       <link>http://typhomnt.github.io/project/skyengine/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
