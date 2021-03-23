@@ -301,7 +301,7 @@ One important aspect of those models is their energy conservative property stati
 
 &lt;!-- &lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/normalsurface.png&#34; alt=&#34;NormalSurf&#34; style=&#34;width:700px;&#34;/&gt;&lt;/p&gt; --&gt;
 &lt;p&gt;The amount of light that gets into a specific direction from a given point on an object surface is governed by laws of physics and more specifically it is given by the reflectance equation:&lt;/p&gt;
-&lt;p&gt;$$ L_o(p,v) = \int_A f_r(p,l,v,\alpha_p) L_i(p,l), n \cdot l  ,dl $$&lt;/p&gt;
+&lt;p&gt;$$ L_o(p,v) = \int_A f_r(p,l,v,\alpha_p) L_i(p,l)(n \cdot l)dl $$&lt;/p&gt;
 &lt;p&gt;Where $p$ is the point of interest on the object surface (receiving light), $v$ the view direction from $p$ to the eye, $l$ the incident light direction, $\alpha_p$ the surface roughness at point $p$, $L_o$ the output light radiance (stored as a RGB color) perceived by our eye from $p$, $L_i$ the incident light radiance (also stored as a RGB color) gathering at $p$ from direction l, $f_r$ a function controlling the amount of light reflected to direction $v$ with respect to the material property at $p$ and $A$ the hemisphere surrounding $p$ on which we integrate all incoming light directions.&lt;/p&gt;
 
 
@@ -335,7 +335,7 @@ One important aspect of those models is their energy conservative property stati
 
 &lt;!-- &lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/AreaIntegrate.png&#34; alt=&#34;AreaInt&#34; style=&#34;width:700px;&#34;/&gt;&lt;/p&gt; --&gt;
 &lt;p&gt;In this tutorial, we further restrict incoming light sources to a given number of point light sources. Thus, the integral over $A$ can be transformed into a sum over the different light sources.&lt;/p&gt;
-&lt;p&gt;$$ L_o(p,v) = \sum_l f_r(p,p-c_l,v,\alpha_p) L_i(p,p-c_l), n \cdot \frac{(c_l-p)}{\left\lVert   c_l - p \right\rVert}  $$&lt;/p&gt;
+&lt;p&gt;$$ L_o(p,v) = \sum_l f_r(p,p-c_l,v,\alpha_p) L_i(p,p-c_l)( n \cdot \frac{(c_l-p)}{\left\lVert   c_l - p \right\rVert})  $$&lt;/p&gt;
 &lt;p&gt;The incoming reflectance $L_i(p,p-c_l)$ equals to the intensity of the light source $I$, multiplied by its color $C$, and weighted by an attenuation factor which depends on the distance to the source.
 In our case, we will consider that the intensity of light decrease with the square distance to the source:&lt;/p&gt;
 &lt;p&gt;$$L_i(p,p-c_l) = \frac{IC}{{\left\lVert p - c_l\right\rVert}^2} $$&lt;/p&gt;
@@ -419,7 +419,7 @@ Indeed, while dielectric materials diffuse light, it is not the case of metals t
 
 &lt;!-- &lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/Fresnel_Photo.png&#34; alt=&#34;FresnelPhoto&#34; style=&#34;width:700px;&#34;/&gt;&lt;/p&gt; --&gt;
 &lt;p&gt;$F_0$ is computed as the amount of reflected light at normal incidence where $v$ and $l$ are collinear.
-It is important to note that this equation can only be applied to dielectric materials, especially because metallic materials absorb all refracted light. However, as $F_0$ for dielectric materials is usually low and  high for metallic materials, a common approximation is to use a common average $F_0$ for dielectic materials and the metal color as $F_O$ for metallic materials. This is plausible because metallic $F_0$ are tinted and give to metals their color. Furthermore, following the metallic workflow we will consider that being metallic or dielectric is not a binary feature, meaning that one material can be sem-metallic with its metalness varying from $0$ to $1$.&lt;/p&gt;
+It is important to note that this equation can only be applied to dielectric materials, especially because metallic materials absorb all refracted light. However, as $F_0$ for dielectric materials is usually low and  high for metallic materials, a common approximation is to use a common average $F_0$ for dielectic materials and the metal color as $F_0$ for metallic materials. This is plausible because metallic $F_0$ are tinted and give to metals their color. Furthermore, following the metallic workflow we will consider that being metallic or dielectric is not a binary feature, meaning that one material can be sem-metallic with its metalness varying from $0$ to $1$.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt;  One might notice that $h$ is replaced by $n$ in the original equation. This is perfectly right in a macroscopic point of view. However, in our case we look at reflections in a microscopic scale, meaning that the normal of the surface is determined by microfacet normals. Additionally the only case where the light is reflected into our eye is when $n = h$ which justify our use of h in this case. This property is further used to approximate the BRDF final expression.&lt;/p&gt;
 &lt;/blockquote&gt;
