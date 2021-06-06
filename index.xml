@@ -518,7 +518,8 @@ I would like to thank Romain Vergne for his course slides and the two first prac
 (Ecole Polythecnique / LIX)&lt;/p&gt;
 &lt;h3 id=&#34;abstract-&#34;&gt;Abstract&lt;/h3&gt;
 &lt;p&gt;We present a method for easily drafting expressive character animation by playing with instrumented rigid objects. We parse the input 6D trajectories (position and orientation over time) – called spatial motion doodles – into sequences of actions and convert them into detailed character animations using a dataset of parameterized motion clips which are automatically fitted to the doodles in terms of global trajectory and timing. Moreover, we capture the expressiveness of user-manipulation by analyzing Laban effort qualities in the input spatial motion doodles and transferring them to the synthetic motions we generate. We validate the ease of use of our system and the expressiveness of the resulting animations through a series of user studies, showing the interest of our approach for interactive digital storytelling applications dedicated to children and non-expert users, as well as for providing fast drafting tools for animators.&lt;/p&gt;
-&lt;p align=&#34;center&#34;&gt;&lt;iframe width=&#34;838&#34; height=&#34;472&#34; src=&#34;https://www.youtube.com/embed/0xG2dlGg_9M&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/0xG2dlGg_9M&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
+&lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/5BDqJQ6XK_k&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
 </description>
     </item>
     
@@ -1199,7 +1200,7 @@ float lightDist(in vec3 ro, in Light l) //computes distance to light
 This is done in two steps. We first compute the ambient term and the material $F_0$. We then compute the normal of the surface at the intersection point, the view vector, the half vector, the light intensity and direction and pass them to the computeReflectance function inside of which we compute the actual output radiance.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;vec3 PBR(in HitSurface hit, in Ray r , in Light l)
 {
-    vec3 ambient = vec3(0.03) * hit.material.color * hit.material.ao;
+    vec3 ambient = vec3(0.03) * hit.material.color * (1.0 - hit.material.ao);
     //Average F0 for dielectric materials
     vec3 F0 = vec3(0.04);
     // Get Proper F0 if material is not dielectric
