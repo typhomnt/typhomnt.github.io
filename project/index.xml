@@ -22,9 +22,9 @@
 &lt;a href=&#34;https://www.grenoblegamelab.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Scientific Game Jam&lt;/a&gt; 2020. This game jam focuses on creating games in 48 hours whose theme is linked with PhD students&amp;rsquo; research. And here it is, we created this game in a style between Super Hexagon and Touhou, where the player has to maintain the temperature of a cooling metalic glass at a medium while avoiding oxydation. The main principle is to catch heat particles but not too much while protecting the core with a controlable shield against both heat and oxygen particles. During the project I worked on the graphics of the game that are mainly built on Unity Shader Graphs.&lt;/p&gt;
 &lt;p&gt;You can download and test the game on the 
 &lt;a href=&#34;https://eikins.itch.io/oxyde-redux-edition&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Itch page&lt;/a&gt; of the project.&lt;/p&gt;
-&lt;p&gt;&lt;video autoplay loop muted playsinline&gt;]
-&lt;source src=&#34;http://typhomnt.github.io/Videos/Oxyde/oxyde.mp4&#34; type=&#34;video/mp4&#34;&gt;
-&lt;/video&gt;&lt;/p&gt;
+&lt;video autoplay loop muted playsinline&gt;
+	&lt;source src=&#34;http://typhomnt.github.io/Videos/Oxyde/oxyde.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
 </description>
     </item>
     

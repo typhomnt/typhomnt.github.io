@@ -208,6 +208,44 @@ The resulting mesh is then refined through an iterative process, alternating sub
     </item>
     
     <item>
+      <title>Coherent Mark-based Stylization of 3D Scenes at the Compositing Stage</title>
+      <link>http://typhomnt.github.io/post/npr_splatting/</link>
+      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/post/npr_splatting/</guid>
+      <description>&lt;p&gt;This article describes the mark-based stylization technique that we developped at Inria with Romain Vergne, Mohamed-Amine Farhat Pierre Benard and Joelle Thollot.
+This work will be presented as a full paper at the Eurographics conference and publshed in the Compter &amp;amp; Graphics Forum Journal. Our author version of the article can be found 
+&lt;a href=&#34;&#34;&gt;here&lt;/a&gt;.
+Our technique guarentees temporal coherence and operates at the compositing stage using G-Buffers as input, easing the integration into existing pipelines.
+The source code is avaible 
+&lt;a href=&#34;&#34;&gt;here&lt;/a&gt; and necessitate that you use Gratin, an open-source node-based compositing software that you can find 
+&lt;a href=&#34;http://jcgt.org/published/0004/04/03/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.
+For windows users, we created an archive containing an executable that you can use right out of the box.&lt;/p&gt;
+&lt;p&gt;This post is divided into three parts. First, I will describe the main principle behing our technique, then I will explain how to compile and use the application, then I will detail it works in the code.&lt;/p&gt;
+&lt;h3 id=&#34;main-principle-&#34;&gt;Main principle&lt;/h3&gt;
+&lt;p&gt;In the ocean of NPR techniques, we can distinguish two different families when it come to stylizing color regions: texture-based and mark-based approaches.
+The first embeds marks in an image which is then mapped or pached either onto the 3D scene or over the entire screen. Here are some reference of previous research works falling into that category.
+More concretly, this kind of technique is quite common when using 3D software like Maya or Blender.
+The later consists in attaching 2D or 3D marks (brush strokes) to anchor points distributed onto the 3D scene.&lt;/p&gt;
+&lt;p&gt;Our method belongs to the familly of mark-based methods but borrows ideas from texture-based methods.
+Moreover, it consists in dynamically generating a motion-coherent 3D anchor point distribution that are drawn as billboard brush strokes.
+In order to ensure temporal continuity as well as motion coherence at the compositing stage, the anchor point generation is based on implicit Voronoi noise generated from G-Buffers. This allows our technique to operate  regardless of the geometric representation or animation technique.&lt;/p&gt;
+&lt;h4 id=&#34;anchor-point-generation-&#34;&gt;Anchor Point Generation&lt;/h4&gt;
+&lt;p&gt;Our anchor point generation algorithm is two folds: a first process generates anchor points around the objects based on a 3D Worley noise which takes 3D positions stored in the G-Buffers as input. Then, we group together all pixels that generated the same anchor point and compute its final position in screen-space as the average of the screen-space position of these pixels. To ensure a quasi constant density of the points, especially when zooming in or out, we introduce a fractalization process which generate several layers of points. Moreover, at each pixel of the position G-Buffer, we generate several points using the same process as earlier but with a different frequency for each layer. For each layer its sampling frequency is related to the gradient of the position at the considered pixel such that when the gradient is low, meaning that the surface is flat, we increase the sampling frequency and increase it other wise. The intuition behind this process is to sample more points when the surface is flat because at a given frequency of the Worley noise, more points are generated when the position varies, the surface of the object intersecting more virtual 3D cells than when it is flat.&lt;/p&gt;
+&lt;p&gt;Let me show you the difference of our anchor point genereation process with and without the fractalization :&lt;/p&gt;
+&lt;p&gt;&lt;video autoplay loop muted playsinline&gt;]
+&lt;source src=&#34;http://typhomnt.github.io/Videos/SplatNPR/Fractalization_Zoom.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;video autoplay loop muted playsinline&gt;]
+&lt;source src=&#34;http://typhomnt.github.io/Videos/SplatNPR/Splat_Generation_Animation_Sub.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;&lt;/p&gt;
+&lt;h4 id=&#34;improve-temporal-continuity-&#34;&gt;Improve Temporal Continuity&lt;/h4&gt;
+&lt;p&gt;Until this stage we focused&lt;/p&gt;
+&lt;h3 id=&#34;use-the-application-&#34;&gt;Use the application&lt;/h3&gt;
+&lt;h3 id=&#34;understanding-the-code-&#34;&gt;Understanding the code&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Laban Effort Animation Transfer</title>
       <link>http://typhomnt.github.io/post/laban_transfer/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
