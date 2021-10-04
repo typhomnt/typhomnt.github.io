@@ -38,7 +38,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="hsl(200, 90%, 68%)">
   
 
   
@@ -62,8 +62,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
         
       
     
@@ -234,13 +234,16 @@
   
   <meta property="twitter:card" content="summary">
   
+  <meta property="twitter:site" content="@typhomnt">
+  <meta property="twitter:creator" content="@typhomnt">
+  
   <meta property="og:site_name" content="Maxime Garcia">
   <meta property="og:url" content="http://typhomnt.github.io/post/">
   <meta property="og:title" content="Posts | Maxime Garcia">
   <meta property="og:description" content="Post-Doc At Inria Rhone Alpes. Maverick Team"><meta property="og:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png">
   <meta property="twitter:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2019-02-20T16:22:09&#43;01:00">
+    <meta property="og:updated_time" content="2019-12-16T16:22:09&#43;01:00">
   
 
   
@@ -261,7 +264,7 @@
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -518,23 +521,6 @@
       
 
       
-      <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-palette" aria-hidden="true"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="#" class="dropdown-item js-set-theme-light">
-            <span>Light</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-dark">
-            <span>Dark</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-auto">
-            <span>Automatic</span>
-          </a>
-        </div>
-      </li>
-      
 
       
 
@@ -611,7 +597,7 @@
     
       
     
-    Feb 20, 2019
+    Dec 16, 2019
   </span>
   
 
@@ -638,6 +624,11 @@
   
   
   
+  
+  <a href="/post/animation_target_ctr/">
+      <img src="/post/animation_target_ctr/featured_hu987ffb4319af09974b72bd68e208a6c8_374739_918x517_fill_q90_box_smart1_2.png" class="article-banner" alt="">
+  </a>
+  
 
   <h3 class="article-title mb-1 mt-3">
     <a href="/post/animation_target_ctr/">Animation Target Constraint</a>
@@ -645,7 +636,7 @@
 
   
   <div class="article-style">
-    <p>One common problem game developers come across when using animated characters is to modify them in real-time in order to satisfy a given task. More particularly, re-using the same grab/take animation or push/punch/kick animation to target a specific object is a feature every programmer want and may have to implement.
+    <p>One common task game developers come across when using animated characters is to modify them in real-time in order to satisfy a given task. More particularly, re-using the same grab/take animation or push/punch/kick animation to target a specific object is a feature every programmer want and may have to implement.
 When dealing with targets in animation, the first word that came into our mind is Inverse Kinematic (IK). And actually, that is a good start to tackle our problem.</p>
   </div>
   
@@ -713,6 +704,11 @@ When dealing with targets in animation, the first word that came into our mind i
 
   
   
+  
+  
+  <a href="/post/animation_transfer/">
+      <img src="/post/animation_transfer/featured_hu3aa8cbfe987c6e2e187c46674a3e0da5_862544_918x517_fill_q90_box_smart1_2.png" class="article-banner" alt="">
+  </a>
   
 
   <h3 class="article-title mb-1 mt-3">
@@ -790,6 +786,11 @@ Space Time Doodle Transfer examples  Below, I show transfered space-time doodles
   
   
   
+  
+  <a href="/post/bmesh/">
+      <img src="/post/bmesh/featured_huc775479ece25cf6e948ac9ef0017b2ab_269755_918x517_fill_q90_box_smart1_2.png" class="article-banner" alt="">
+  </a>
+  
 
   <h3 class="article-title mb-1 mt-3">
     <a href="/post/bmesh/">Base Mesh Creation</a>
@@ -797,7 +798,7 @@ Space Time Doodle Transfer examples  Below, I show transfered space-time doodles
 
   
   <div class="article-style">
-    <p>This project is in fact a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.</p>
+    <p>This project is a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.</p>
   </div>
   
 
@@ -1072,7 +1073,7 @@ Space Time Doodle Transfer examples  Below, I show transfered space-time doodles
 
     
     
-    <script>const isSiteThemeDark = false;</script>
+    <script>const isSiteThemeDark = true;</script>
     
 
     

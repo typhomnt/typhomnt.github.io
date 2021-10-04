@@ -5,7 +5,7 @@
     <link>http://typhomnt.github.io/post/</link>
       <atom:link href="http://typhomnt.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 Feb 2019 16:22:09 +0100</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 16 Dec 2019 16:22:09 +0100</lastBuildDate>
     <image>
       <url>http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png</url>
       <title>Posts</title>
@@ -15,9 +15,9 @@
     <item>
       <title>Animation Target Constraint</title>
       <link>http://typhomnt.github.io/post/animation_target_ctr/</link>
-      <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
+      <pubDate>Mon, 16 Dec 2019 16:22:09 +0100</pubDate>
       <guid>http://typhomnt.github.io/post/animation_target_ctr/</guid>
-      <description>&lt;p&gt;One common problem game developers come across when using animated characters is to modify them in real-time in order to satisfy a given task.
+      <description>&lt;p&gt;One common task game developers come across when using animated characters is to modify them in real-time in order to satisfy a given task.
 More particularly, re-using the same grab/take animation or push/punch/kick animation to target a specific object is a feature every programmer want and may have to implement.&lt;/p&gt;
 &lt;p&gt;When dealing with targets in animation, the first word that came into our mind is Inverse Kinematic (IK). And actually, that is a good start to tackle our problem. Indeed, for instance when a character has to grab an item, IK automatically find rotations and positions of the elbow and shoulder (can be more than that) so that the hand reach the target.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s now define our problem more accurately. At a given frame of one animation, we want some body part of our character to reach a given target.
@@ -158,8 +158,9 @@ $$&lt;/p&gt;
 
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/Slap_LaplacianEdit.gif&#34; alt=&#34;Example 2&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/SkyEngine/Kick_LaplacianEdit.gif&#34; alt=&#34;Example 1&#34;&gt;&lt;/p&gt;
+&lt;video autoplay loop muted playsinline&gt;
+	&lt;source src=&#34;http://typhomnt.github.io/Videos/Animation/Animation_Target_CTR/Slap_Laplacian.mp4&#34; type=&#34;video/mp4&#34;&#34;&gt;
+&lt;/video&gt;
 </description>
     </item>
     
@@ -174,10 +175,19 @@ It is easy to identify the weaknesses of such an approach, it is limited to few 
 During my thesis I took inspiration from the paper untitled Motion Doodle where the authors were using 2D curves to created animation sequences . More particulary a given input curve, it was segmented into horizontal, vertical and oblic bins and animation were defined as a regular expression of curve bins. 
 At that moment, I took a step back and told myself that they were creating a kind of motion language characterizing the curve by its different direction changes.) --&gt;
 &lt;h3 id=&#34;space-time-doodle-transfer-examples--&#34;&gt;Space Time Doodle Transfer examples &lt;/h3&gt;
-&lt;p&gt;Below, I show transfered space-time doodles into animation sequences. It is important to note that all actions were learnt for the two first examples as well as for the garden example.
-&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/Anim_eg1.gif&#34; alt=&#34;Example 1&#34;&gt;
-&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/Anim_eg2.gif&#34; alt=&#34;Example 2&#34;&gt;
-&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/Anim_eg3.gif&#34; alt=&#34;Example 3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Below, I show transfered space-time doodles into animation sequences. It is important to note that all actions were learnt for the two first examples as well as for the garden example.&lt;/p&gt;
+&lt;video autoplay loop muted playsinline&gt;
+	&lt;source src=&#34;http://typhomnt.github.io/Videos/Animation/Animation_Transfer/PhD_Baseline.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;video autoplay loop muted playsinline&gt;
+	&lt;source src=&#34;http://typhomnt.github.io/Videos/Animation/Animation_Transfer/Max_Eg.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;video autoplay loop muted playsinline&gt;
+	&lt;source src=&#34;http://typhomnt.github.io/Videos/Animation/Animation_Transfer/Pierre_Eg.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;video autoplay loop muted playsinline&gt;
+	&lt;source src=&#34;http://typhomnt.github.io/Videos/Animation/Animation_Transfer/Remi_Eg.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
 </description>
     </item>
     
@@ -186,14 +196,18 @@ At that moment, I took a step back and told myself that they were creating a kin
       <link>http://typhomnt.github.io/post/bmesh/</link>
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       <guid>http://typhomnt.github.io/post/bmesh/</guid>
-      <description>&lt;p&gt;This project is in fact a second attemp to implement a fast base mesh creation method from 
+      <description>&lt;p&gt;This project is a second attemp to implement a fast base mesh creation method from 
 &lt;a href=&#34;https://pdfs.semanticscholar.org/2009/3aea25b50e59c63998ba0377371c59bf007f.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this paper&lt;/a&gt;.
 The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices.
 This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.
-The resulting mesh is then refined through an iterative process, alternating subdivisions and evolutions. Finally, a an edge fairing optimazation is performed whose puporse is to prevent quad deformation as much as possible without changing the geometry.&lt;/p&gt;
+The resulting mesh is then refined through an iterative process, alternating subdivisions and evolutions. Finally, an edge fairing optimazation is performed whose puporse is to prevent quad deformation as much as possible without changing the geometry.&lt;/p&gt;
 &lt;h3 id=&#34;bmesh-evolution-example--&#34;&gt;BMesh Evolution example &lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/BMesh/bmesh0.gif&#34; alt=&#34;Example 1&#34;&gt;
-&lt;img src=&#34;http://typhomnt.github.io/Images/BMesh/B_Mesh_1.gif&#34; alt=&#34;Example 2&#34;&gt;&lt;/p&gt;
+&lt;video autoplay loop muted playsinline&gt;
+	&lt;source src=&#34;http://typhomnt.github.io/Videos/BMesh/B_Mesh_0.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;video autoplay loop muted playsinline&gt;
+	&lt;source src=&#34;http://typhomnt.github.io/Videos/BMesh/B_Mesh_1.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
 </description>
     </item>
     

@@ -27,7 +27,7 @@
   
     
   
-  <meta name="description" content="This project is in fact a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.">
+  <meta name="description" content="This project is a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://typhomnt.github.io/post/bmesh/">
@@ -38,7 +38,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="hsl(200, 90%, 68%)">
   
 
   
@@ -62,8 +62,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
         
       
     
@@ -227,16 +227,18 @@
   
   
     
-    
   
   
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@typhomnt">
+  <meta property="twitter:creator" content="@typhomnt">
   
   <meta property="og:site_name" content="Maxime Garcia">
   <meta property="og:url" content="http://typhomnt.github.io/post/bmesh/">
   <meta property="og:title" content="Base Mesh Creation | Maxime Garcia">
-  <meta property="og:description" content="This project is in fact a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions."><meta property="og:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png">
-  <meta property="twitter:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="This project is a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions."><meta property="og:image" content="http://typhomnt.github.io/post/bmesh/featured.png">
+  <meta property="twitter:image" content="http://typhomnt.github.io/post/bmesh/featured.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2019-02-20T16:22:09&#43;01:00">
@@ -269,6 +271,10 @@
   },
   "headline": "Base Mesh Creation",
   
+  "image": [
+    "http://typhomnt.github.io/post/bmesh/featured.png"
+  ],
+  
   "datePublished": "2019-02-20T16:22:09+01:00",
   "dateModified": "2019-02-20T16:22:09+01:00",
   
@@ -280,7 +286,7 @@
       "url": "http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_2.png"
     }
   },
-  "description": "This project is in fact a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions."
+  "description": "This project is a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions."
 }
 </script>
 
@@ -302,7 +308,7 @@
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -559,23 +565,6 @@
       
 
       
-      <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-palette" aria-hidden="true"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="#" class="dropdown-item js-set-theme-light">
-            <span>Light</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-dark">
-            <span>Dark</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-auto">
-            <span>Automatic</span>
-          </a>
-        </div>
-      </li>
-      
 
       
 
@@ -585,33 +574,41 @@
 </nav>
 
 
-  <article class="article">
+  
+        <article class="article">
+            
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
   
 
 
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-  
-  
 <div class="article-container pt-3">
   <h1>Base Mesh Creation</h1>
 
   
 
   
-    
 
 
 <div class="article-metadata">
@@ -647,41 +644,49 @@
 
 </div>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 225px;">
+  <div style="position: relative">
+    <img src="/post/bmesh/featured_huc775479ece25cf6e948ac9ef0017b2ab_269755_720x0_resize_box_2.png" alt="" class="featured-image">
+    
+  </div>
+</div>
 
-  <div class="article-container">
 
-    <div class="article-style">
-      <p>This project is in fact a second attemp to implement a fast base mesh creation method from 
+            <div class="article-container">
+              <div class="article-style">
+                <p>This project is a second attemp to implement a fast base mesh creation method from 
 <a href="https://pdfs.semanticscholar.org/2009/3aea25b50e59c63998ba0377371c59bf007f.pdf" target="_blank" rel="noopener">this paper</a>.
 The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices.
 This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.
-The resulting mesh is then refined through an iterative process, alternating subdivisions and evolutions. Finally, a an edge fairing optimazation is performed whose puporse is to prevent quad deformation as much as possible without changing the geometry.</p>
+The resulting mesh is then refined through an iterative process, alternating subdivisions and evolutions. Finally, an edge fairing optimazation is performed whose puporse is to prevent quad deformation as much as possible without changing the geometry.</p>
 <h3 id="bmesh-evolution-example--">BMesh Evolution example </h3>
-<p><img src="/Images/BMesh/bmesh0.gif" alt="Example 1">
-<img src="/Images/BMesh/B_Mesh_1.gif" alt="Example 2"></p>
+<video autoplay loop muted playsinline>
+	<source src="/Videos/BMesh/B_Mesh_0.mp4" type="video/mp4">
+</video>
+<video autoplay loop muted playsinline>
+	<source src="/Videos/BMesh/B_Mesh_1.mp4" type="video/mp4">
+</video>
 
-    </div>
-
-    
+              </div>
+              
 
 
 
@@ -844,6 +849,23 @@ The resulting mesh is then refined through an iterative process, alternating sub
     
     
     
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/typhomnt" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
     
     
     
@@ -877,9 +899,9 @@ The resulting mesh is then refined through an iterative process, alternating sub
   
 
 
-
-  </div>
-</article>
+            </div>
+        </article>
+  
 
       
 
@@ -915,7 +937,7 @@ The resulting mesh is then refined through an iterative process, alternating sub
 
     
     
-    <script>const isSiteThemeDark = false;</script>
+    <script>const isSiteThemeDark = true;</script>
     
 
     

@@ -38,7 +38,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="hsl(200, 90%, 68%)">
   
 
   
@@ -65,8 +65,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
         
       
     
@@ -235,6 +235,9 @@
   
   <meta property="twitter:card" content="summary">
   
+  <meta property="twitter:site" content="@typhomnt">
+  <meta property="twitter:creator" content="@typhomnt">
+  
   <meta property="og:site_name" content="Maxime Garcia">
   <meta property="og:url" content="http://typhomnt.github.io/teaching/ray_tracing/raymarching_intro/">
   <meta property="og:title" content="An Introduction to Raymarching | Maxime Garcia">
@@ -265,7 +268,7 @@
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -522,23 +525,6 @@
       
 
       
-      <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-palette" aria-hidden="true"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="#" class="dropdown-item js-set-theme-light">
-            <span>Light</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-dark">
-            <span>Dark</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-auto">
-            <span>Automatic</span>
-          </a>
-        </div>
-      </li>
-      
 
       
 
@@ -548,9 +534,32 @@
 </nav>
 
 
-  <article class="article">
-
   
+<div class="container-fluid docs">
+    <div class="row flex-xl-nowrap">
+      <div class="d-none d-xl-block col-xl-2 docs-toc">
+        <ul class="nav toc-top">
+          <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+        </ul>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-">Introduction</a></li>
+    <li><a href="#main-principle-">Main Principle</a></li>
+    <li><a href="#marching-">Marching</a></li>
+    <li><a href="#coding-time-">Coding Time</a></li>
+    <li><a href="#sdf-gradient-">SDF gradient</a></li>
+    <li><a href="#example--march-lava-lamp-">Example : March Lava Lamp</a></li>
+    <li><a href="#bonus-effect-ambient-occulsion-">Bonus Effect: Ambient Occulsion</a></li>
+    <li><a href="#what-is-next-">What is next</a></li>
+    <li><a href="#references-">References</a></li>
+  </ul>
+</nav>
+        
+      </div>
+      <main class="col-12 col-md-0 col-xl-10 py-md-3 pl-md-5 docs-content" role="main">
+
+        <article class="article">
+            
 
 
 
@@ -624,11 +633,9 @@
 </div>
 
 
-
-  <div class="article-container">
-
-    <div class="article-style">
-      <!--
+            <div class="article-container">
+              <div class="article-style">
+                <!--
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {
@@ -1530,9 +1537,8 @@ vec3 march(in Ray r)
 <a href="https://www.opengl.org/documentation/glsl/" target="_blank" rel="noopener">https://www.opengl.org/documentation/glsl/</a> 
 <a href="https://www.shadertoy.com/" target="_blank" rel="noopener">https://www.shadertoy.com/</a></p>
 
-    </div>
-
-    
+              </div>
+              
 
 
 
@@ -1695,6 +1701,23 @@ vec3 march(in Ray r)
     
     
     
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/typhomnt" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
     
     
     
@@ -1728,9 +1751,13 @@ vec3 march(in Ray r)
   
 
 
-
+            </div>
+        </article>
+  
+      </main>
+    </div>
   </div>
-</article>
+  
 
       
 
@@ -1766,7 +1793,7 @@ vec3 march(in Ray r)
 
     
     
-    <script>const isSiteThemeDark = false;</script>
+    <script>const isSiteThemeDark = true;</script>
     
 
     

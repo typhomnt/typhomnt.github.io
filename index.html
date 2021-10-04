@@ -38,7 +38,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="hsl(200, 90%, 68%)">
   
 
   
@@ -62,8 +62,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark">
         
       
     
@@ -236,6 +236,9 @@
   
   <meta property="twitter:card" content="summary">
   
+  <meta property="twitter:site" content="@typhomnt">
+  <meta property="twitter:creator" content="@typhomnt">
+  
   <meta property="og:site_name" content="Maxime Garcia">
   <meta property="og:url" content="http://typhomnt.github.io/">
   <meta property="og:title" content="Maxime Garcia">
@@ -277,7 +280,7 @@
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="dark">
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -534,23 +537,6 @@
       
 
       
-      <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-palette" aria-hidden="true"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="#" class="dropdown-item js-set-theme-light">
-            <span>Light</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-dark">
-            <span>Dark</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-auto">
-            <span>Automatic</span>
-          </a>
-        </div>
-      </li>
-      
 
       
 
@@ -691,6 +677,23 @@
         
         
         
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://twitter.com/typhomnt" target="_blank" rel="noopener">
+            <i class="fab fa-twitter big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
         
         
         
@@ -766,8 +769,6 @@ On this website I post articles on my research results as well as articles on th
   
 
   
-    
-  
 
   
 
@@ -793,7 +794,7 @@ On this website I post articles on my research results as well as articles on th
   
   
 
-  <section id="posts" class="home-section wg-pages   " style="background-image: linear-gradient(White, SkyBlue);custom.scss" >
+  <section id="posts" class="home-section wg-pages   " style="custom.scss" >
     <div class="container">
       
 
@@ -874,7 +875,7 @@ On this website I post articles on my research results as well as articles on th
 
     
     <div class="article-style">
-      One common problem game developers come across when using animated characters is to modify them in real-time in order to satisfy a given task. More particularly, re-using the same grab/take animation or push/punch/kick animation to target a specific object is a feature every programmer want and may have to implement.
+      One common task game developers come across when using animated characters is to modify them in real-time in order to satisfy a given task. More particularly, re-using the same grab/take animation or push/punch/kick animation to target a specific object is a feature every programmer want and may have to implement.
 When dealing with targets in animation, the first word that came into our mind is Inverse Kinematic (IK). And actually, that is a good start to tackle our problem.
     </div>
     
@@ -898,7 +899,7 @@ When dealing with targets in animation, the first word that came into our mind i
     
       
     
-    Feb 20, 2019
+    Dec 16, 2019
   </span>
   
 
@@ -928,6 +929,11 @@ When dealing with targets in animation, the first word that came into our mind i
   </div>
   <div class="ml-3">
     
+    
+    
+    <a href="/post/animation_target_ctr/" >
+      <img src="/post/animation_target_ctr/featured_hu987ffb4319af09974b72bd68e208a6c8_374739_150x0_resize_box_2.png" alt="">
+    </a>
     
   </div>
 </div>
@@ -1015,6 +1021,11 @@ Space Time Doodle Transfer examples  Below, I show transfered space-time doodles
   <div class="ml-3">
     
     
+    
+    <a href="/post/animation_transfer/" >
+      <img src="/post/animation_transfer/featured_hu3aa8cbfe987c6e2e187c46674a3e0da5_862544_150x0_resize_box_2.png" alt="">
+    </a>
+    
   </div>
 </div>
 
@@ -1046,7 +1057,7 @@ Space Time Doodle Transfer examples  Below, I show transfered space-time doodles
 
     
     <div class="article-style">
-      This project is in fact a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.
+      This project is a second attemp to implement a fast base mesh creation method from this paper. The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices. This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.
     </div>
     
 
@@ -1099,6 +1110,11 @@ Space Time Doodle Transfer examples  Below, I show transfered space-time doodles
   </div>
   <div class="ml-3">
     
+    
+    
+    <a href="/post/bmesh/" >
+      <img src="/post/bmesh/featured_huc775479ece25cf6e948ac9ef0017b2ab_269755_150x0_resize_box_2.png" alt="">
+    </a>
     
   </div>
 </div>
@@ -1298,8 +1314,6 @@ Space Time Doodle Transfer examples  Below, I show transfered space-time doodles
   
 
   
-    
-  
 
   
 
@@ -1323,7 +1337,7 @@ Space Time Doodle Transfer examples  Below, I show transfered space-time doodles
   
   
 
-  <section id="projects" class="home-section wg-portfolio   " style="background-image: linear-gradient(White, LightGray);" >
+  <section id="projects" class="home-section wg-portfolio   "  >
     <div class="container">
       
 
@@ -1454,8 +1468,6 @@ Space Time Doodle Transfer examples  Below, I show transfered space-time doodles
   
 
   
-    
-  
 
   
 
@@ -1481,7 +1493,7 @@ Space Time Doodle Transfer examples  Below, I show transfered space-time doodles
   
   
 
-  <section id="research" class="home-section wg-pages   " style="background-image: linear-gradient(White, LightGray);custom.scss" >
+  <section id="research" class="home-section wg-pages   " style="custom.scss" >
     <div class="container">
       
 
@@ -1675,7 +1687,7 @@ Abstract We present a novel temporally coherent stylized rendering technique wor
 
     
     
-    <script>const isSiteThemeDark = false;</script>
+    <script>const isSiteThemeDark = true;</script>
     
 
     
