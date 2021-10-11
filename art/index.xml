@@ -128,7 +128,7 @@
 &lt;h3 id=&#34;galactik-football-project-&#34;&gt;Galactik Football Project&lt;/h3&gt;
 &lt;p&gt;Work in progress project where I try to recreate characters and animations from the french cartoon Galactik Football,&lt;/p&gt;
 &lt;h4 id=&#34;tia-&#34;&gt;Tia&lt;/h4&gt;
-&lt;video controls muted playsinline&gt;
+&lt;video controls playsinline&gt;
 	&lt;source src=&#34;http://typhomnt.github.io/Videos/Art/Galactik_Football/Breath_Shoot_Montage_V4.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;
 &lt;h4 id=&#34;genesis-stadium-&#34;&gt;Genesis Stadium&lt;/h4&gt;
