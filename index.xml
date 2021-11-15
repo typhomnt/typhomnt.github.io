@@ -377,6 +377,25 @@ This part should be fixed and take into account the output of the true Diffuse c
     </item>
     
     <item>
+      <title>Post Processing Effects</title>
+      <link>http://typhomnt.github.io/post/post_proc_effects/</link>
+      <pubDate>Fri, 20 Aug 2021 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/post/post_proc_effects/</guid>
+      <description>&lt;p&gt;Here is a compilation of post processing effects implemented inside Skyengine. I implemented some of them inside Unity as well.&lt;/p&gt;
+&lt;p&gt;Gundam model : Gundam GAT 105 modified by Rupen Kanwar on Sketchfab&lt;/p&gt;
+&lt;h3 id=&#34;bloom-&#34;&gt;Bloom&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Bloom_Sky_Gundam.PNG&#34; alt=&#34;Bloom&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;outline-&#34;&gt;Outline&lt;/h3&gt;
+&lt;p&gt;Based on a Sobel filter on the Depth and Normals&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Sobel_Sky_Gundam.PNG&#34; alt=&#34;Outline&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contrast-&#34;&gt;Contrast&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Contrast_Sky_Gundam.PNG&#34; alt=&#34;Contast&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;kuwahara-filter-&#34;&gt;Kuwahara Filter&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Kuwahara_Sky_Gundam.PNG&#34; alt=&#34;Kuwahara&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Oxyde ⌀  Redux edition</title>
       <link>http://typhomnt.github.io/project/oxyde/</link>
       <pubDate>Mon, 12 Apr 2021 16:22:09 +0100</pubDate>
@@ -790,6 +809,12 @@ In order to ensure temporal continuity as well as motion coherence at the compos
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
 &lt;h3 id=&#34;abstract-&#34;&gt;Abstract&lt;/h3&gt;
 &lt;p&gt;We present a novel temporally coherent stylized rendering technique working entirely at the compositing stage. We first generate a distribution of 3D anchor points using an implicit grid based on the local object positions stored in a G-buffer, hence following object motion. We then draw splats in screen space anchored to these points so as to be motion coherent. To increase the perceived flatness of the style, we adjust the anchor points density using a fractalization mechanism. Sudden changes are prevented by controlling the anchor points opacity and introducing a new order-independent blending function. We demonstrate the versatility of our method by showing a large variety of styles thanks to the freedom offered by the splats content and their attributes that can be controlled by any G-buffer.&lt;/p&gt;
+&lt;h4 id=&#34;eurographics-fast-forward-&#34;&gt;Eurographics Fast Forward&lt;/h4&gt;
+&lt;video controls playsinline&gt;
+	&lt;source src=&#34;http://typhomnt.github.io/Videos/SplatNPR/FF_Version_2.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;p&gt;Watch it in full screen for a better experience.&lt;/p&gt;
+&lt;p&gt;Models: Female Orca by neurodolphin and Shiny Fish by GenEugen on Sketchfab.&lt;/p&gt;
 &lt;h4 id=&#34;main-video-&#34;&gt;Main Video&lt;/h4&gt;
 &lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/466IoPKs0p0&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
 &lt;h4 id=&#34;supplementals-&#34;&gt;Supplementals&lt;/h4&gt;

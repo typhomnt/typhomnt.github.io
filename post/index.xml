@@ -348,6 +348,25 @@ This part should be fixed and take into account the output of the true Diffuse c
     </item>
     
     <item>
+      <title>Post Processing Effects</title>
+      <link>http://typhomnt.github.io/post/post_proc_effects/</link>
+      <pubDate>Fri, 20 Aug 2021 16:22:09 +0100</pubDate>
+      <guid>http://typhomnt.github.io/post/post_proc_effects/</guid>
+      <description>&lt;p&gt;Here is a compilation of post processing effects implemented inside Skyengine. I implemented some of them inside Unity as well.&lt;/p&gt;
+&lt;p&gt;Gundam model : Gundam GAT 105 modified by Rupen Kanwar on Sketchfab&lt;/p&gt;
+&lt;h3 id=&#34;bloom-&#34;&gt;Bloom&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Bloom_Sky_Gundam.PNG&#34; alt=&#34;Bloom&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;outline-&#34;&gt;Outline&lt;/h3&gt;
+&lt;p&gt;Based on a Sobel filter on the Depth and Normals&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Sobel_Sky_Gundam.PNG&#34; alt=&#34;Outline&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;contrast-&#34;&gt;Contrast&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Contrast_Sky_Gundam.PNG&#34; alt=&#34;Contast&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;kuwahara-filter-&#34;&gt;Kuwahara Filter&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Kuwahara_Sky_Gundam.PNG&#34; alt=&#34;Kuwahara&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Animation Target Constraint</title>
       <link>http://typhomnt.github.io/post/animation_target_ctr/</link>
       <pubDate>Mon, 16 Dec 2019 16:22:09 +0100</pubDate>

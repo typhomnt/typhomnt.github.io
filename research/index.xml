@@ -35,6 +35,12 @@
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
 &lt;h3 id=&#34;abstract-&#34;&gt;Abstract&lt;/h3&gt;
 &lt;p&gt;We present a novel temporally coherent stylized rendering technique working entirely at the compositing stage. We first generate a distribution of 3D anchor points using an implicit grid based on the local object positions stored in a G-buffer, hence following object motion. We then draw splats in screen space anchored to these points so as to be motion coherent. To increase the perceived flatness of the style, we adjust the anchor points density using a fractalization mechanism. Sudden changes are prevented by controlling the anchor points opacity and introducing a new order-independent blending function. We demonstrate the versatility of our method by showing a large variety of styles thanks to the freedom offered by the splats content and their attributes that can be controlled by any G-buffer.&lt;/p&gt;
+&lt;h4 id=&#34;eurographics-fast-forward-&#34;&gt;Eurographics Fast Forward&lt;/h4&gt;
+&lt;video controls playsinline&gt;
+	&lt;source src=&#34;http://typhomnt.github.io/Videos/SplatNPR/FF_Version_2.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;p&gt;Watch it in full screen for a better experience.&lt;/p&gt;
+&lt;p&gt;Models: Female Orca by neurodolphin and Shiny Fish by GenEugen on Sketchfab.&lt;/p&gt;
 &lt;h4 id=&#34;main-video-&#34;&gt;Main Video&lt;/h4&gt;
 &lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/466IoPKs0p0&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
 &lt;h4 id=&#34;supplementals-&#34;&gt;Supplementals&lt;/h4&gt;
