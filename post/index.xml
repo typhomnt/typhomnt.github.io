@@ -7,7 +7,7 @@
     <description>Posts</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 26 Sep 2021 16:22:09 +0100</lastBuildDate>
     <image>
-      <url>http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png</url>
+      <url>http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_3.png</url>
       <title>Posts</title>
       <link>http://typhomnt.github.io/post/</link>
     </image>
@@ -23,7 +23,7 @@
 &lt;a href=&#34;https://www.facebook.com/groups/BNPRandFreestyle&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Blender NPR community&lt;/a&gt; and also check out the Lightning Boy Studio 
 &lt;a href=&#34;https://www.youtube.com/channel/UCd9i2MKimSaKezat1xkn8-A&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;youtube channel&lt;/a&gt;, there are many resources for that field.&lt;/p&gt;
 &lt;p&gt;In this article, I am going to describe a simple version of a Blender shader NPR that I built. Of course, I took inspiration from what is available on the Internet and also tried to propose my own vision. It is very far from perfect but I hope it will give you a basic understanding in order to start exploring NPR on your own.&lt;/p&gt;
-&lt;h2 id=&#34;shader-structure-&#34;&gt;Shader Structure&lt;/h2&gt;
+&lt;h2 id=&#34;shader-structure&#34;&gt;Shader Structure&lt;/h2&gt;
 &lt;p&gt;The shader is represented as a node group which itself is divided into several groups that correspond to light contributions.
 More precisely, this NPR shader light contributions are divided into 5 components: Diffuse, Specular, Ambient occlusion, Sub-Surface Scattering (SSS) and Emission.
 Furthermore, I also include Rim light and Outline contributions which are heavily present in NPR shaders.&lt;/p&gt;
@@ -36,14 +36,14 @@ Below, you can notice the difference compared to a more realistic look using the
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;Realistic&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Cartoon&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Realistic&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Cartoon&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Realistic_Animated.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/NPR_Animated.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Realistic_Animated.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/NPR_Animated.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -63,7 +63,7 @@ This is especially useful to improve the perception of characters&amp;rsquo; pos
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Before going further, it is important to switch the color management to Standard in the Render Properties panel as we want to control our color output precisely &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Color_Managment.PNG&#34; alt=&#34;Color Managment&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;diffuse-component-&#34;&gt;Diffuse Component&lt;/h2&gt;
+&lt;h2 id=&#34;diffuse-component&#34;&gt;Diffuse Component&lt;/h2&gt;
 &lt;p&gt;
 &lt;a href=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Group.PNG&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Group.PNG&#34; alt=&#34;Diffuse Group&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The diffuse component represents the amount of light re-emitted by the surface after receiving incoming light, here coming from lamps. This amount can be obtained using the Diffuse BRDF node which computes a physically based diffusion.&lt;/p&gt;
@@ -79,7 +79,7 @@ And finally, we can get back the color of the surface we actually want (diffuse 
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_1.png&#34; alt=&#34;Diffuse Example&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_1_Mat.png&#34; alt=&#34;Diffuse Example&#34;&gt;&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s a good start, but several questions need to be answered: how do we modify the color ramp to get a stylized result ? What about metallic materials ? How to get back the influence of the incoming light color which is discarded with our current setup ?&lt;/p&gt;
-&lt;h3 id=&#34;playing-with-color-ramps-&#34;&gt;Playing with color ramps&lt;/h3&gt;
+&lt;h3 id=&#34;playing-with-color-ramps&#34;&gt;Playing with color ramps&lt;/h3&gt;
 &lt;p&gt;We were able to get the light contribution of the Diffuse component inside a color ramp, it is now time to play with it in order to stylize this contribution.
 To do it properly, we first need to understand what is happening inside the Diffuse node and think about how we can get closer to a stylized result like we can see in cartoons/anime.&lt;/p&gt;
 &lt;p&gt;To put it simply, the Diffusion or the light re-emitted by the surface of an object hit by light, depends on the surface orientation, referred as the normal $N$, with respect to the incoming direction of the light $L$. If the surface faces the incoming light direction it will re-emit more light. This can be simply modeled using a dot product between L and N of the surface.&lt;/p&gt;
@@ -92,13 +92,13 @@ Usually you get one, two or three grading levels with abrupt changes.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_2.png&#34; alt=&#34;Diffuse Example&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_2_Mat.PNG&#34; alt=&#34;Diffuse Example&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Et voila ! you get a cartoonish/anime shading. You are free to tweak the levels at your own convenience as well as to use a smoother interpolation and even mix the discrete and smooth Diffusion, like I suggest in the final version of the Diffuse shader.&lt;/p&gt;
-&lt;h3 id=&#34;metallic-diffusion--&#34;&gt;Metallic Diffusion ?&lt;/h3&gt;
+&lt;h3 id=&#34;metallic-diffusion-&#34;&gt;Metallic Diffusion ?&lt;/h3&gt;
 &lt;p&gt;As you probably guess there is something to take into account with metallic materials regarding Diffusion.
 Indeed, something to know is that metallic materials do not diffuse light, only absorbing and reflecting it.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s why we took it into consideration by multiplying the result of the diffusion with $ 1 - metalness $.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_3.png&#34; alt=&#34;Diffuse Example&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_3_Mat.PNG&#34; alt=&#34;Diffuse Example&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;light-color-influence-&#34;&gt;Light Color Influence&lt;/h3&gt;
+&lt;h3 id=&#34;light-color-influence&#34;&gt;Light Color Influence&lt;/h3&gt;
 &lt;p&gt;Using our current node configuration, you can notice that changing the light color has no effect on the shading of our objects.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Light_Influence_Objs.PNG&#34; alt=&#34;Light Influence Off&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Light_Influence.PNG&#34; alt=&#34;Light Influence On&#34;&gt;&lt;/p&gt;
@@ -107,14 +107,14 @@ The question is how to get it back ?
 The answer is quite simple. As we already recover the light intensity of our shading (&lt;strong&gt;value&lt;/strong&gt; of the HSV node) we just have to get back the &lt;strong&gt;hue&lt;/strong&gt; and &lt;strong&gt;saturation&lt;/strong&gt; resulting from  a multiplication between the object color and the light color.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Light_Influence_Objs_On.PNG&#34; alt=&#34;Light Influence On&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Light_Influence_Objs_On_Mat.PNG&#34; alt=&#34;Light Influence On Mat&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;smoothness-and-responsiveness-&#34;&gt;Smoothness and Responsiveness&lt;/h3&gt;
+&lt;h3 id=&#34;smoothness-and-responsiveness&#34;&gt;Smoothness and Responsiveness&lt;/h3&gt;
 &lt;p&gt;It is also possible to give more artistic control to the Diffuse component, and this is something we will also use for the Specular contribution.&lt;/p&gt;
 &lt;p&gt;First, it is very handy to add a smoothness control to your Diffuse shading.
 And this can be done easily by adding a second color ramp with a linear interpolation this time, and blend it with the previous color ramp we built using a Mix Color node and a smoothness parameter.&lt;/p&gt;
 &lt;p&gt;Secondly, it can also be useful to add a control that tweaks the amount of light re-emitted using a Map range node that maps $ [a : b] $ to $ [c : d] $. Here, we use an attenuation parameter that we plug as $b$ so that $ [0:b] $ gets mapped into $ [0:1] $, thus the higher $b$ is the less light will be re-emitted.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_4.png&#34; alt=&#34;Diffuse Example&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_4_Mat.PNG&#34; alt=&#34;Diffuse Example&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;specular-component-&#34;&gt;Specular Component&lt;/h2&gt;
+&lt;h2 id=&#34;specular-component&#34;&gt;Specular Component&lt;/h2&gt;
 &lt;p&gt;The Specular component represents the amount of incoming light that is reflected by the object surface.
 One simple way of formulating its contribution is : from the camera point of view, how well does it see the light source reflected on the object ?&lt;/p&gt;
 &lt;p&gt;The simplest model describing this contribution has been introduced by Phong, and simply look at the dot product between the reflected light vector $ R = reflect(L,N) $ and the view vector $ V $.&lt;/p&gt;
@@ -135,18 +135,18 @@ One simple way of formulating its contribution is : from the camera point of vie
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;No Env Map&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Env Map on&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;No Env Map&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Env Map on&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Magnemite_1.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Magnemite_2.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Magnemite_1.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Magnemite_2.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;ambient-occlusion-&#34;&gt;Ambient Occlusion&lt;/h2&gt;
+&lt;h2 id=&#34;ambient-occlusion&#34;&gt;Ambient Occlusion&lt;/h2&gt;
 &lt;p&gt;Ambient Occlusion (AO) is actually not a light contribution but more like a shadow contribution. It describes the area of the scene where light rays are less likely to hit.
 This is especially the case of corners and creases and it is quite noticeable if you look at your room for instance.&lt;/p&gt;
 &lt;p&gt;Ambient occlusion greatly enhances the realism of real-time renders and is something that artists are aware of when drawing and painting.
@@ -161,7 +161,7 @@ Notice that I limited AO to two levels for the cartoonish/anime shading as it is
 &lt;p&gt;You will also have to adjust the Distance parameter depending on the scale of your model, especially for small and large models. In the first case your model might be fully occluded while in the second case you might not notice any occlusion if you don&amp;rsquo;t tune this parameter carefully.&lt;br&gt;
 I also added a Math power node to tweak the contrast of AO and give it more importance.&lt;/p&gt;
 &lt;p&gt;Finally, to further increase the color contrast, we assign a color to the non occluded areas with a Multiply node.&lt;/p&gt;
-&lt;h2 id=&#34;emission-component-&#34;&gt;Emission Component&lt;/h2&gt;
+&lt;h2 id=&#34;emission-component&#34;&gt;Emission Component&lt;/h2&gt;
 &lt;p&gt;The emissive contribution is the easiest to take into account as Blender already does all the work for us with the Emissive shader.&lt;/p&gt;
 &lt;p&gt;However, it is important to note that when using EEVEE and real-time renderers, you have to enable Bloom to get a greater impact.
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Bloom_Panel.PNG&#34; alt=&#34;Bloom Panel&#34;&gt;&lt;/p&gt;
@@ -172,24 +172,24 @@ As you can see, there are also few parameters to tune the Bloom effect. You migh
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;No Bloom&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Bloom On&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;No Bloom&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Bloom On&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Emission.png&#34; alt=&#34;Emission Example&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Emission_Bloom.png&#34; alt=&#34;Emission Example&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Emission.png&#34; alt=&#34;Emission Example&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Emission_Bloom.png&#34; alt=&#34;Emission Example&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Emission_Group.PNG&#34; alt=&#34;Emission Group&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Currently it is quite costly to handle emissive materials as light sources in a real-time fashion.
 Handling emissive materials like path tracers (Cycles in Blender) might change in the future with real time ray tracing being faster and more optimized.&lt;/p&gt;
-&lt;h2 id=&#34;rim-light-and-outline-&#34;&gt;Rim Light and Outline&lt;/h2&gt;
+&lt;h2 id=&#34;rim-light-and-outline&#34;&gt;Rim Light and Outline&lt;/h2&gt;
 &lt;p&gt;Rim lighting and Outline are tools used by artists to better depict the contours and the pose of characters.
 They can also be used to set a specific mood and to enhance the perception of motion.&lt;/p&gt;
-&lt;h3 id=&#34;extracting-the-contours-&#34;&gt;Extracting the contours&lt;/h3&gt;
+&lt;h3 id=&#34;extracting-the-contours&#34;&gt;Extracting the contours&lt;/h3&gt;
 &lt;p&gt;There are plenty of techniques to get the contours of a 3D model and draw art lines on top of it. There are pros and cons for each technique, but state-of-the-art methods tend to give a lot of freedom with computational costs that get shorter and shorter.
 
 &lt;a href=&#34;https://hal.inria.fr/hal-02189483/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Benard et al.&lt;/a&gt; made a survey summarizing many existing methods to draw art lines on top of 3D models.&lt;/p&gt;
@@ -197,14 +197,14 @@ They can also be used to set a specific mood and to enhance the perception of mo
 &lt;a href=&#34;https://www.blendersecrets.org/secrets/inverted-hull-toon-outline-bnpr-blender-tutorial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;inverted hull&lt;/a&gt;, at least for the outline.&lt;/p&gt;
 &lt;p&gt;The simplest way of getting the contours is to use the dot product between the view direction $ V $ and the normal $ N $.
 Indeed, one way of defining parts of a 3D model that are near the silhouette is to look at where this dot product is near zero, or formulated differently, where the normal of the surface is orthogonal to the view direction.&lt;/p&gt;
-&lt;h3 id=&#34;outline-&#34;&gt;Outline&lt;/h3&gt;
+&lt;h3 id=&#34;outline&#34;&gt;Outline&lt;/h3&gt;
 &lt;p&gt;There is an easy way to get this dot product in Blender within one node, namely the Fresnel node.
 It takes into account an index of refraction which is a fundamental parameter to determine the amount of light that goes through the object, which also tells us the amount of light that gets reflected as its complementary.
 This amount of light being reflected is directly linked to the dot product between the view direction $ V $ and  the normal $ N $.
 And so, to get the Outline, we can use the output of the Fresnel node and threshold it with a color ramp like we did for the other components.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Outline_Group.PNG&#34; alt=&#34;Outline Group&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/outline.png&#34; alt=&#34;Outline Example&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;rim-light-&#34;&gt;Rim light&lt;/h3&gt;
+&lt;h3 id=&#34;rim-light&#34;&gt;Rim light&lt;/h3&gt;
 &lt;p&gt;Rim Light is also referred as a backlight that highlights the full silhouette or only one part of it.&lt;/p&gt;
 &lt;p&gt;To achieve this effect with 3D geometry, we can also compute the dot product between the normal $ N $ and the camera view $ V $ to get the silhouette and use color ramps to tweak its values.
 This time I intentionally computed the dot product using Vector Math nodes.&lt;/p&gt;
@@ -220,13 +220,13 @@ Computing an alignment with a vector is equivalent to compute the dot product be
 &lt;/blockquote&gt;
 &lt;p&gt;As a final touch, like precedently, we can use color ramps to sharpen or soften the Rim Light depending on the style you want to convey.
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/rim_light.png&#34; alt=&#34;Rim Light Example&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;sub-surface-scaterring-&#34;&gt;Sub-Surface Scaterring&lt;/h2&gt;
+&lt;h2 id=&#34;sub-surface-scaterring&#34;&gt;Sub-Surface Scaterring&lt;/h2&gt;
 &lt;p&gt;Sub-Surface Scattering (SSS) is one of the most difficult contributions to handle as it is also a more complex phenomena.
 It corresponds to light rays that completely traverse an opaque medium, like your body, and that reaches your eye. One common example given to behold this phenomena is to place your hand between you and the sun and look at the space between your fingers, you will notice a reddish color at the silhouette of your hand. This is the light going through a thin opaque medium that is your skin.&lt;/p&gt;
 &lt;p&gt;Although it is a quite common phenomena, it is also very difficult to achieve in a real-time fashion and for this tutorial we will use the approximation proposed by 
 &lt;a href=&#34;https://www.alanzucconi.com/2017/08/30/fast-subsurface-scattering-1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Alan Zucconi&lt;/a&gt; (based on a GDC talk) to achieve our NPR SSS inside Blender. Note that we will not use the SSS shader provided by Blender as the method proposed by Alan Zucconi offers more expressiveness and  better artistic control.
 We will also extend this approach by adding two additional contributions.&lt;/p&gt;
-&lt;h3 id=&#34;approximated-sss-&#34;&gt;Approximated SSS&lt;/h3&gt;
+&lt;h3 id=&#34;approximated-sss&#34;&gt;Approximated SSS&lt;/h3&gt;
 &lt;p&gt;In this section, I will  mostly paraphrase the tutorial of 
 &lt;a href=&#34;https://www.alanzucconi.com/2017/08/30/fast-subsurface-scattering-1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Alan Zucconi&lt;/a&gt;, I will skip few details and explain how to implement it inside Blender.&lt;/p&gt;
 &lt;p&gt;Like I mentioned above, SSS is a complex phenomenon where light rays go through the surface and are also deviated from their incoming direction.
@@ -238,14 +238,14 @@ The trick to take into account this phenomena is to create a fictive light contr
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;SSS Off&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;SSS On&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;SSS Off&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;SSS On&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_No.png&#34; alt=&#34;SSS Fig&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_On.png&#34; alt=&#34;SSS On Fig&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_No.png&#34; alt=&#34;SSS Fig&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_On.png&#34; alt=&#34;SSS On Fig&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -276,7 +276,7 @@ Notice that the z coordinate of the input vector is $ -1 $ so that we get $ -L $
 &lt;p&gt;
 &lt;a href=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_Approx.png&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_Approx.png&#34; alt=&#34;SSS Group&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;video autoplay loop muted &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/SSS_Approx.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;
-&lt;h3 id=&#34;inverse-diffuse-lighting-&#34;&gt;Inverse Diffuse Lighting&lt;/h3&gt;
+&lt;h3 id=&#34;inverse-diffuse-lighting&#34;&gt;Inverse Diffuse Lighting&lt;/h3&gt;
 &lt;p&gt;It is possible to go further in the stylization of SSS by adding an additional effect which is much more &amp;ldquo;artistic&amp;rdquo; than the approximation I just described.
 The main idea is to add the complementary of the diffuse component as a contribution in order to make non lighted areas pop out a little bit.
 The contribution is divided into two parts : front inverse diffuse and back inverse diffuse. The first adds the complementary of the incoming light while the later adds the complementary of the light coming from the opposite direction.&lt;/p&gt;
@@ -287,11 +287,11 @@ $$ B_{SSS} = 1 - max(-L \cdot N,0)  $$&lt;/p&gt;
 &lt;p&gt;$$ F_{SSS} = (1 - max(L \cdot N,0))^p*\alpha_{front} $$
 $$ B_{SSS} = (1 - max(-L \cdot N,0))^p*\alpha_{back}  $$&lt;/p&gt;
 &lt;p&gt;And finally, the thickness of the object should also be taken into consideration:&lt;/p&gt;
-&lt;p&gt;$$ I_{nverse Diffuse} = ((F_{SSS} + B_{SSS})*S)^{p_i}* (1 - thickness) $$&lt;/p&gt;
+&lt;p&gt;$$ I_{nverse Diffuse} = ((F_{SSS} + B_{SSS})&lt;em&gt;S)^{p_i}&lt;/em&gt; (1 - thickness) $$&lt;/p&gt;
 &lt;p&gt;
 &lt;a href=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_Front_Back.png&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_Front_Back.png&#34; alt=&#34;SSS Group&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;video autoplay loop muted &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/SSS_Inverse_Diffuse.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;
-&lt;h3 id=&#34;final-sss-node-group-&#34;&gt;Final SSS Node Group&lt;/h3&gt;
+&lt;h3 id=&#34;final-sss-node-group&#34;&gt;Final SSS Node Group&lt;/h3&gt;
 &lt;p&gt;The final SSS contribution results in the sum of the approximated SSS and the inverse diffuse contribution.&lt;/p&gt;
 &lt;p&gt;$$ SSS = (I_{SSS} + I_{nverse Diffuse})*(1 - metalness) $$&lt;/p&gt;
 &lt;p&gt;As metallic materials cannot be translucent, we take into account the metalness of the material with a Multiply node and nullify the contribution of the SSS if the material is a metal.&lt;/p&gt;
@@ -299,7 +299,7 @@ $$ B_{SSS} = (1 - max(-L \cdot N,0))^p*\alpha_{back}  $$&lt;/p&gt;
 &lt;a href=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_All.png&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_All.png&#34; alt=&#34;SSS Group&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Notice that eventually tweak the final result with color ramps to discretize or smooth the contribution.&lt;/p&gt;
 &lt;p&gt;&lt;video autoplay loop muted &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/SSS_Example.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;
-&lt;h2 id=&#34;blending-components-&#34;&gt;Blending Components&lt;/h2&gt;
+&lt;h2 id=&#34;blending-components&#34;&gt;Blending Components&lt;/h2&gt;
 &lt;p&gt;Now that we computed all the 7 different contributions, it is time to blend them together.
 Diffuse, Specular and SSS components should be added together.
 However, we first apply the Ambient Occlusion to the Diffuse component in Overlay mode in order to increase the contrast between the non occluded and occluded regions.
@@ -312,25 +312,25 @@ We then successively add the SSS and the Specular component with an Add node.&lt
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; This way of blending contributions together is one of the infinite possibilities you can test. There is no true way to blend these contributions together as we deal with NPR, so tweak these blend modes to your heart content !&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;limitations-&#34;&gt;Limitations&lt;/h2&gt;
+&lt;h2 id=&#34;limitations&#34;&gt;Limitations&lt;/h2&gt;
 &lt;p&gt;The main limitation of the shader is that it only supports one light for the main lighting and the SSS as we use drivers. If you want to add more light I recommend that you use point, spot and area lights even though the SSS won&amp;rsquo;t be computed for these additional lights.
 Additionally, Inverse Diffuse Lighting can produce artifacts when it is not properly aligned with the Diffuse contribution, and that is because we compute it as the complementary of a fake Diffuse component.
 This part should be fixed and take into account the output of the true Diffuse component instead.&lt;/p&gt;
 &lt;p&gt;There is not too much room for stylizing metallic materials with this shader, it mainly depends on the environment map you use. This aspect can surely be improved a lot.&lt;/p&gt;
 &lt;p&gt;Finally, we did not cover the artifacts that are due to the topology of the model that may not be adapted to cartoon/anime style, I&amp;rsquo;ll be definitely working on that part.&lt;/p&gt;
-&lt;h2 id=&#34;going-further--&#34;&gt;Going further ?&lt;/h2&gt;
+&lt;h2 id=&#34;going-further-&#34;&gt;Going further ?&lt;/h2&gt;
 &lt;p&gt;From that point, I strongly encourage you to test this shader in more complex scenes like the one below. Do not hesitate to try variations, new ideas often come from testing !&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;Sakura Tree 1&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Sakura Tree 2&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Sakura Tree 1&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Sakura Tree 2&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Sakura_Tree.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Sakura_Tree_2.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Sakura_Tree.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Sakura_Tree_2.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -340,7 +340,7 @@ This part should be fixed and take into account the output of the true Diffuse c
 &lt;p&gt;You may also go further in shading control and tweak the normals of your model to get rid of unwanted artifacts. Indeed, if you want to go for anime style, unless you adapt the topology of your model to have sharp transitions and add/remove some shadows, you will have to tweak the normals. Inside Blender, you can edit your normals or you can use proxy objects to achieve a more consistent anime look. That is the topic of other tutorials you can find on the Internet but as a good start you can check the 
 &lt;a href=&#34;https://www.youtube.com/watch?v=yhGjCzxJV3E&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Guilty Gear GDC conference&lt;/a&gt; that gives a good insight on how to achieve anime looking style in 3D.&lt;/p&gt;
 &lt;p&gt;There is a lot more to be discovered in that field of course, never stop exploring !&lt;/p&gt;
-&lt;h2 id=&#34;tutorial-files-&#34;&gt;Tutorial Files&lt;/h2&gt;
+&lt;h2 id=&#34;tutorial-files&#34;&gt;Tutorial Files&lt;/h2&gt;
 &lt;p&gt;You can find this tutorial NPR material inside this 
 &lt;a href=&#34;http://typhomnt.github.io/Files/shading_npr.blend&#34;&gt;blend file&lt;/a&gt; as well as the file generating the teaser image 
 &lt;a href=&#34;http://typhomnt.github.io/Files/shading_samples.blend&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
@@ -354,14 +354,14 @@ This part should be fixed and take into account the output of the true Diffuse c
       <guid>http://typhomnt.github.io/post/post_proc_effects/</guid>
       <description>&lt;p&gt;Here is a compilation of post processing effects implemented inside Skyengine. I implemented some of them inside Unity as well.&lt;/p&gt;
 &lt;p&gt;Gundam model : Gundam GAT 105 modified by Rupen Kanwar on Sketchfab&lt;/p&gt;
-&lt;h3 id=&#34;bloom-&#34;&gt;Bloom&lt;/h3&gt;
+&lt;h3 id=&#34;bloom&#34;&gt;Bloom&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Bloom_Sky_Gundam.PNG&#34; alt=&#34;Bloom&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;outline-&#34;&gt;Outline&lt;/h3&gt;
+&lt;h3 id=&#34;outline&#34;&gt;Outline&lt;/h3&gt;
 &lt;p&gt;Based on a Sobel filter on the Depth and Normals&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Sobel_Sky_Gundam.PNG&#34; alt=&#34;Outline&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;contrast-&#34;&gt;Contrast&lt;/h3&gt;
+&lt;h3 id=&#34;contrast&#34;&gt;Contrast&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Contrast_Sky_Gundam.PNG&#34; alt=&#34;Contast&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;kuwahara-filter-&#34;&gt;Kuwahara Filter&lt;/h3&gt;
+&lt;h3 id=&#34;kuwahara-filter&#34;&gt;Kuwahara Filter&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Kuwahara_Sky_Gundam.PNG&#34; alt=&#34;Kuwahara&#34;&gt;&lt;/p&gt;
 </description>
     </item>
@@ -528,7 +528,7 @@ $$&lt;/p&gt;
 It is easy to identify the weaknesses of such an approach, it is limited to few actions and above all it is not really accurate, tweaking and thresholding is often needed for identifying singular points.
 During my thesis I took inspiration from the paper untitled Motion Doodle where the authors were using 2D curves to created animation sequences . More particulary a given input curve, it was segmented into horizontal, vertical and oblic bins and animation were defined as a regular expression of curve bins. 
 At that moment, I took a step back and told myself that they were creating a kind of motion language characterizing the curve by its different direction changes.) --&gt;
-&lt;h3 id=&#34;space-time-doodle-transfer-examples--&#34;&gt;Space Time Doodle Transfer examples &lt;/h3&gt;
+&lt;h3 id=&#34;space-time-doodle-transfer-examples&#34;&gt;Space Time Doodle Transfer examples &lt;/h3&gt;
 &lt;p&gt;Below, I show transfered space-time doodles into animation sequences. It is important to note that all actions were learnt for the two first examples as well as for the garden example.&lt;/p&gt;
 &lt;video autoplay loop muted playsinline&gt;
 	&lt;source src=&#34;http://typhomnt.github.io/Videos/Animation/Animation_Transfer/PhD_Baseline.mp4&#34; type=&#34;video/mp4&#34;&gt;
@@ -555,7 +555,7 @@ At that moment, I took a step back and told myself that they were creating a kin
 The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices.
 This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.
 The resulting mesh is then refined through an iterative process, alternating subdivisions and evolutions. Finally, an edge fairing optimazation is performed whose puporse is to prevent quad deformation as much as possible without changing the geometry.&lt;/p&gt;
-&lt;h3 id=&#34;bmesh-evolution-example--&#34;&gt;BMesh Evolution example &lt;/h3&gt;
+&lt;h3 id=&#34;bmesh-evolution-example&#34;&gt;BMesh Evolution example &lt;/h3&gt;
 &lt;video autoplay loop muted playsinline&gt;
 	&lt;source src=&#34;http://typhomnt.github.io/Videos/BMesh/B_Mesh_0.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;
@@ -579,7 +579,7 @@ The source code is avaible
 &lt;a href=&#34;http://jcgt.org/published/0004/04/03/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.
 For windows users, we created an archive containing an executable that you can use right out of the box.&lt;/p&gt;
 &lt;p&gt;This post is divided into three parts. First, I will describe the main principle behing our technique, then I will explain how to compile and use the application, then I will detail it works in the code.&lt;/p&gt;
-&lt;h3 id=&#34;main-principle-&#34;&gt;Main principle&lt;/h3&gt;
+&lt;h3 id=&#34;main-principle&#34;&gt;Main principle&lt;/h3&gt;
 &lt;p&gt;In the ocean of NPR techniques, we can distinguish two different families when it come to stylizing color regions: texture-based and mark-based approaches.
 The first embeds marks in an image which is then mapped or pached either onto the 3D scene or over the entire screen. Here are some reference of previous research works falling into that category.
 More concretly, this kind of technique is quite common when using 3D software like Maya or Blender.
@@ -587,7 +587,7 @@ The later consists in attaching 2D or 3D marks (brush strokes) to anchor points 
 &lt;p&gt;Our method belongs to the familly of mark-based methods but borrows ideas from texture-based methods.
 Moreover, it consists in dynamically generating a motion-coherent 3D anchor point distribution that are drawn as billboard brush strokes.
 In order to ensure temporal continuity as well as motion coherence at the compositing stage, the anchor point generation is based on implicit Voronoi noise generated from G-Buffers. This allows our technique to operate  regardless of the geometric representation or animation technique.&lt;/p&gt;
-&lt;h4 id=&#34;anchor-point-generation-&#34;&gt;Anchor Point Generation&lt;/h4&gt;
+&lt;h4 id=&#34;anchor-point-generation&#34;&gt;Anchor Point Generation&lt;/h4&gt;
 &lt;p&gt;Our anchor point generation algorithm is two folds: a first process generates anchor points around the objects based on a 3D Worley noise which takes 3D positions stored in the G-Buffers as input. Then, we group together all pixels that generated the same anchor point and compute its final position in screen-space as the average of the screen-space position of these pixels. To ensure a quasi constant density of the points, especially when zooming in or out, we introduce a fractalization process which generate several layers of points. Moreover, at each pixel of the position G-Buffer, we generate several points using the same process as earlier but with a different frequency for each layer. For each layer its sampling frequency is related to the gradient of the position at the considered pixel such that when the gradient is low, meaning that the surface is flat, we increase the sampling frequency and increase it other wise. The intuition behind this process is to sample more points when the surface is flat because at a given frequency of the Worley noise, more points are generated when the position varies, the surface of the object intersecting more virtual 3D cells than when it is flat.&lt;/p&gt;
 &lt;p&gt;Let me show you the difference of our anchor point genereation process with and without the fractalization :&lt;/p&gt;
 &lt;p&gt;&lt;video autoplay loop muted playsinline&gt;]
@@ -596,10 +596,10 @@ In order to ensure temporal continuity as well as motion coherence at the compos
 &lt;p&gt;&lt;video autoplay loop muted playsinline&gt;]
 &lt;source src=&#34;http://typhomnt.github.io/Videos/SplatNPR/Splat_Generation_Animation_Sub.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;&lt;/p&gt;
-&lt;h4 id=&#34;improve-temporal-continuity-&#34;&gt;Improve Temporal Continuity&lt;/h4&gt;
+&lt;h4 id=&#34;improve-temporal-continuity&#34;&gt;Improve Temporal Continuity&lt;/h4&gt;
 &lt;p&gt;Until this stage we focused&lt;/p&gt;
-&lt;h3 id=&#34;use-the-application-&#34;&gt;Use the application&lt;/h3&gt;
-&lt;h3 id=&#34;understanding-the-code-&#34;&gt;Understanding the code&lt;/h3&gt;
+&lt;h3 id=&#34;use-the-application&#34;&gt;Use the application&lt;/h3&gt;
+&lt;h3 id=&#34;understanding-the-code&#34;&gt;Understanding the code&lt;/h3&gt;
 </description>
     </item>
     
@@ -611,8 +611,8 @@ In order to ensure temporal continuity as well as motion coherence at the compos
       <description>&lt;p&gt;One important aspect of my thesis work is adding expressivity to an input &amp;ldquo;neutral&amp;rdquo; animation. In our work, we decided to take the Laban Effort space as the main representation of the expressivity.
 This 4D space is divided into Space, Time, Weight and Flow axis. The Space axis describes how direct or indirect a movment is, Time describes if a movment is rather sudden or sustained while Weight differenciate Light from Strong motions. Finally Flow describes if a motion sequence is free or bound. In this article, I will only present how to transfer Time and Weight to a neutral animation.
 To do so, I will first introduce three animation operators: scaling, retiming and shaping operators.&lt;/p&gt;
-&lt;h3 id=&#34;scaling-&#34;&gt;Scaling&lt;/h3&gt;
-&lt;h3 id=&#34;efforts-comparison--&#34;&gt;Efforts Comparison &lt;/h3&gt;
+&lt;h3 id=&#34;scaling&#34;&gt;Scaling&lt;/h3&gt;
+&lt;h3 id=&#34;efforts-comparison&#34;&gt;Efforts Comparison &lt;/h3&gt;
 &lt;p&gt;Finally, I show below the comparison of the 4 efforts for several animations of the Mixamo database
 &lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/kick_laban.gif&#34; alt=&#34;Kick Laban&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/punch_laban.gif&#34; alt=&#34;Punch Laban&#34;&gt;

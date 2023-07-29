@@ -217,8 +217,8 @@
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_box_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_2.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_box_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_3.png">
 
   <link rel="canonical" href="http://typhomnt.github.io/post/blender_npr/">
 
@@ -286,7 +286,7 @@
     "name": "Maxime Garcia",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_2.png"
+      "url": "http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_3.png"
     }
   },
   "description": "Introduction to NPR inside Blender for a basic but complete shader."
@@ -586,36 +586,36 @@
         </ul>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#shader-structure-">Shader Structure</a></li>
-    <li><a href="#diffuse-component-">Diffuse Component</a>
+    <li><a href="#shader-structure">Shader Structure</a></li>
+    <li><a href="#diffuse-component">Diffuse Component</a>
       <ul>
-        <li><a href="#playing-with-color-ramps-">Playing with color ramps</a></li>
-        <li><a href="#metallic-diffusion--">Metallic Diffusion ?</a></li>
-        <li><a href="#light-color-influence-">Light Color Influence</a></li>
-        <li><a href="#smoothness-and-responsiveness-">Smoothness and Responsiveness</a></li>
+        <li><a href="#playing-with-color-ramps">Playing with color ramps</a></li>
+        <li><a href="#metallic-diffusion-">Metallic Diffusion ?</a></li>
+        <li><a href="#light-color-influence">Light Color Influence</a></li>
+        <li><a href="#smoothness-and-responsiveness">Smoothness and Responsiveness</a></li>
       </ul>
     </li>
-    <li><a href="#specular-component-">Specular Component</a></li>
-    <li><a href="#ambient-occlusion-">Ambient Occlusion</a></li>
-    <li><a href="#emission-component-">Emission Component</a></li>
-    <li><a href="#rim-light-and-outline-">Rim Light and Outline</a>
+    <li><a href="#specular-component">Specular Component</a></li>
+    <li><a href="#ambient-occlusion">Ambient Occlusion</a></li>
+    <li><a href="#emission-component">Emission Component</a></li>
+    <li><a href="#rim-light-and-outline">Rim Light and Outline</a>
       <ul>
-        <li><a href="#extracting-the-contours-">Extracting the contours</a></li>
-        <li><a href="#outline-">Outline</a></li>
-        <li><a href="#rim-light-">Rim light</a></li>
+        <li><a href="#extracting-the-contours">Extracting the contours</a></li>
+        <li><a href="#outline">Outline</a></li>
+        <li><a href="#rim-light">Rim light</a></li>
       </ul>
     </li>
-    <li><a href="#sub-surface-scaterring-">Sub-Surface Scaterring</a>
+    <li><a href="#sub-surface-scaterring">Sub-Surface Scaterring</a>
       <ul>
-        <li><a href="#approximated-sss-">Approximated SSS</a></li>
-        <li><a href="#inverse-diffuse-lighting-">Inverse Diffuse Lighting</a></li>
-        <li><a href="#final-sss-node-group-">Final SSS Node Group</a></li>
+        <li><a href="#approximated-sss">Approximated SSS</a></li>
+        <li><a href="#inverse-diffuse-lighting">Inverse Diffuse Lighting</a></li>
+        <li><a href="#final-sss-node-group">Final SSS Node Group</a></li>
       </ul>
     </li>
-    <li><a href="#blending-components-">Blending Components</a></li>
-    <li><a href="#limitations-">Limitations</a></li>
-    <li><a href="#going-further--">Going further ?</a></li>
-    <li><a href="#tutorial-files-">Tutorial Files</a></li>
+    <li><a href="#blending-components">Blending Components</a></li>
+    <li><a href="#limitations">Limitations</a></li>
+    <li><a href="#going-further-">Going further ?</a></li>
+    <li><a href="#tutorial-files">Tutorial Files</a></li>
   </ul>
 </nav>
         
@@ -711,7 +711,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 405px;">
   <div style="position: relative">
-    <img src="/post/blender_npr/featured_hu772cc35029d0854780ab7eab1b34382a_2200754_720x0_resize_box_2.png" alt="" class="featured-image">
+    <img src="/post/blender_npr/featured_hu772cc35029d0854780ab7eab1b34382a_2200754_720x0_resize_box_3.png" alt="" class="featured-image">
     
   </div>
 </div>
@@ -725,7 +725,7 @@
 <a href="https://www.facebook.com/groups/BNPRandFreestyle" target="_blank" rel="noopener">Blender NPR community</a> and also check out the Lightning Boy Studio 
 <a href="https://www.youtube.com/channel/UCd9i2MKimSaKezat1xkn8-A" target="_blank" rel="noopener">youtube channel</a>, there are many resources for that field.</p>
 <p>In this article, I am going to describe a simple version of a Blender shader NPR that I built. Of course, I took inspiration from what is available on the Internet and also tried to propose my own vision. It is very far from perfect but I hope it will give you a basic understanding in order to start exploring NPR on your own.</p>
-<h2 id="shader-structure-">Shader Structure</h2>
+<h2 id="shader-structure">Shader Structure</h2>
 <p>The shader is represented as a node group which itself is divided into several groups that correspond to light contributions.
 More precisely, this NPR shader light contributions are divided into 5 components: Diffuse, Specular, Ambient occlusion, Sub-Surface Scattering (SSS) and Emission.
 Furthermore, I also include Rim light and Outline contributions which are heavily present in NPR shaders.</p>
@@ -738,14 +738,14 @@ Below, you can notice the difference compared to a more realistic look using the
 <table>
 <thead>
 <tr>
-<th align="center">Realistic</th>
-<th align="center">Cartoon</th>
+<th style="text-align:center">Realistic</th>
+<th style="text-align:center">Cartoon</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><video autoplay loop muted controls><source src="/Videos/NPR/Blender_NPR/Realistic_Animated.mp4" type="video/mp4"></video></td>
-<td align="center"><video autoplay loop muted controls><source src="/Videos/NPR/Blender_NPR/NPR_Animated.mp4" type="video/mp4"></video></td>
+<td style="text-align:center"><video autoplay loop muted controls><source src="/Videos/NPR/Blender_NPR/Realistic_Animated.mp4" type="video/mp4"></video></td>
+<td style="text-align:center"><video autoplay loop muted controls><source src="/Videos/NPR/Blender_NPR/NPR_Animated.mp4" type="video/mp4"></video></td>
 </tr>
 </tbody>
 </table>
@@ -765,7 +765,7 @@ This is especially useful to improve the perception of characters&rsquo; poses a
 <blockquote>
 <p><strong><em>NOTE:</em></strong> Before going further, it is important to switch the color management to Standard in the Render Properties panel as we want to control our color output precisely <img src="/Images/NPR/Blender_NPR/Color_Managment.PNG" alt="Color Managment"></p>
 </blockquote>
-<h2 id="diffuse-component-">Diffuse Component</h2>
+<h2 id="diffuse-component">Diffuse Component</h2>
 <p>
 <a href="/Images/NPR/Blender_NPR/Diffuse_Group.PNG"><img src="/Images/NPR/Blender_NPR/Diffuse_Group.PNG" alt="Diffuse Group"></a></p>
 <p>The diffuse component represents the amount of light re-emitted by the surface after receiving incoming light, here coming from lamps. This amount can be obtained using the Diffuse BRDF node which computes a physically based diffusion.</p>
@@ -781,7 +781,7 @@ And finally, we can get back the color of the surface we actually want (diffuse 
 <p><img src="/Images/NPR/Blender_NPR/Diffuse_1.png" alt="Diffuse Example">
 <img src="/Images/NPR/Blender_NPR/Diffuse_1_Mat.png" alt="Diffuse Example"></p>
 <p>That&rsquo;s a good start, but several questions need to be answered: how do we modify the color ramp to get a stylized result ? What about metallic materials ? How to get back the influence of the incoming light color which is discarded with our current setup ?</p>
-<h3 id="playing-with-color-ramps-">Playing with color ramps</h3>
+<h3 id="playing-with-color-ramps">Playing with color ramps</h3>
 <p>We were able to get the light contribution of the Diffuse component inside a color ramp, it is now time to play with it in order to stylize this contribution.
 To do it properly, we first need to understand what is happening inside the Diffuse node and think about how we can get closer to a stylized result like we can see in cartoons/anime.</p>
 <p>To put it simply, the Diffusion or the light re-emitted by the surface of an object hit by light, depends on the surface orientation, referred as the normal $N$, with respect to the incoming direction of the light $L$. If the surface faces the incoming light direction it will re-emit more light. This can be simply modeled using a dot product between L and N of the surface.</p>
@@ -794,13 +794,13 @@ Usually you get one, two or three grading levels with abrupt changes.</p>
 <p><img src="/Images/NPR/Blender_NPR/Diffuse_2.png" alt="Diffuse Example">
 <img src="/Images/NPR/Blender_NPR/Diffuse_2_Mat.PNG" alt="Diffuse Example"></p>
 <p>Et voila ! you get a cartoonish/anime shading. You are free to tweak the levels at your own convenience as well as to use a smoother interpolation and even mix the discrete and smooth Diffusion, like I suggest in the final version of the Diffuse shader.</p>
-<h3 id="metallic-diffusion--">Metallic Diffusion ?</h3>
+<h3 id="metallic-diffusion-">Metallic Diffusion ?</h3>
 <p>As you probably guess there is something to take into account with metallic materials regarding Diffusion.
 Indeed, something to know is that metallic materials do not diffuse light, only absorbing and reflecting it.</p>
 <p>That&rsquo;s why we took it into consideration by multiplying the result of the diffusion with $ 1 - metalness $.</p>
 <p><img src="/Images/NPR/Blender_NPR/Diffuse_3.png" alt="Diffuse Example">
 <img src="/Images/NPR/Blender_NPR/Diffuse_3_Mat.PNG" alt="Diffuse Example"></p>
-<h3 id="light-color-influence-">Light Color Influence</h3>
+<h3 id="light-color-influence">Light Color Influence</h3>
 <p>Using our current node configuration, you can notice that changing the light color has no effect on the shading of our objects.</p>
 <p><img src="/Images/NPR/Blender_NPR/Diffuse_Light_Influence_Objs.PNG" alt="Light Influence Off">
 <img src="/Images/NPR/Blender_NPR/Diffuse_Light_Influence.PNG" alt="Light Influence On"></p>
@@ -809,14 +809,14 @@ The question is how to get it back ?
 The answer is quite simple. As we already recover the light intensity of our shading (<strong>value</strong> of the HSV node) we just have to get back the <strong>hue</strong> and <strong>saturation</strong> resulting from  a multiplication between the object color and the light color.</p>
 <p><img src="/Images/NPR/Blender_NPR/Diffuse_Light_Influence_Objs_On.PNG" alt="Light Influence On">
 <img src="/Images/NPR/Blender_NPR/Diffuse_Light_Influence_Objs_On_Mat.PNG" alt="Light Influence On Mat"></p>
-<h3 id="smoothness-and-responsiveness-">Smoothness and Responsiveness</h3>
+<h3 id="smoothness-and-responsiveness">Smoothness and Responsiveness</h3>
 <p>It is also possible to give more artistic control to the Diffuse component, and this is something we will also use for the Specular contribution.</p>
 <p>First, it is very handy to add a smoothness control to your Diffuse shading.
 And this can be done easily by adding a second color ramp with a linear interpolation this time, and blend it with the previous color ramp we built using a Mix Color node and a smoothness parameter.</p>
 <p>Secondly, it can also be useful to add a control that tweaks the amount of light re-emitted using a Map range node that maps $ [a : b] $ to $ [c : d] $. Here, we use an attenuation parameter that we plug as $b$ so that $ [0:b] $ gets mapped into $ [0:1] $, thus the higher $b$ is the less light will be re-emitted.</p>
 <p><img src="/Images/NPR/Blender_NPR/Diffuse_4.png" alt="Diffuse Example">
 <img src="/Images/NPR/Blender_NPR/Diffuse_4_Mat.PNG" alt="Diffuse Example"></p>
-<h2 id="specular-component-">Specular Component</h2>
+<h2 id="specular-component">Specular Component</h2>
 <p>The Specular component represents the amount of incoming light that is reflected by the object surface.
 One simple way of formulating its contribution is : from the camera point of view, how well does it see the light source reflected on the object ?</p>
 <p>The simplest model describing this contribution has been introduced by Phong, and simply look at the dot product between the reflected light vector $ R = reflect(L,N) $ and the view vector $ V $.</p>
@@ -837,18 +837,18 @@ One simple way of formulating its contribution is : from the camera point of vie
 <table>
 <thead>
 <tr>
-<th align="center">No Env Map</th>
-<th align="center">Env Map on</th>
+<th style="text-align:center">No Env Map</th>
+<th style="text-align:center">Env Map on</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><video autoplay loop muted controls><source src="/Videos/NPR/Blender_NPR/Magnemite_1.mp4" type="video/mp4"></video></td>
-<td align="center"><video autoplay loop muted controls><source src="/Videos/NPR/Blender_NPR/Magnemite_2.mp4" type="video/mp4"></video></td>
+<td style="text-align:center"><video autoplay loop muted controls><source src="/Videos/NPR/Blender_NPR/Magnemite_1.mp4" type="video/mp4"></video></td>
+<td style="text-align:center"><video autoplay loop muted controls><source src="/Videos/NPR/Blender_NPR/Magnemite_2.mp4" type="video/mp4"></video></td>
 </tr>
 </tbody>
 </table>
-<h2 id="ambient-occlusion-">Ambient Occlusion</h2>
+<h2 id="ambient-occlusion">Ambient Occlusion</h2>
 <p>Ambient Occlusion (AO) is actually not a light contribution but more like a shadow contribution. It describes the area of the scene where light rays are less likely to hit.
 This is especially the case of corners and creases and it is quite noticeable if you look at your room for instance.</p>
 <p>Ambient occlusion greatly enhances the realism of real-time renders and is something that artists are aware of when drawing and painting.
@@ -863,7 +863,7 @@ Notice that I limited AO to two levels for the cartoonish/anime shading as it is
 <p>You will also have to adjust the Distance parameter depending on the scale of your model, especially for small and large models. In the first case your model might be fully occluded while in the second case you might not notice any occlusion if you don&rsquo;t tune this parameter carefully.<br>
 I also added a Math power node to tweak the contrast of AO and give it more importance.</p>
 <p>Finally, to further increase the color contrast, we assign a color to the non occluded areas with a Multiply node.</p>
-<h2 id="emission-component-">Emission Component</h2>
+<h2 id="emission-component">Emission Component</h2>
 <p>The emissive contribution is the easiest to take into account as Blender already does all the work for us with the Emissive shader.</p>
 <p>However, it is important to note that when using EEVEE and real-time renderers, you have to enable Bloom to get a greater impact.
 <img src="/Images/NPR/Blender_NPR/Bloom_Panel.PNG" alt="Bloom Panel"></p>
@@ -874,24 +874,24 @@ As you can see, there are also few parameters to tune the Bloom effect. You migh
 <table>
 <thead>
 <tr>
-<th align="center">No Bloom</th>
-<th align="center">Bloom On</th>
+<th style="text-align:center">No Bloom</th>
+<th style="text-align:center">Bloom On</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="/Images/NPR/Blender_NPR/Emission.png" alt="Emission Example"></td>
-<td align="center"><img src="/Images/NPR/Blender_NPR/Emission_Bloom.png" alt="Emission Example"></td>
+<td style="text-align:center"><img src="/Images/NPR/Blender_NPR/Emission.png" alt="Emission Example"></td>
+<td style="text-align:center"><img src="/Images/NPR/Blender_NPR/Emission_Bloom.png" alt="Emission Example"></td>
 </tr>
 </tbody>
 </table>
 <p><img src="/Images/NPR/Blender_NPR/Emission_Group.PNG" alt="Emission Group"></p>
 <p>Currently it is quite costly to handle emissive materials as light sources in a real-time fashion.
 Handling emissive materials like path tracers (Cycles in Blender) might change in the future with real time ray tracing being faster and more optimized.</p>
-<h2 id="rim-light-and-outline-">Rim Light and Outline</h2>
+<h2 id="rim-light-and-outline">Rim Light and Outline</h2>
 <p>Rim lighting and Outline are tools used by artists to better depict the contours and the pose of characters.
 They can also be used to set a specific mood and to enhance the perception of motion.</p>
-<h3 id="extracting-the-contours-">Extracting the contours</h3>
+<h3 id="extracting-the-contours">Extracting the contours</h3>
 <p>There are plenty of techniques to get the contours of a 3D model and draw art lines on top of it. There are pros and cons for each technique, but state-of-the-art methods tend to give a lot of freedom with computational costs that get shorter and shorter.
 
 <a href="https://hal.inria.fr/hal-02189483/document" target="_blank" rel="noopener">Benard et al.</a> made a survey summarizing many existing methods to draw art lines on top of 3D models.</p>
@@ -899,14 +899,14 @@ They can also be used to set a specific mood and to enhance the perception of mo
 <a href="https://www.blendersecrets.org/secrets/inverted-hull-toon-outline-bnpr-blender-tutorial" target="_blank" rel="noopener">inverted hull</a>, at least for the outline.</p>
 <p>The simplest way of getting the contours is to use the dot product between the view direction $ V $ and the normal $ N $.
 Indeed, one way of defining parts of a 3D model that are near the silhouette is to look at where this dot product is near zero, or formulated differently, where the normal of the surface is orthogonal to the view direction.</p>
-<h3 id="outline-">Outline</h3>
+<h3 id="outline">Outline</h3>
 <p>There is an easy way to get this dot product in Blender within one node, namely the Fresnel node.
 It takes into account an index of refraction which is a fundamental parameter to determine the amount of light that goes through the object, which also tells us the amount of light that gets reflected as its complementary.
 This amount of light being reflected is directly linked to the dot product between the view direction $ V $ and  the normal $ N $.
 And so, to get the Outline, we can use the output of the Fresnel node and threshold it with a color ramp like we did for the other components.</p>
 <p><img src="/Images/NPR/Blender_NPR/Outline_Group.PNG" alt="Outline Group">
 <img src="/Images/NPR/Blender_NPR/outline.png" alt="Outline Example"></p>
-<h3 id="rim-light-">Rim light</h3>
+<h3 id="rim-light">Rim light</h3>
 <p>Rim Light is also referred as a backlight that highlights the full silhouette or only one part of it.</p>
 <p>To achieve this effect with 3D geometry, we can also compute the dot product between the normal $ N $ and the camera view $ V $ to get the silhouette and use color ramps to tweak its values.
 This time I intentionally computed the dot product using Vector Math nodes.</p>
@@ -922,13 +922,13 @@ Computing an alignment with a vector is equivalent to compute the dot product be
 </blockquote>
 <p>As a final touch, like precedently, we can use color ramps to sharpen or soften the Rim Light depending on the style you want to convey.
 <img src="/Images/NPR/Blender_NPR/rim_light.png" alt="Rim Light Example"></p>
-<h2 id="sub-surface-scaterring-">Sub-Surface Scaterring</h2>
+<h2 id="sub-surface-scaterring">Sub-Surface Scaterring</h2>
 <p>Sub-Surface Scattering (SSS) is one of the most difficult contributions to handle as it is also a more complex phenomena.
 It corresponds to light rays that completely traverse an opaque medium, like your body, and that reaches your eye. One common example given to behold this phenomena is to place your hand between you and the sun and look at the space between your fingers, you will notice a reddish color at the silhouette of your hand. This is the light going through a thin opaque medium that is your skin.</p>
 <p>Although it is a quite common phenomena, it is also very difficult to achieve in a real-time fashion and for this tutorial we will use the approximation proposed by 
 <a href="https://www.alanzucconi.com/2017/08/30/fast-subsurface-scattering-1/" target="_blank" rel="noopener">Alan Zucconi</a> (based on a GDC talk) to achieve our NPR SSS inside Blender. Note that we will not use the SSS shader provided by Blender as the method proposed by Alan Zucconi offers more expressiveness and  better artistic control.
 We will also extend this approach by adding two additional contributions.</p>
-<h3 id="approximated-sss-">Approximated SSS</h3>
+<h3 id="approximated-sss">Approximated SSS</h3>
 <p>In this section, I will  mostly paraphrase the tutorial of 
 <a href="https://www.alanzucconi.com/2017/08/30/fast-subsurface-scattering-1/" target="_blank" rel="noopener">Alan Zucconi</a>, I will skip few details and explain how to implement it inside Blender.</p>
 <p>Like I mentioned above, SSS is a complex phenomenon where light rays go through the surface and are also deviated from their incoming direction.
@@ -940,14 +940,14 @@ The trick to take into account this phenomena is to create a fictive light contr
 <table>
 <thead>
 <tr>
-<th align="center">SSS Off</th>
-<th align="center">SSS On</th>
+<th style="text-align:center">SSS Off</th>
+<th style="text-align:center">SSS On</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="/Images/NPR/Blender_NPR/SSS_No.png" alt="SSS Fig"></td>
-<td align="center"><img src="/Images/NPR/Blender_NPR/SSS_On.png" alt="SSS On Fig"></td>
+<td style="text-align:center"><img src="/Images/NPR/Blender_NPR/SSS_No.png" alt="SSS Fig"></td>
+<td style="text-align:center"><img src="/Images/NPR/Blender_NPR/SSS_On.png" alt="SSS On Fig"></td>
 </tr>
 </tbody>
 </table>
@@ -978,7 +978,7 @@ Notice that the z coordinate of the input vector is $ -1 $ so that we get $ -L $
 <p>
 <a href="/Images/NPR/Blender_NPR/SSS_Approx.png"><img src="/Images/NPR/Blender_NPR/SSS_Approx.png" alt="SSS Group"></a></p>
 <p><video autoplay loop muted ><source src="/Videos/NPR/Blender_NPR/SSS_Approx.mp4" type="video/mp4"></video></p>
-<h3 id="inverse-diffuse-lighting-">Inverse Diffuse Lighting</h3>
+<h3 id="inverse-diffuse-lighting">Inverse Diffuse Lighting</h3>
 <p>It is possible to go further in the stylization of SSS by adding an additional effect which is much more &ldquo;artistic&rdquo; than the approximation I just described.
 The main idea is to add the complementary of the diffuse component as a contribution in order to make non lighted areas pop out a little bit.
 The contribution is divided into two parts : front inverse diffuse and back inverse diffuse. The first adds the complementary of the incoming light while the later adds the complementary of the light coming from the opposite direction.</p>
@@ -989,11 +989,11 @@ $$ B_{SSS} = 1 - max(-L \cdot N,0)  $$</p>
 <p>$$ F_{SSS} = (1 - max(L \cdot N,0))^p*\alpha_{front} $$
 $$ B_{SSS} = (1 - max(-L \cdot N,0))^p*\alpha_{back}  $$</p>
 <p>And finally, the thickness of the object should also be taken into consideration:</p>
-<p>$$ I_{nverse Diffuse} = ((F_{SSS} + B_{SSS})*S)^{p_i}* (1 - thickness) $$</p>
+<p>$$ I_{nverse Diffuse} = ((F_{SSS} + B_{SSS})<em>S)^{p_i}</em> (1 - thickness) $$</p>
 <p>
 <a href="/Images/NPR/Blender_NPR/SSS_Front_Back.png"><img src="/Images/NPR/Blender_NPR/SSS_Front_Back.png" alt="SSS Group"></a></p>
 <p><video autoplay loop muted ><source src="/Videos/NPR/Blender_NPR/SSS_Inverse_Diffuse.mp4" type="video/mp4"></video></p>
-<h3 id="final-sss-node-group-">Final SSS Node Group</h3>
+<h3 id="final-sss-node-group">Final SSS Node Group</h3>
 <p>The final SSS contribution results in the sum of the approximated SSS and the inverse diffuse contribution.</p>
 <p>$$ SSS = (I_{SSS} + I_{nverse Diffuse})*(1 - metalness) $$</p>
 <p>As metallic materials cannot be translucent, we take into account the metalness of the material with a Multiply node and nullify the contribution of the SSS if the material is a metal.</p>
@@ -1001,7 +1001,7 @@ $$ B_{SSS} = (1 - max(-L \cdot N,0))^p*\alpha_{back}  $$</p>
 <a href="/Images/NPR/Blender_NPR/SSS_All.png"><img src="/Images/NPR/Blender_NPR/SSS_All.png" alt="SSS Group"></a></p>
 <p>Notice that eventually tweak the final result with color ramps to discretize or smooth the contribution.</p>
 <p><video autoplay loop muted ><source src="/Videos/NPR/Blender_NPR/SSS_Example.mp4" type="video/mp4"></video></p>
-<h2 id="blending-components-">Blending Components</h2>
+<h2 id="blending-components">Blending Components</h2>
 <p>Now that we computed all the 7 different contributions, it is time to blend them together.
 Diffuse, Specular and SSS components should be added together.
 However, we first apply the Ambient Occlusion to the Diffuse component in Overlay mode in order to increase the contrast between the non occluded and occluded regions.
@@ -1014,25 +1014,25 @@ We then successively add the SSS and the Specular component with an Add node.</p
 <blockquote>
 <p><strong><em>NOTE:</em></strong> This way of blending contributions together is one of the infinite possibilities you can test. There is no true way to blend these contributions together as we deal with NPR, so tweak these blend modes to your heart content !</p>
 </blockquote>
-<h2 id="limitations-">Limitations</h2>
+<h2 id="limitations">Limitations</h2>
 <p>The main limitation of the shader is that it only supports one light for the main lighting and the SSS as we use drivers. If you want to add more light I recommend that you use point, spot and area lights even though the SSS won&rsquo;t be computed for these additional lights.
 Additionally, Inverse Diffuse Lighting can produce artifacts when it is not properly aligned with the Diffuse contribution, and that is because we compute it as the complementary of a fake Diffuse component.
 This part should be fixed and take into account the output of the true Diffuse component instead.</p>
 <p>There is not too much room for stylizing metallic materials with this shader, it mainly depends on the environment map you use. This aspect can surely be improved a lot.</p>
 <p>Finally, we did not cover the artifacts that are due to the topology of the model that may not be adapted to cartoon/anime style, I&rsquo;ll be definitely working on that part.</p>
-<h2 id="going-further--">Going further ?</h2>
+<h2 id="going-further-">Going further ?</h2>
 <p>From that point, I strongly encourage you to test this shader in more complex scenes like the one below. Do not hesitate to try variations, new ideas often come from testing !</p>
 <table>
 <thead>
 <tr>
-<th align="center">Sakura Tree 1</th>
-<th align="center">Sakura Tree 2</th>
+<th style="text-align:center">Sakura Tree 1</th>
+<th style="text-align:center">Sakura Tree 2</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><video autoplay loop muted controls ><source src="/Videos/NPR/Blender_NPR/Sakura_Tree.mp4" type="video/mp4"></video></td>
-<td align="center"><video autoplay loop muted controls ><source src="/Videos/NPR/Blender_NPR/Sakura_Tree_2.mp4" type="video/mp4"></video></td>
+<td style="text-align:center"><video autoplay loop muted controls ><source src="/Videos/NPR/Blender_NPR/Sakura_Tree.mp4" type="video/mp4"></video></td>
+<td style="text-align:center"><video autoplay loop muted controls ><source src="/Videos/NPR/Blender_NPR/Sakura_Tree_2.mp4" type="video/mp4"></video></td>
 </tr>
 </tbody>
 </table>
@@ -1042,7 +1042,7 @@ This part should be fixed and take into account the output of the true Diffuse c
 <p>You may also go further in shading control and tweak the normals of your model to get rid of unwanted artifacts. Indeed, if you want to go for anime style, unless you adapt the topology of your model to have sharp transitions and add/remove some shadows, you will have to tweak the normals. Inside Blender, you can edit your normals or you can use proxy objects to achieve a more consistent anime look. That is the topic of other tutorials you can find on the Internet but as a good start you can check the 
 <a href="https://www.youtube.com/watch?v=yhGjCzxJV3E" target="_blank" rel="noopener">Guilty Gear GDC conference</a> that gives a good insight on how to achieve anime looking style in 3D.</p>
 <p>There is a lot more to be discovered in that field of course, never stop exploring !</p>
-<h2 id="tutorial-files-">Tutorial Files</h2>
+<h2 id="tutorial-files">Tutorial Files</h2>
 <p>You can find this tutorial NPR material inside this 
 <a href="/Files/shading_npr.blend">blend file</a> as well as the file generating the teaser image 
 <a href="/Files/shading_samples.blend">here</a></p>
@@ -1169,12 +1169,12 @@ This part should be fixed and take into account the output of the true Diffuse c
     <div class="media author-card content-widget-hr">
       
         
-        <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu14fa9686a237893a821adc4e52dd5e2c_152507_270x270_fill_box_center_2.png" alt="">
+        <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu14fa9686a237893a821adc4e52dd5e2c_152507_270x270_fill_box_center_3.png" alt="">
       
 
       <div class="media-body">
         <h5 class="card-title"><a href="http://typhomnt.github.io/"></a></h5>
-        <h6 class="card-subtitle">3D Expert. Computer graphics R&amp;D Freenlance.</h6>
+        <h6 class="card-subtitle">3D Expert </br> Computer Graphics R&amp;D Freelance</h6>
         <p class="card-text">My research interests include character animation and non-photorealistic rendering.</p>
         <ul class="network-icon" aria-hidden="true">
   
@@ -1371,7 +1371,7 @@ This part should be fixed and take into account the output of the true Diffuse c
     
     
     
-    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+    <script src="/js/academic.min.cbb2418f8e248a2e58f5a15a2abbfed0.js"></script>
 
     
 

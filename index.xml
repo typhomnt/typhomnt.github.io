@@ -7,7 +7,7 @@
     <description>Maxime Garcia</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 Feb 2019 16:29:59 +0100</lastBuildDate>
     <image>
-      <url>http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png</url>
+      <url>http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_3.png</url>
       <title>Maxime Garcia</title>
       <link>http://typhomnt.github.io/</link>
     </image>
@@ -23,7 +23,7 @@
 &lt;a href=&#34;https://www.facebook.com/groups/BNPRandFreestyle&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Blender NPR community&lt;/a&gt; and also check out the Lightning Boy Studio 
 &lt;a href=&#34;https://www.youtube.com/channel/UCd9i2MKimSaKezat1xkn8-A&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;youtube channel&lt;/a&gt;, there are many resources for that field.&lt;/p&gt;
 &lt;p&gt;In this article, I am going to describe a simple version of a Blender shader NPR that I built. Of course, I took inspiration from what is available on the Internet and also tried to propose my own vision. It is very far from perfect but I hope it will give you a basic understanding in order to start exploring NPR on your own.&lt;/p&gt;
-&lt;h2 id=&#34;shader-structure-&#34;&gt;Shader Structure&lt;/h2&gt;
+&lt;h2 id=&#34;shader-structure&#34;&gt;Shader Structure&lt;/h2&gt;
 &lt;p&gt;The shader is represented as a node group which itself is divided into several groups that correspond to light contributions.
 More precisely, this NPR shader light contributions are divided into 5 components: Diffuse, Specular, Ambient occlusion, Sub-Surface Scattering (SSS) and Emission.
 Furthermore, I also include Rim light and Outline contributions which are heavily present in NPR shaders.&lt;/p&gt;
@@ -36,14 +36,14 @@ Below, you can notice the difference compared to a more realistic look using the
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;Realistic&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Cartoon&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Realistic&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Cartoon&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Realistic_Animated.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/NPR_Animated.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Realistic_Animated.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/NPR_Animated.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -63,7 +63,7 @@ This is especially useful to improve the perception of characters&amp;rsquo; pos
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; Before going further, it is important to switch the color management to Standard in the Render Properties panel as we want to control our color output precisely &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Color_Managment.PNG&#34; alt=&#34;Color Managment&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;diffuse-component-&#34;&gt;Diffuse Component&lt;/h2&gt;
+&lt;h2 id=&#34;diffuse-component&#34;&gt;Diffuse Component&lt;/h2&gt;
 &lt;p&gt;
 &lt;a href=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Group.PNG&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Group.PNG&#34; alt=&#34;Diffuse Group&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The diffuse component represents the amount of light re-emitted by the surface after receiving incoming light, here coming from lamps. This amount can be obtained using the Diffuse BRDF node which computes a physically based diffusion.&lt;/p&gt;
@@ -79,7 +79,7 @@ And finally, we can get back the color of the surface we actually want (diffuse 
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_1.png&#34; alt=&#34;Diffuse Example&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_1_Mat.png&#34; alt=&#34;Diffuse Example&#34;&gt;&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s a good start, but several questions need to be answered: how do we modify the color ramp to get a stylized result ? What about metallic materials ? How to get back the influence of the incoming light color which is discarded with our current setup ?&lt;/p&gt;
-&lt;h3 id=&#34;playing-with-color-ramps-&#34;&gt;Playing with color ramps&lt;/h3&gt;
+&lt;h3 id=&#34;playing-with-color-ramps&#34;&gt;Playing with color ramps&lt;/h3&gt;
 &lt;p&gt;We were able to get the light contribution of the Diffuse component inside a color ramp, it is now time to play with it in order to stylize this contribution.
 To do it properly, we first need to understand what is happening inside the Diffuse node and think about how we can get closer to a stylized result like we can see in cartoons/anime.&lt;/p&gt;
 &lt;p&gt;To put it simply, the Diffusion or the light re-emitted by the surface of an object hit by light, depends on the surface orientation, referred as the normal $N$, with respect to the incoming direction of the light $L$. If the surface faces the incoming light direction it will re-emit more light. This can be simply modeled using a dot product between L and N of the surface.&lt;/p&gt;
@@ -92,13 +92,13 @@ Usually you get one, two or three grading levels with abrupt changes.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_2.png&#34; alt=&#34;Diffuse Example&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_2_Mat.PNG&#34; alt=&#34;Diffuse Example&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Et voila ! you get a cartoonish/anime shading. You are free to tweak the levels at your own convenience as well as to use a smoother interpolation and even mix the discrete and smooth Diffusion, like I suggest in the final version of the Diffuse shader.&lt;/p&gt;
-&lt;h3 id=&#34;metallic-diffusion--&#34;&gt;Metallic Diffusion ?&lt;/h3&gt;
+&lt;h3 id=&#34;metallic-diffusion-&#34;&gt;Metallic Diffusion ?&lt;/h3&gt;
 &lt;p&gt;As you probably guess there is something to take into account with metallic materials regarding Diffusion.
 Indeed, something to know is that metallic materials do not diffuse light, only absorbing and reflecting it.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s why we took it into consideration by multiplying the result of the diffusion with $ 1 - metalness $.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_3.png&#34; alt=&#34;Diffuse Example&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_3_Mat.PNG&#34; alt=&#34;Diffuse Example&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;light-color-influence-&#34;&gt;Light Color Influence&lt;/h3&gt;
+&lt;h3 id=&#34;light-color-influence&#34;&gt;Light Color Influence&lt;/h3&gt;
 &lt;p&gt;Using our current node configuration, you can notice that changing the light color has no effect on the shading of our objects.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Light_Influence_Objs.PNG&#34; alt=&#34;Light Influence Off&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Light_Influence.PNG&#34; alt=&#34;Light Influence On&#34;&gt;&lt;/p&gt;
@@ -107,14 +107,14 @@ The question is how to get it back ?
 The answer is quite simple. As we already recover the light intensity of our shading (&lt;strong&gt;value&lt;/strong&gt; of the HSV node) we just have to get back the &lt;strong&gt;hue&lt;/strong&gt; and &lt;strong&gt;saturation&lt;/strong&gt; resulting from  a multiplication between the object color and the light color.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Light_Influence_Objs_On.PNG&#34; alt=&#34;Light Influence On&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_Light_Influence_Objs_On_Mat.PNG&#34; alt=&#34;Light Influence On Mat&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;smoothness-and-responsiveness-&#34;&gt;Smoothness and Responsiveness&lt;/h3&gt;
+&lt;h3 id=&#34;smoothness-and-responsiveness&#34;&gt;Smoothness and Responsiveness&lt;/h3&gt;
 &lt;p&gt;It is also possible to give more artistic control to the Diffuse component, and this is something we will also use for the Specular contribution.&lt;/p&gt;
 &lt;p&gt;First, it is very handy to add a smoothness control to your Diffuse shading.
 And this can be done easily by adding a second color ramp with a linear interpolation this time, and blend it with the previous color ramp we built using a Mix Color node and a smoothness parameter.&lt;/p&gt;
 &lt;p&gt;Secondly, it can also be useful to add a control that tweaks the amount of light re-emitted using a Map range node that maps $ [a : b] $ to $ [c : d] $. Here, we use an attenuation parameter that we plug as $b$ so that $ [0:b] $ gets mapped into $ [0:1] $, thus the higher $b$ is the less light will be re-emitted.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_4.png&#34; alt=&#34;Diffuse Example&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Diffuse_4_Mat.PNG&#34; alt=&#34;Diffuse Example&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;specular-component-&#34;&gt;Specular Component&lt;/h2&gt;
+&lt;h2 id=&#34;specular-component&#34;&gt;Specular Component&lt;/h2&gt;
 &lt;p&gt;The Specular component represents the amount of incoming light that is reflected by the object surface.
 One simple way of formulating its contribution is : from the camera point of view, how well does it see the light source reflected on the object ?&lt;/p&gt;
 &lt;p&gt;The simplest model describing this contribution has been introduced by Phong, and simply look at the dot product between the reflected light vector $ R = reflect(L,N) $ and the view vector $ V $.&lt;/p&gt;
@@ -135,18 +135,18 @@ One simple way of formulating its contribution is : from the camera point of vie
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;No Env Map&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Env Map on&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;No Env Map&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Env Map on&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Magnemite_1.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Magnemite_2.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Magnemite_1.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls&gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Magnemite_2.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;ambient-occlusion-&#34;&gt;Ambient Occlusion&lt;/h2&gt;
+&lt;h2 id=&#34;ambient-occlusion&#34;&gt;Ambient Occlusion&lt;/h2&gt;
 &lt;p&gt;Ambient Occlusion (AO) is actually not a light contribution but more like a shadow contribution. It describes the area of the scene where light rays are less likely to hit.
 This is especially the case of corners and creases and it is quite noticeable if you look at your room for instance.&lt;/p&gt;
 &lt;p&gt;Ambient occlusion greatly enhances the realism of real-time renders and is something that artists are aware of when drawing and painting.
@@ -161,7 +161,7 @@ Notice that I limited AO to two levels for the cartoonish/anime shading as it is
 &lt;p&gt;You will also have to adjust the Distance parameter depending on the scale of your model, especially for small and large models. In the first case your model might be fully occluded while in the second case you might not notice any occlusion if you don&amp;rsquo;t tune this parameter carefully.&lt;br&gt;
 I also added a Math power node to tweak the contrast of AO and give it more importance.&lt;/p&gt;
 &lt;p&gt;Finally, to further increase the color contrast, we assign a color to the non occluded areas with a Multiply node.&lt;/p&gt;
-&lt;h2 id=&#34;emission-component-&#34;&gt;Emission Component&lt;/h2&gt;
+&lt;h2 id=&#34;emission-component&#34;&gt;Emission Component&lt;/h2&gt;
 &lt;p&gt;The emissive contribution is the easiest to take into account as Blender already does all the work for us with the Emissive shader.&lt;/p&gt;
 &lt;p&gt;However, it is important to note that when using EEVEE and real-time renderers, you have to enable Bloom to get a greater impact.
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Bloom_Panel.PNG&#34; alt=&#34;Bloom Panel&#34;&gt;&lt;/p&gt;
@@ -172,24 +172,24 @@ As you can see, there are also few parameters to tune the Bloom effect. You migh
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;No Bloom&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Bloom On&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;No Bloom&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Bloom On&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Emission.png&#34; alt=&#34;Emission Example&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Emission_Bloom.png&#34; alt=&#34;Emission Example&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Emission.png&#34; alt=&#34;Emission Example&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Emission_Bloom.png&#34; alt=&#34;Emission Example&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Emission_Group.PNG&#34; alt=&#34;Emission Group&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Currently it is quite costly to handle emissive materials as light sources in a real-time fashion.
 Handling emissive materials like path tracers (Cycles in Blender) might change in the future with real time ray tracing being faster and more optimized.&lt;/p&gt;
-&lt;h2 id=&#34;rim-light-and-outline-&#34;&gt;Rim Light and Outline&lt;/h2&gt;
+&lt;h2 id=&#34;rim-light-and-outline&#34;&gt;Rim Light and Outline&lt;/h2&gt;
 &lt;p&gt;Rim lighting and Outline are tools used by artists to better depict the contours and the pose of characters.
 They can also be used to set a specific mood and to enhance the perception of motion.&lt;/p&gt;
-&lt;h3 id=&#34;extracting-the-contours-&#34;&gt;Extracting the contours&lt;/h3&gt;
+&lt;h3 id=&#34;extracting-the-contours&#34;&gt;Extracting the contours&lt;/h3&gt;
 &lt;p&gt;There are plenty of techniques to get the contours of a 3D model and draw art lines on top of it. There are pros and cons for each technique, but state-of-the-art methods tend to give a lot of freedom with computational costs that get shorter and shorter.
 
 &lt;a href=&#34;https://hal.inria.fr/hal-02189483/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Benard et al.&lt;/a&gt; made a survey summarizing many existing methods to draw art lines on top of 3D models.&lt;/p&gt;
@@ -197,14 +197,14 @@ They can also be used to set a specific mood and to enhance the perception of mo
 &lt;a href=&#34;https://www.blendersecrets.org/secrets/inverted-hull-toon-outline-bnpr-blender-tutorial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;inverted hull&lt;/a&gt;, at least for the outline.&lt;/p&gt;
 &lt;p&gt;The simplest way of getting the contours is to use the dot product between the view direction $ V $ and the normal $ N $.
 Indeed, one way of defining parts of a 3D model that are near the silhouette is to look at where this dot product is near zero, or formulated differently, where the normal of the surface is orthogonal to the view direction.&lt;/p&gt;
-&lt;h3 id=&#34;outline-&#34;&gt;Outline&lt;/h3&gt;
+&lt;h3 id=&#34;outline&#34;&gt;Outline&lt;/h3&gt;
 &lt;p&gt;There is an easy way to get this dot product in Blender within one node, namely the Fresnel node.
 It takes into account an index of refraction which is a fundamental parameter to determine the amount of light that goes through the object, which also tells us the amount of light that gets reflected as its complementary.
 This amount of light being reflected is directly linked to the dot product between the view direction $ V $ and  the normal $ N $.
 And so, to get the Outline, we can use the output of the Fresnel node and threshold it with a color ramp like we did for the other components.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/Outline_Group.PNG&#34; alt=&#34;Outline Group&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/outline.png&#34; alt=&#34;Outline Example&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;rim-light-&#34;&gt;Rim light&lt;/h3&gt;
+&lt;h3 id=&#34;rim-light&#34;&gt;Rim light&lt;/h3&gt;
 &lt;p&gt;Rim Light is also referred as a backlight that highlights the full silhouette or only one part of it.&lt;/p&gt;
 &lt;p&gt;To achieve this effect with 3D geometry, we can also compute the dot product between the normal $ N $ and the camera view $ V $ to get the silhouette and use color ramps to tweak its values.
 This time I intentionally computed the dot product using Vector Math nodes.&lt;/p&gt;
@@ -220,13 +220,13 @@ Computing an alignment with a vector is equivalent to compute the dot product be
 &lt;/blockquote&gt;
 &lt;p&gt;As a final touch, like precedently, we can use color ramps to sharpen or soften the Rim Light depending on the style you want to convey.
 &lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/rim_light.png&#34; alt=&#34;Rim Light Example&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;sub-surface-scaterring-&#34;&gt;Sub-Surface Scaterring&lt;/h2&gt;
+&lt;h2 id=&#34;sub-surface-scaterring&#34;&gt;Sub-Surface Scaterring&lt;/h2&gt;
 &lt;p&gt;Sub-Surface Scattering (SSS) is one of the most difficult contributions to handle as it is also a more complex phenomena.
 It corresponds to light rays that completely traverse an opaque medium, like your body, and that reaches your eye. One common example given to behold this phenomena is to place your hand between you and the sun and look at the space between your fingers, you will notice a reddish color at the silhouette of your hand. This is the light going through a thin opaque medium that is your skin.&lt;/p&gt;
 &lt;p&gt;Although it is a quite common phenomena, it is also very difficult to achieve in a real-time fashion and for this tutorial we will use the approximation proposed by 
 &lt;a href=&#34;https://www.alanzucconi.com/2017/08/30/fast-subsurface-scattering-1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Alan Zucconi&lt;/a&gt; (based on a GDC talk) to achieve our NPR SSS inside Blender. Note that we will not use the SSS shader provided by Blender as the method proposed by Alan Zucconi offers more expressiveness and  better artistic control.
 We will also extend this approach by adding two additional contributions.&lt;/p&gt;
-&lt;h3 id=&#34;approximated-sss-&#34;&gt;Approximated SSS&lt;/h3&gt;
+&lt;h3 id=&#34;approximated-sss&#34;&gt;Approximated SSS&lt;/h3&gt;
 &lt;p&gt;In this section, I will  mostly paraphrase the tutorial of 
 &lt;a href=&#34;https://www.alanzucconi.com/2017/08/30/fast-subsurface-scattering-1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Alan Zucconi&lt;/a&gt;, I will skip few details and explain how to implement it inside Blender.&lt;/p&gt;
 &lt;p&gt;Like I mentioned above, SSS is a complex phenomenon where light rays go through the surface and are also deviated from their incoming direction.
@@ -238,14 +238,14 @@ The trick to take into account this phenomena is to create a fictive light contr
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;SSS Off&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;SSS On&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;SSS Off&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;SSS On&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_No.png&#34; alt=&#34;SSS Fig&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_On.png&#34; alt=&#34;SSS On Fig&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_No.png&#34; alt=&#34;SSS Fig&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_On.png&#34; alt=&#34;SSS On Fig&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -276,7 +276,7 @@ Notice that the z coordinate of the input vector is $ -1 $ so that we get $ -L $
 &lt;p&gt;
 &lt;a href=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_Approx.png&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_Approx.png&#34; alt=&#34;SSS Group&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;video autoplay loop muted &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/SSS_Approx.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;
-&lt;h3 id=&#34;inverse-diffuse-lighting-&#34;&gt;Inverse Diffuse Lighting&lt;/h3&gt;
+&lt;h3 id=&#34;inverse-diffuse-lighting&#34;&gt;Inverse Diffuse Lighting&lt;/h3&gt;
 &lt;p&gt;It is possible to go further in the stylization of SSS by adding an additional effect which is much more &amp;ldquo;artistic&amp;rdquo; than the approximation I just described.
 The main idea is to add the complementary of the diffuse component as a contribution in order to make non lighted areas pop out a little bit.
 The contribution is divided into two parts : front inverse diffuse and back inverse diffuse. The first adds the complementary of the incoming light while the later adds the complementary of the light coming from the opposite direction.&lt;/p&gt;
@@ -287,11 +287,11 @@ $$ B_{SSS} = 1 - max(-L \cdot N,0)  $$&lt;/p&gt;
 &lt;p&gt;$$ F_{SSS} = (1 - max(L \cdot N,0))^p*\alpha_{front} $$
 $$ B_{SSS} = (1 - max(-L \cdot N,0))^p*\alpha_{back}  $$&lt;/p&gt;
 &lt;p&gt;And finally, the thickness of the object should also be taken into consideration:&lt;/p&gt;
-&lt;p&gt;$$ I_{nverse Diffuse} = ((F_{SSS} + B_{SSS})*S)^{p_i}* (1 - thickness) $$&lt;/p&gt;
+&lt;p&gt;$$ I_{nverse Diffuse} = ((F_{SSS} + B_{SSS})&lt;em&gt;S)^{p_i}&lt;/em&gt; (1 - thickness) $$&lt;/p&gt;
 &lt;p&gt;
 &lt;a href=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_Front_Back.png&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_Front_Back.png&#34; alt=&#34;SSS Group&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;video autoplay loop muted &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/SSS_Inverse_Diffuse.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;
-&lt;h3 id=&#34;final-sss-node-group-&#34;&gt;Final SSS Node Group&lt;/h3&gt;
+&lt;h3 id=&#34;final-sss-node-group&#34;&gt;Final SSS Node Group&lt;/h3&gt;
 &lt;p&gt;The final SSS contribution results in the sum of the approximated SSS and the inverse diffuse contribution.&lt;/p&gt;
 &lt;p&gt;$$ SSS = (I_{SSS} + I_{nverse Diffuse})*(1 - metalness) $$&lt;/p&gt;
 &lt;p&gt;As metallic materials cannot be translucent, we take into account the metalness of the material with a Multiply node and nullify the contribution of the SSS if the material is a metal.&lt;/p&gt;
@@ -299,7 +299,7 @@ $$ B_{SSS} = (1 - max(-L \cdot N,0))^p*\alpha_{back}  $$&lt;/p&gt;
 &lt;a href=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_All.png&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/Blender_NPR/SSS_All.png&#34; alt=&#34;SSS Group&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Notice that eventually tweak the final result with color ramps to discretize or smooth the contribution.&lt;/p&gt;
 &lt;p&gt;&lt;video autoplay loop muted &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/SSS_Example.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;
-&lt;h2 id=&#34;blending-components-&#34;&gt;Blending Components&lt;/h2&gt;
+&lt;h2 id=&#34;blending-components&#34;&gt;Blending Components&lt;/h2&gt;
 &lt;p&gt;Now that we computed all the 7 different contributions, it is time to blend them together.
 Diffuse, Specular and SSS components should be added together.
 However, we first apply the Ambient Occlusion to the Diffuse component in Overlay mode in order to increase the contrast between the non occluded and occluded regions.
@@ -312,25 +312,25 @@ We then successively add the SSS and the Specular component with an Add node.&lt
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;NOTE:&lt;/em&gt;&lt;/strong&gt; This way of blending contributions together is one of the infinite possibilities you can test. There is no true way to blend these contributions together as we deal with NPR, so tweak these blend modes to your heart content !&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;limitations-&#34;&gt;Limitations&lt;/h2&gt;
+&lt;h2 id=&#34;limitations&#34;&gt;Limitations&lt;/h2&gt;
 &lt;p&gt;The main limitation of the shader is that it only supports one light for the main lighting and the SSS as we use drivers. If you want to add more light I recommend that you use point, spot and area lights even though the SSS won&amp;rsquo;t be computed for these additional lights.
 Additionally, Inverse Diffuse Lighting can produce artifacts when it is not properly aligned with the Diffuse contribution, and that is because we compute it as the complementary of a fake Diffuse component.
 This part should be fixed and take into account the output of the true Diffuse component instead.&lt;/p&gt;
 &lt;p&gt;There is not too much room for stylizing metallic materials with this shader, it mainly depends on the environment map you use. This aspect can surely be improved a lot.&lt;/p&gt;
 &lt;p&gt;Finally, we did not cover the artifacts that are due to the topology of the model that may not be adapted to cartoon/anime style, I&amp;rsquo;ll be definitely working on that part.&lt;/p&gt;
-&lt;h2 id=&#34;going-further--&#34;&gt;Going further ?&lt;/h2&gt;
+&lt;h2 id=&#34;going-further-&#34;&gt;Going further ?&lt;/h2&gt;
 &lt;p&gt;From that point, I strongly encourage you to test this shader in more complex scenes like the one below. Do not hesitate to try variations, new ideas often come from testing !&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;Sakura Tree 1&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Sakura Tree 2&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Sakura Tree 1&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Sakura Tree 2&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Sakura_Tree.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;video autoplay loop muted controls &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Sakura_Tree_2.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Sakura_Tree.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;video autoplay loop muted controls &gt;&lt;source src=&#34;http://typhomnt.github.io/Videos/NPR/Blender_NPR/Sakura_Tree_2.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -340,7 +340,7 @@ This part should be fixed and take into account the output of the true Diffuse c
 &lt;p&gt;You may also go further in shading control and tweak the normals of your model to get rid of unwanted artifacts. Indeed, if you want to go for anime style, unless you adapt the topology of your model to have sharp transitions and add/remove some shadows, you will have to tweak the normals. Inside Blender, you can edit your normals or you can use proxy objects to achieve a more consistent anime look. That is the topic of other tutorials you can find on the Internet but as a good start you can check the 
 &lt;a href=&#34;https://www.youtube.com/watch?v=yhGjCzxJV3E&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Guilty Gear GDC conference&lt;/a&gt; that gives a good insight on how to achieve anime looking style in 3D.&lt;/p&gt;
 &lt;p&gt;There is a lot more to be discovered in that field of course, never stop exploring !&lt;/p&gt;
-&lt;h2 id=&#34;tutorial-files-&#34;&gt;Tutorial Files&lt;/h2&gt;
+&lt;h2 id=&#34;tutorial-files&#34;&gt;Tutorial Files&lt;/h2&gt;
 &lt;p&gt;You can find this tutorial NPR material inside this 
 &lt;a href=&#34;http://typhomnt.github.io/Files/shading_npr.blend&#34;&gt;blend file&lt;/a&gt; as well as the file generating the teaser image 
 &lt;a href=&#34;http://typhomnt.github.io/Files/shading_samples.blend&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
@@ -353,29 +353,33 @@ This part should be fixed and take into account the output of the true Diffuse c
       <pubDate>Sun, 05 Sep 2021 16:22:09 +0100</pubDate>
       <guid>http://typhomnt.github.io/art/music/</guid>
       <description>&lt;p&gt;Here are some of my piano recordings.&lt;/p&gt;
-&lt;p&gt;Chopin Etude 5 Op 25 &amp;ldquo;Wrong Notes&amp;rdquo; (Recorded in 2015)&lt;/p&gt;
+&lt;p&gt;Chopin - Etude 5 Op 25 &amp;ldquo;Wrong Notes&amp;rdquo; (Recorded in 2015)&lt;/p&gt;
 &lt;audio controls=&#34;controls&#34;&gt;
   &lt;source type=&#34;audio/mp3&#34; src=&#34;http://typhomnt.github.io/Audio/Wrong_Notes_good.mp3&#34;&gt;&lt;/source&gt;
 &lt;/audio&gt;
-&lt;p&gt;To Zanarkand Final Fantasy X (Recorded in 2020)&lt;/p&gt;
+&lt;p&gt;Final Fantasy X - To Zanarkand  (Recorded in 2020)&lt;/p&gt;
 &lt;audio controls=&#34;controls&#34;&gt;
   &lt;source type=&#34;audio/mp3&#34; src=&#34;http://typhomnt.github.io/Audio/zanarkand_final.mp3&#34;&gt;&lt;/source&gt;
 &lt;/audio&gt;
-&lt;p&gt;Grandma Nier (Recorded in 2021)&lt;/p&gt;
+&lt;p&gt;Nier - Grandma  (Recorded in 2021)&lt;/p&gt;
 &lt;audio controls=&#34;controls&#34;&gt;
   &lt;source type=&#34;audio/mp3&#34; src=&#34;http://typhomnt.github.io/Audio/Grandma_clear_ver.mp3&#34;&gt;&lt;/source&gt;
 &lt;/audio&gt;
-&lt;p&gt;Song of The Ancients Nier (Recorded in 2021)&lt;/p&gt;
+&lt;p&gt;Nier - Song of The Ancients (Recorded in 2021)&lt;/p&gt;
 &lt;audio controls=&#34;controls&#34;&gt;
   &lt;source type=&#34;audio/mp3&#34; src=&#34;http://typhomnt.github.io/Audio/Song_Of_The_Ancient.mp3&#34;&gt;&lt;/source&gt;
 &lt;/audio&gt;
-&lt;p&gt;Yonah Nier (Recorded in 2021)&lt;/p&gt;
+&lt;p&gt;Nier - Yonah  (Recorded in 2021)&lt;/p&gt;
 &lt;audio controls=&#34;controls&#34;&gt;
   &lt;source type=&#34;audio/mp3&#34; src=&#34;http://typhomnt.github.io/Audio/Yonah.mp3&#34;&gt;&lt;/source&gt;
 &lt;/audio&gt;
-&lt;p&gt;Emil Nier (Recorded in 2022)&lt;/p&gt;
+&lt;p&gt;Nier - Emil  (Recorded in 2022)&lt;/p&gt;
 &lt;audio controls=&#34;controls&#34;&gt;
   &lt;source type=&#34;audio/mp3&#34; src=&#34;http://typhomnt.github.io/Audio/Emil.mp3&#34;&gt;&lt;/source&gt;
+&lt;/audio&gt;
+&lt;p&gt;Neon Genesis Evangelion - Those women longed for the touch of other&amp;rsquo;s lips and thus invited their kisses (Recorded in 2023)&lt;/p&gt;
+&lt;audio controls=&#34;controls&#34;&gt;
+  &lt;source type=&#34;audio/mp3&#34; src=&#34;http://typhomnt.github.io/Audio/those_women_longed_for_the_touch_of_other_s_lips_and_thus_invited_their_kisses.mp3&#34;&gt;&lt;/source&gt;
 &lt;/audio&gt;
 </description>
     </item>
@@ -387,14 +391,14 @@ This part should be fixed and take into account the output of the true Diffuse c
       <guid>http://typhomnt.github.io/post/post_proc_effects/</guid>
       <description>&lt;p&gt;Here is a compilation of post processing effects implemented inside Skyengine. I implemented some of them inside Unity as well.&lt;/p&gt;
 &lt;p&gt;Gundam model : Gundam GAT 105 modified by Rupen Kanwar on Sketchfab&lt;/p&gt;
-&lt;h3 id=&#34;bloom-&#34;&gt;Bloom&lt;/h3&gt;
+&lt;h3 id=&#34;bloom&#34;&gt;Bloom&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Bloom_Sky_Gundam.PNG&#34; alt=&#34;Bloom&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;outline-&#34;&gt;Outline&lt;/h3&gt;
+&lt;h3 id=&#34;outline&#34;&gt;Outline&lt;/h3&gt;
 &lt;p&gt;Based on a Sobel filter on the Depth and Normals&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Sobel_Sky_Gundam.PNG&#34; alt=&#34;Outline&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;contrast-&#34;&gt;Contrast&lt;/h3&gt;
+&lt;h3 id=&#34;contrast&#34;&gt;Contrast&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Contrast_Sky_Gundam.PNG&#34; alt=&#34;Contast&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;kuwahara-filter-&#34;&gt;Kuwahara Filter&lt;/h3&gt;
+&lt;h3 id=&#34;kuwahara-filter&#34;&gt;Kuwahara Filter&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Post_Proc_Effects/Kuwahara_Sky_Gundam.PNG&#34; alt=&#34;Kuwahara&#34;&gt;&lt;/p&gt;
 </description>
     </item>
@@ -420,7 +424,7 @@ This part should be fixed and take into account the output of the true Diffuse c
       <link>http://typhomnt.github.io/art/3d_art/</link>
       <pubDate>Wed, 30 Sep 2020 16:22:09 +0100</pubDate>
       <guid>http://typhomnt.github.io/art/3d_art/</guid>
-      <description>&lt;h3 id=&#34;sketchfab-models-&#34;&gt;Sketchfab Models&lt;/h3&gt;
+      <description>&lt;h3 id=&#34;sketchfab-models&#34;&gt;Sketchfab Models&lt;/h3&gt;
 &lt;div class=&#34;block_container&#34;&gt;
 &lt;div class=&#34;sketchfab-embed-wrapper&#34;&gt; &lt;iframe title=&#34;Splatoon Squid Form&#34; frameborder=&#34;0&#34; allowfullscreen mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34; allow=&#34;autoplay; fullscreen; xr-spatial-tracking&#34; xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width=&#34;320&#34; height=&#34;240&#34; src=&#34;https://sketchfab.com/models/2c9bdb36324f4c85a24f8df5076400b0/embed&#34;&gt; &lt;/iframe&gt; &lt;p style=&#34;font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;&#34;&gt; &lt;a href=&#34;https://sketchfab.com/3d-models/splatoon-squid-form-2c9bdb36324f4c85a24f8df5076400b0?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=2c9bdb36324f4c85a24f8df5076400b0&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt; Splatoon Squid Form &lt;/a&gt; by &lt;a href=&#34;https://sketchfab.com/typhomnt?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=2c9bdb36324f4c85a24f8df5076400b0&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt; typhomnt &lt;/a&gt; on &lt;a href=&#34;https://sketchfab.com?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=2c9bdb36324f4c85a24f8df5076400b0&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt;Sketchfab&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&#34;sketchfab-embed-wrapper&#34;&gt; &lt;iframe title=&#34;Monster Hunter Great Sword&#34; frameborder=&#34;0&#34; allowfullscreen mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34; allow=&#34;autoplay; fullscreen; xr-spatial-tracking&#34; xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width=&#34;320&#34; height=&#34;240&#34; src=&#34;https://sketchfab.com/models/e7393eb02a1b40e8b11e2cfcd09281f9/embed&#34;&gt; &lt;/iframe&gt; &lt;p style=&#34;font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;&#34;&gt; &lt;a href=&#34;https://sketchfab.com/3d-models/monster-hunter-great-sword-e7393eb02a1b40e8b11e2cfcd09281f9?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=e7393eb02a1b40e8b11e2cfcd09281f9&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt; Monster Hunter Great Sword &lt;/a&gt; by &lt;a href=&#34;https://sketchfab.com/typhomnt?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=e7393eb02a1b40e8b11e2cfcd09281f9&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt; typhomnt &lt;/a&gt; on &lt;a href=&#34;https://sketchfab.com?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=e7393eb02a1b40e8b11e2cfcd09281f9&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt;Sketchfab&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
@@ -443,7 +447,7 @@ This part should be fixed and take into account the output of the true Diffuse c
 &lt;div class=&#34;sketchfab-embed-wrapper&#34;&gt; &lt;iframe title=&#34;Soul Calibur Fan Art First Attempt&#34; frameborder=&#34;0&#34; allowfullscreen mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34; allow=&#34;autoplay; fullscreen; xr-spatial-tracking&#34; xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width=&#34;320&#34; height=&#34;240&#34; src=&#34;https://sketchfab.com/models/df663648a1cc41928ba21dc09f7b4dba/embed&#34;&gt; &lt;/iframe&gt; &lt;p style=&#34;font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;&#34;&gt; &lt;a href=&#34;https://sketchfab.com/3d-models/soul-calibur-fan-art-first-attempt-df663648a1cc41928ba21dc09f7b4dba?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=df663648a1cc41928ba21dc09f7b4dba&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt; Soul Calibur Fan Art First Attempt &lt;/a&gt; by &lt;a href=&#34;https://sketchfab.com/typhomnt?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=df663648a1cc41928ba21dc09f7b4dba&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt; typhomnt &lt;/a&gt; on &lt;a href=&#34;https://sketchfab.com?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=df663648a1cc41928ba21dc09f7b4dba&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt;Sketchfab&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&#34;sketchfab-embed-wrapper&#34;&gt; &lt;iframe title=&#34;Excalibur Sword&#34; frameborder=&#34;0&#34; allowfullscreen mozallowfullscreen=&#34;true&#34; webkitallowfullscreen=&#34;true&#34; allow=&#34;autoplay; fullscreen; xr-spatial-tracking&#34; xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width=&#34;320&#34; height=&#34;240&#34; src=&#34;https://sketchfab.com/models/02bce8f203074d1fb5eb465ca8b1b1e2/embed&#34;&gt; &lt;/iframe&gt; &lt;p style=&#34;font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;&#34;&gt; &lt;a href=&#34;https://sketchfab.com/3d-models/excalibur-sword-02bce8f203074d1fb5eb465ca8b1b1e2?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=02bce8f203074d1fb5eb465ca8b1b1e2&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt; Excalibur Sword &lt;/a&gt; by &lt;a href=&#34;https://sketchfab.com/typhomnt?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=02bce8f203074d1fb5eb465ca8b1b1e2&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt; typhomnt &lt;/a&gt; on &lt;a href=&#34;https://sketchfab.com?utm_medium=embed&amp;utm_campaign=share-popup&amp;utm_content=02bce8f203074d1fb5eb465ca8b1b1e2&#34; target=&#34;_blank&#34; style=&#34;font-weight: bold; color: #1CAAD9;&#34;&gt;Sketchfab&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;3d-challenges-&#34;&gt;3D Challenges&lt;/h3&gt;
+&lt;h3 id=&#34;3d-challenges&#34;&gt;3D Challenges&lt;/h3&gt;
 &lt;p&gt;3D Projects made for 3DC challenges (quick challenges) on the 3DFR Discord Server.
 
 
@@ -473,7 +477,7 @@ This part should be fixed and take into account the output of the true Diffuse c
       
     
   &lt;a data-fancybox=&#34;gallery-3DC_Images&#34; href=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/3DC_Can.png&#34; data-caption=&#34;Can with procedural textures&#34;&gt;
-  &lt;img data-src=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/3DC_Can_hufbc3b231a6e228efd72eb7d59fa8c922_2578240_0x190_resize_box_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;338&#34; height=&#34;190&#34;&gt;
+  &lt;img data-src=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/3DC_Can_hufbc3b231a6e228efd72eb7d59fa8c922_2578240_0x190_resize_box_3.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;338&#34; height=&#34;190&#34;&gt;
   &lt;/a&gt;
   
     
@@ -484,7 +488,7 @@ This part should be fixed and take into account the output of the true Diffuse c
       
     
   &lt;a data-fancybox=&#34;gallery-3DC_Images&#34; href=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/Crystal_Table.png&#34; &gt;
-  &lt;img data-src=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/Crystal_Table_hu4521d10d33b83edcf467a9c48d43873e_2842001_0x190_resize_box_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;338&#34; height=&#34;190&#34;&gt;
+  &lt;img data-src=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/Crystal_Table_hu4521d10d33b83edcf467a9c48d43873e_2842001_0x190_resize_box_3.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;338&#34; height=&#34;190&#34;&gt;
   &lt;/a&gt;
   
     
@@ -495,7 +499,7 @@ This part should be fixed and take into account the output of the true Diffuse c
       
     
   &lt;a data-fancybox=&#34;gallery-3DC_Images&#34; href=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/Sky_Lantern.png&#34; &gt;
-  &lt;img data-src=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/Sky_Lantern_hue90aa73afc960b83ee08100c5c4c19a4_2859613_0x190_resize_box_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;338&#34; height=&#34;190&#34;&gt;
+  &lt;img data-src=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/Sky_Lantern_hue90aa73afc960b83ee08100c5c4c19a4_2859613_0x190_resize_box_3.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;338&#34; height=&#34;190&#34;&gt;
   &lt;/a&gt;
   
     
@@ -506,7 +510,7 @@ This part should be fixed and take into account the output of the true Diffuse c
       
     
   &lt;a data-fancybox=&#34;gallery-3DC_Images&#34; href=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/Throne_Nier.png&#34; &gt;
-  &lt;img data-src=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/Throne_Nier_hu077fe2a572b0279ccb7185de22ffd95e_2184552_0x190_resize_box_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;338&#34; height=&#34;190&#34;&gt;
+  &lt;img data-src=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/Throne_Nier_hu077fe2a572b0279ccb7185de22ffd95e_2184552_0x190_resize_box_3.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;338&#34; height=&#34;190&#34;&gt;
   &lt;/a&gt;
   
     
@@ -517,7 +521,7 @@ This part should be fixed and take into account the output of the true Diffuse c
       
     
   &lt;a data-fancybox=&#34;gallery-3DC_Images&#34; href=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/torii_test.png&#34; &gt;
-  &lt;img data-src=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/torii_test_hu509ed74a72079062670ef1d3bb70ccac_2139358_0x190_resize_box_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;338&#34; height=&#34;190&#34;&gt;
+  &lt;img data-src=&#34;http://typhomnt.github.io/art/3d_art/3DC_Images/torii_test_hu509ed74a72079062670ef1d3bb70ccac_2139358_0x190_resize_box_3.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;338&#34; height=&#34;190&#34;&gt;
   &lt;/a&gt;
   
 
@@ -526,19 +530,19 @@ This part should be fixed and take into account the output of the true Diffuse c
 &lt;video controls muted playsinline&gt;
 	&lt;source src=&#34;http://typhomnt.github.io/Videos/Art/3DC/Sakura_Tree.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;
-&lt;h3 id=&#34;galactik-football-project-&#34;&gt;Galactik Football Project&lt;/h3&gt;
+&lt;h3 id=&#34;galactik-football-project&#34;&gt;Galactik Football Project&lt;/h3&gt;
 &lt;p&gt;Work in progress project where I try to recreate characters and animations from the french cartoon Galactik Football,&lt;/p&gt;
-&lt;h4 id=&#34;tia-&#34;&gt;Tia&lt;/h4&gt;
+&lt;h4 id=&#34;tia&#34;&gt;Tia&lt;/h4&gt;
 &lt;video controls playsinline&gt;
 	&lt;source src=&#34;http://typhomnt.github.io/Videos/Art/Galactik_Football/Breath_Shoot_Montage_V4.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;
-&lt;h4 id=&#34;genesis-stadium-&#34;&gt;Genesis Stadium&lt;/h4&gt;
+&lt;h4 id=&#34;genesis-stadium&#34;&gt;Genesis Stadium&lt;/h4&gt;
 &lt;video controls muted playsinline&gt;
 	&lt;source src=&#34;http://typhomnt.github.io/Videos/Art/Galactik_Football/Genese_V03.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;
-&lt;h3 id=&#34;office-project-&#34;&gt;Office Project&lt;/h3&gt;
+&lt;h3 id=&#34;office-project&#34;&gt;Office Project&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Art/PhD_Office/Step_11.png&#34; alt=&#34;Office&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;anima-podi-&#34;&gt;Anima Podi&lt;/h3&gt;
+&lt;h3 id=&#34;anima-podi&#34;&gt;Anima Podi&lt;/h3&gt;
 &lt;p&gt;Animation made during the MOOC Anima Podi (Gobelins school)&lt;/p&gt;
 &lt;video controls muted playsinline&gt;
 	&lt;source src=&#34;http://typhomnt.github.io/Videos/Art/Anima_Podi/Ball_Parkour_F.mp4&#34; type=&#34;video/mp4&#34;&gt;
@@ -720,7 +724,7 @@ $$&lt;/p&gt;
 It is easy to identify the weaknesses of such an approach, it is limited to few actions and above all it is not really accurate, tweaking and thresholding is often needed for identifying singular points.
 During my thesis I took inspiration from the paper untitled Motion Doodle where the authors were using 2D curves to created animation sequences . More particulary a given input curve, it was segmented into horizontal, vertical and oblic bins and animation were defined as a regular expression of curve bins. 
 At that moment, I took a step back and told myself that they were creating a kind of motion language characterizing the curve by its different direction changes.) --&gt;
-&lt;h3 id=&#34;space-time-doodle-transfer-examples--&#34;&gt;Space Time Doodle Transfer examples &lt;/h3&gt;
+&lt;h3 id=&#34;space-time-doodle-transfer-examples&#34;&gt;Space Time Doodle Transfer examples &lt;/h3&gt;
 &lt;p&gt;Below, I show transfered space-time doodles into animation sequences. It is important to note that all actions were learnt for the two first examples as well as for the garden example.&lt;/p&gt;
 &lt;video autoplay loop muted playsinline&gt;
 	&lt;source src=&#34;http://typhomnt.github.io/Videos/Animation/Animation_Transfer/PhD_Baseline.mp4&#34; type=&#34;video/mp4&#34;&gt;
@@ -747,7 +751,7 @@ At that moment, I took a step back and told myself that they were creating a kin
 The main idea is to create a animable mesh from a skeleton whose joints are represented by spheres with variable radius defining the distance from the mesh vertices.
 This mesh generation algorithm is decomposed into 3 steps: First a simple init mesh is computed connecting each joint with successive quad extrusion and convex hull computation for T-junctions.
 The resulting mesh is then refined through an iterative process, alternating subdivisions and evolutions. Finally, an edge fairing optimazation is performed whose puporse is to prevent quad deformation as much as possible without changing the geometry.&lt;/p&gt;
-&lt;h3 id=&#34;bmesh-evolution-example--&#34;&gt;BMesh Evolution example &lt;/h3&gt;
+&lt;h3 id=&#34;bmesh-evolution-example&#34;&gt;BMesh Evolution example &lt;/h3&gt;
 &lt;video autoplay loop muted playsinline&gt;
 	&lt;source src=&#34;http://typhomnt.github.io/Videos/BMesh/B_Mesh_0.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;
@@ -771,7 +775,7 @@ The source code is avaible
 &lt;a href=&#34;http://jcgt.org/published/0004/04/03/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.
 For windows users, we created an archive containing an executable that you can use right out of the box.&lt;/p&gt;
 &lt;p&gt;This post is divided into three parts. First, I will describe the main principle behing our technique, then I will explain how to compile and use the application, then I will detail it works in the code.&lt;/p&gt;
-&lt;h3 id=&#34;main-principle-&#34;&gt;Main principle&lt;/h3&gt;
+&lt;h3 id=&#34;main-principle&#34;&gt;Main principle&lt;/h3&gt;
 &lt;p&gt;In the ocean of NPR techniques, we can distinguish two different families when it come to stylizing color regions: texture-based and mark-based approaches.
 The first embeds marks in an image which is then mapped or pached either onto the 3D scene or over the entire screen. Here are some reference of previous research works falling into that category.
 More concretly, this kind of technique is quite common when using 3D software like Maya or Blender.
@@ -779,7 +783,7 @@ The later consists in attaching 2D or 3D marks (brush strokes) to anchor points 
 &lt;p&gt;Our method belongs to the familly of mark-based methods but borrows ideas from texture-based methods.
 Moreover, it consists in dynamically generating a motion-coherent 3D anchor point distribution that are drawn as billboard brush strokes.
 In order to ensure temporal continuity as well as motion coherence at the compositing stage, the anchor point generation is based on implicit Voronoi noise generated from G-Buffers. This allows our technique to operate  regardless of the geometric representation or animation technique.&lt;/p&gt;
-&lt;h4 id=&#34;anchor-point-generation-&#34;&gt;Anchor Point Generation&lt;/h4&gt;
+&lt;h4 id=&#34;anchor-point-generation&#34;&gt;Anchor Point Generation&lt;/h4&gt;
 &lt;p&gt;Our anchor point generation algorithm is two folds: a first process generates anchor points around the objects based on a 3D Worley noise which takes 3D positions stored in the G-Buffers as input. Then, we group together all pixels that generated the same anchor point and compute its final position in screen-space as the average of the screen-space position of these pixels. To ensure a quasi constant density of the points, especially when zooming in or out, we introduce a fractalization process which generate several layers of points. Moreover, at each pixel of the position G-Buffer, we generate several points using the same process as earlier but with a different frequency for each layer. For each layer its sampling frequency is related to the gradient of the position at the considered pixel such that when the gradient is low, meaning that the surface is flat, we increase the sampling frequency and increase it other wise. The intuition behind this process is to sample more points when the surface is flat because at a given frequency of the Worley noise, more points are generated when the position varies, the surface of the object intersecting more virtual 3D cells than when it is flat.&lt;/p&gt;
 &lt;p&gt;Let me show you the difference of our anchor point genereation process with and without the fractalization :&lt;/p&gt;
 &lt;p&gt;&lt;video autoplay loop muted playsinline&gt;]
@@ -788,10 +792,10 @@ In order to ensure temporal continuity as well as motion coherence at the compos
 &lt;p&gt;&lt;video autoplay loop muted playsinline&gt;]
 &lt;source src=&#34;http://typhomnt.github.io/Videos/SplatNPR/Splat_Generation_Animation_Sub.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;&lt;/p&gt;
-&lt;h4 id=&#34;improve-temporal-continuity-&#34;&gt;Improve Temporal Continuity&lt;/h4&gt;
+&lt;h4 id=&#34;improve-temporal-continuity&#34;&gt;Improve Temporal Continuity&lt;/h4&gt;
 &lt;p&gt;Until this stage we focused&lt;/p&gt;
-&lt;h3 id=&#34;use-the-application-&#34;&gt;Use the application&lt;/h3&gt;
-&lt;h3 id=&#34;understanding-the-code-&#34;&gt;Understanding the code&lt;/h3&gt;
+&lt;h3 id=&#34;use-the-application&#34;&gt;Use the application&lt;/h3&gt;
+&lt;h3 id=&#34;understanding-the-code&#34;&gt;Understanding the code&lt;/h3&gt;
 </description>
     </item>
     
@@ -803,7 +807,7 @@ In order to ensure temporal continuity as well as motion coherence at the compos
       <description>&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/splat_teaser.jpg&#34; alt=&#34;Teaser&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Comptuer Graphics Forum, Eurographics 2021. Article available 
 &lt;a href=&#34;https://hal.inria.fr/hal-03143244&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;authors-&#34;&gt;Authors&lt;/h2&gt;
+&lt;h2 id=&#34;authors&#34;&gt;Authors&lt;/h2&gt;
 &lt;p&gt;Maxime Garcia
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
 &lt;p&gt;Romain Vergne
@@ -816,19 +820,19 @@ In order to ensure temporal continuity as well as motion coherence at the compos
 (Laboratoire Cogitamus)&lt;/p&gt;
 &lt;p&gt;Joelle Thollot
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
-&lt;h3 id=&#34;abstract-&#34;&gt;Abstract&lt;/h3&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
 &lt;p&gt;We present a novel temporally coherent stylized rendering technique working entirely at the compositing stage. We first generate a distribution of 3D anchor points using an implicit grid based on the local object positions stored in a G-buffer, hence following object motion. We then draw splats in screen space anchored to these points so as to be motion coherent. To increase the perceived flatness of the style, we adjust the anchor points density using a fractalization mechanism. Sudden changes are prevented by controlling the anchor points opacity and introducing a new order-independent blending function. We demonstrate the versatility of our method by showing a large variety of styles thanks to the freedom offered by the splats content and their attributes that can be controlled by any G-buffer.&lt;/p&gt;
-&lt;h4 id=&#34;eurographics-fast-forward-&#34;&gt;Eurographics Fast Forward&lt;/h4&gt;
+&lt;h4 id=&#34;eurographics-fast-forward&#34;&gt;Eurographics Fast Forward&lt;/h4&gt;
 &lt;video controls playsinline&gt;
 	&lt;source src=&#34;http://typhomnt.github.io/Videos/SplatNPR/FF_Version_2.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;
 &lt;p&gt;Watch it in full screen for a better experience.&lt;/p&gt;
 &lt;p&gt;Models: Female Orca by neurodolphin and Shiny Fish by GenEugen on Sketchfab.&lt;/p&gt;
-&lt;h4 id=&#34;main-video-&#34;&gt;Main Video&lt;/h4&gt;
+&lt;h4 id=&#34;main-video&#34;&gt;Main Video&lt;/h4&gt;
 &lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/466IoPKs0p0&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
-&lt;h4 id=&#34;supplementals-&#34;&gt;Supplementals&lt;/h4&gt;
+&lt;h4 id=&#34;supplementals&#34;&gt;Supplementals&lt;/h4&gt;
 &lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/sxU_ZEjwwjI&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
-&lt;h4 id=&#34;app-and-turorial-&#34;&gt;App and Turorial&lt;/h4&gt;
+&lt;h4 id=&#34;app-and-turorial&#34;&gt;App and Turorial&lt;/h4&gt;
 &lt;p&gt;Available soon !&lt;/p&gt;
 </description>
     </item>
@@ -857,8 +861,8 @@ In order to ensure temporal continuity as well as motion coherence at the compos
       <description>&lt;p&gt;One important aspect of my thesis work is adding expressivity to an input &amp;ldquo;neutral&amp;rdquo; animation. In our work, we decided to take the Laban Effort space as the main representation of the expressivity.
 This 4D space is divided into Space, Time, Weight and Flow axis. The Space axis describes how direct or indirect a movment is, Time describes if a movment is rather sudden or sustained while Weight differenciate Light from Strong motions. Finally Flow describes if a motion sequence is free or bound. In this article, I will only present how to transfer Time and Weight to a neutral animation.
 To do so, I will first introduce three animation operators: scaling, retiming and shaping operators.&lt;/p&gt;
-&lt;h3 id=&#34;scaling-&#34;&gt;Scaling&lt;/h3&gt;
-&lt;h3 id=&#34;efforts-comparison--&#34;&gt;Efforts Comparison &lt;/h3&gt;
+&lt;h3 id=&#34;scaling&#34;&gt;Scaling&lt;/h3&gt;
+&lt;h3 id=&#34;efforts-comparison&#34;&gt;Efforts Comparison &lt;/h3&gt;
 &lt;p&gt;Finally, I show below the comparison of the 4 efforts for several animations of the Mixamo database
 &lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/kick_laban.gif&#34; alt=&#34;Kick Laban&#34;&gt;
 &lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Transfer/punch_laban.gif&#34; alt=&#34;Punch Laban&#34;&gt;
@@ -927,14 +931,14 @@ I would like to thank Romain Vergne for his course slides and the two first prac
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       <guid>http://typhomnt.github.io/research/recognition_laban_hand/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Classification/effort_cube.jpg&#34; alt=&#34;Teaser&#34;&gt;&lt;/p&gt;
-&lt;p&gt;MOCO&amp;rsquo;20 - 7th International Conference on Movement and Computing, Jul 2020, Jersey City/ Virtual, United States. Article available 
+&lt;p&gt;MOCO&#39;20 - 7th International Conference on Movement and Computing, Jul 2020, Jersey City/ Virtual, United States. Article available 
 &lt;a href=&#34;https://hal.inria.fr/hal-02899999&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;authors-&#34;&gt;Authors&lt;/h2&gt;
+&lt;h2 id=&#34;authors&#34;&gt;Authors&lt;/h2&gt;
 &lt;p&gt;Maxime Garcia
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
 &lt;p&gt;Remi Ronfard
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
-&lt;h3 id=&#34;abstract-&#34;&gt;Abstract&lt;/h3&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
 &lt;p&gt;In this paper, we conduct a study for recognizing motion qualities in hand gestures using virtual reality trackers attached to the hand. From this 6D signal, we extract Euclidean, equi-affine and moving frame features and compare their effectiveness in the task of recognizing Laban Effort qualities. Our experimental results reveal that equi-affine features are highly discriminant features for this task. We also compare two classification methods on this task. In the first method, we trained separate HMM models for the 6 Laban Effort qualities (light, strong, sudden, sustained, direct, indirect). In the second method, we trained separate HMM models for the 8 Laban motion verbs (dab, glide, float, flick, thrust, press, wring, slash) and combined them to recognize individual qualities. In our experiments, the second method gives improved results. Together, those findings suggest that low-dimensional signals from VR trackers can be used to predict motion qualities with reasonable precision.&lt;/p&gt;
 </description>
     </item>
@@ -957,14 +961,14 @@ I would like to thank Romain Vergne for his course slides and the two first prac
       <description>&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/SMD_Teaser.png&#34; alt=&#34;Teaser&#34;&gt;&lt;/p&gt;
 &lt;p&gt;ACM Motion, Interaction and Games 2019 (MIG &amp;lsquo;19). Article available 
 &lt;a href=&#34;https://hal.archives-ouvertes.fr/hal-02303803/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;authors-&#34;&gt;Authors&lt;/h2&gt;
+&lt;h2 id=&#34;authors&#34;&gt;Authors&lt;/h2&gt;
 &lt;p&gt;Maxime Garcia
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
 &lt;p&gt;Remi Ronfard
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
 &lt;p&gt;Marie-Paule Cani
 (Ecole Polythecnique / LIX)&lt;/p&gt;
-&lt;h3 id=&#34;abstract-&#34;&gt;Abstract&lt;/h3&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
 &lt;p&gt;We present a method for easily drafting expressive character animation by playing with instrumented rigid objects. We parse the input 6D trajectories (position and orientation over time) – called spatial motion doodles – into sequences of actions and convert them into detailed character animations using a dataset of parameterized motion clips which are automatically fitted to the doodles in terms of global trajectory and timing. Moreover, we capture the expressiveness of user-manipulation by analyzing Laban effort qualities in the input spatial motion doodles and transferring them to the synthetic motions we generate. We validate the ease of use of our system and the expressiveness of the resulting animations through a series of user studies, showing the interest of our approach for interactive digital storytelling applications dedicated to children and non-expert users, as well as for providing fast drafting tools for animators.&lt;/p&gt;
 &lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/0xG2dlGg_9M&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
 &lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/5BDqJQ6XK_k&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
@@ -979,7 +983,7 @@ I would like to thank Romain Vergne for his course slides and the two first prac
       <description>&lt;p&gt;This tutorial is inspired from 
 &lt;a href=&#34;https://learnopengl.com/PBR/Theory&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://learnopengl.com/PBR/Theory&lt;/a&gt; and adapted for the ray-tracing course available 
 &lt;a href=&#34;../raytracing_practs&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;introduction-&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;A big challenge in computer graphics is to design shading models mimicking real-life lighting behaviour while allowing intuitive control of object materials. This control is crucial for artists who are creating assets that have to be integrated in a rendering pipeline. For real-time applications like video games, the question of computation time and memory cost is also essential; such models must be flexible enough and allow affordable approximations.&lt;/p&gt;
 &lt;p&gt;In this tutorial, we are interested in Physically Based Rendering (PBR) models which aim at simulating light behaviour in a more realistic way, approximating light related equations (models like the Phong model are very simplistic in comparison).
 One important aspect of those models is their energy conservative property stating that when interacting with a surface, the amount of outgoing light is equal to the amount of incoming light. More precisely, the amount of light absorbed, scattered and diffused by object surfaces is equal to the amount of light hitting the surface. The figure below illustrates these phenomena.&lt;/p&gt;
@@ -1014,7 +1018,7 @@ One important aspect of those models is their energy conservative property stati
 &lt;/figure&gt;
 
 &lt;!-- &lt;p align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/LightInteraction.png&#34; alt=&#34;LightInteract&#34; style=&#34;width:700px;&#34;/&gt;&lt;/p&gt; --&gt;
-&lt;h2 id=&#34;surface-representation-micro-facet-model-&#34;&gt;Surface Representation: Micro-Facet model&lt;/h2&gt;
+&lt;h2 id=&#34;surface-representation-micro-facet-model&#34;&gt;Surface Representation: Micro-Facet model&lt;/h2&gt;
 &lt;p&gt;Simulating this behaviour is highly correlated with how we represent object surfaces. Indeed, light interaction with object surfaces is modeled by the Snell-Descartes law which describes how incident light gets refracted and reflected on a flat surface.&lt;/p&gt;
 
 
@@ -1051,13 +1055,13 @@ One important aspect of those models is their energy conservative property stati
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;Rough Surface&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Smooth Surface&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Rough Surface&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Smooth Surface&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
 
 
 
@@ -1093,7 +1097,7 @@ One important aspect of those models is their energy conservative property stati
 
 &lt;/figure&gt;
 &lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
 
 
 
@@ -1136,18 +1140,18 @@ One important aspect of those models is their energy conservative property stati
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;Rough Surface&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Smooth Surface&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Rough Surface&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Smooth Surface&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/roughsurface.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/smoothsurface.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/roughsurface.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/smoothsurface.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;light-equation-&#34;&gt;Light Equation&lt;/h2&gt;
+&lt;h2 id=&#34;light-equation&#34;&gt;Light Equation&lt;/h2&gt;
 &lt;p&gt;Having stated all this principles, our main goal remains unchanged, compute the color received by the eye (camera) for each pixel of the output image displayed on our screen. More specifically, we are interested in the color and intensity of light that either gets directly reflected from the surface to the eye or that gets refracted and then re-emitted by the object through diffusion (considering that all the light that gets absorbed is lost). On the other hand, in this tutorial we neglect the effect of scattering which gives more realistic results (especially useful when rendering skin) but is more costly to compute.&lt;/p&gt;
 
 
@@ -1219,7 +1223,7 @@ One important aspect of those models is their energy conservative property stati
 &lt;p&gt;The incoming reflectance $L_i(p,p-c_l)$ equals to the intensity of the light source $I$, multiplied by its color $C$, and weighted by an attenuation factor which depends on the distance to the source.
 In our case, we will consider that the intensity of light decrease with the square distance to the source:&lt;/p&gt;
 &lt;p&gt;$$L_i(p,p-c_l) = \frac{IC}{{\left\lVert p - c_l\right\rVert}^2} $$&lt;/p&gt;
-&lt;h2 id=&#34;the-bidirectional-reflective-distribution-function-brdf-&#34;&gt;The Bidirectional Reflective Distribution Function (BRDF)&lt;/h2&gt;
+&lt;h2 id=&#34;the-bidirectional-reflective-distribution-function-brdf&#34;&gt;The Bidirectional Reflective Distribution Function (BRDF)&lt;/h2&gt;
 &lt;p&gt;The only unknown left is the $f_r$ function that controls the amount of reflected light with respect to materials properties. This function is called a BRDF which stands for Bidirectional Reflective Distribution Function. Several functions were proposed to simulate real-life materials behavior, all of them respect the energy conservation law, meaning that the amount of outgoing light do not exceed the amount of incoming light and above all the later is divided between reflected and refracted light. Another important property of the BRDF functions is that there are intresectly symmetric with respect to incoming and outgoing light because of the principle of reversibility of light.
 In our case, we will use the Cook-Torrance BRDF model composed of a diffuse and a specular part:&lt;/p&gt;
 &lt;p&gt;$$f_r = k_d f_l + k_s f_c$$&lt;/p&gt;
@@ -1420,14 +1424,14 @@ D represent the amount of microfacet that are aligned with the half vector $h$. 
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;Shadowing&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Masking&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Shadowing&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Masking&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/shadowing.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/masking.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/shadowing.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/masking.png&#34; alt=&#34;&#34;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1474,7 +1478,7 @@ D represent the amount of microfacet that are aligned with the half vector $h$. 
 
 &lt;!--  &lt;div style=&#34;width:image width px; font-size:100%; text-align:center;&#34;&gt;&lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/Geometry_Vis.png&#34; alt=&#34;GeometryEg&#34; style=&#34;width:700px;&#34;/&gt;&lt;/p&gt;Geometry function computed on our test scene (left: rough surface. right: smooth surface).&lt;/div&gt; --&gt;
 &lt;p&gt;In this tutorial we made choices for approximation functions but several others can be found in the literature (see &lt;strong&gt;References&lt;/strong&gt; at the bottom of the page), I invite you to take a look at BRDF comparison articles.&lt;/p&gt;
-&lt;h2 id=&#34;coding-time-&#34;&gt;Coding Time&lt;/h2&gt;
+&lt;h2 id=&#34;coding-time&#34;&gt;Coding Time&lt;/h2&gt;
 &lt;p&gt;We are now ready to dive into the code. The base code can be found 
 &lt;a href=&#34;http://typhomnt.github.io/Files/MSIAM_Code.zip&#34;&gt;here&lt;/a&gt;.
 First, lets go back to our main function. We are working inside a fragment shader displaying a simple quad perfectly fitting our window. For each pixel we cast rays from a virtual camera to the current pixel whose screen coordinates are given by the in variable $fragCoord$.&lt;/p&gt;
@@ -1852,7 +1856,7 @@ vec3 fresnelSchlick(float cosTheta, vec3 F0)
 &lt;/figure&gt;
 
 &lt;!-- &lt;div style=&#34;width:image width px; font-size:100%; text-align:center;&#34;&gt;&lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/metal_refl.png&#34; alt=&#34;MetalRefl&#34; style=&#34;width:700px;&#34;/&gt;&lt;/p&gt;Metallic material with reflection (metalness = 1)&lt;/div&gt; --&gt;
-&lt;h2 id=&#34;one-last-step-hdr-and-gamma-correction-&#34;&gt;One last step: HDR and Gamma correction&lt;/h2&gt;
+&lt;h2 id=&#34;one-last-step-hdr-and-gamma-correction&#34;&gt;One last step: HDR and Gamma correction&lt;/h2&gt;
 &lt;p&gt;So far we are able to render scenes in a more realistic way. Still, you can notice that if you choose a high intensity for your lights, the results also gets highly saturated, which is already the case in the above examples. This situation is to be expected because radiance can have value bigger than 1. Consequently, we need to find a way to account for High Dynamic Range (HDR) of radiance and process the computed values such that everything is remapped between 0 and 1. I won&amp;rsquo;t enter into details here as it is not the subject of this tutorial. We basically use the Reinhard operator to correct our input colors, remapping them inside the $[0;1]^3$ space with the function $C = \frac{C}{C+1}$.&lt;/p&gt;
 &lt;p&gt;Finally, we also need to take into account the color shift that screens produce in response to color values and depending on what we call their gamma value defining this response. Hence, we proceed to a gamma correction of the output colors which rectifies the shift. Again this will be covered in another tutorial, however be careful that this gamma value depends on the monitor configuration you are using.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;vec3 trace()
@@ -2054,7 +2058,7 @@ vec3 fresnelSchlick(float cosTheta, vec3 F0)
 &lt;/figure&gt;
 
 &lt;!-- &lt;div style=&#34;width:image width px; font-size:100%; text-align:center;&#34;&gt;&lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;http://typhomnt.github.io/Images/PBR_Intro/Final_Eg.png&#34; alt=&#34;FinalEg&#34; style=&#34;width:700px;&#34;/&gt;&lt;/p&gt;Various materials, Gamma = 1&lt;/div&gt; --&gt;
-&lt;h2 id=&#34;and-then--whats-next--&#34;&gt;And then ? What&amp;rsquo;s Next ?&lt;/h2&gt;
+&lt;h2 id=&#34;and-then--whats-next-&#34;&gt;And then ? What&amp;rsquo;s Next ?&lt;/h2&gt;
 &lt;p&gt;Rendering is a huge topic and we covered a very small part of it. What is next entirely depends on which direction you want to pursue this journey; you could go into path tracing and ignore real-time approximations or on the contrary go for more real-time rendering effects like Image Based Lighting (IBL), Screen Space Ambient Occlusion (SSAO), Screen Space Reflections (SSR) and so on.&lt;/p&gt;
 &lt;p&gt;However, There is one aspect that should be improved in our current raytracing context which is the way we handle reflections. Indeed, currently in our ray-tracing context we cast only one reflected ray from intersection point. While it is accurate to do so for smooth surfaces, it is totally wrong for rough surfaces as we should cast several rays from the each intersection point and average the results in order to get the blurred reflections like I mentioned at the beginning of the tutorial. This is something you could try to implement in a naive manner and see how reflections are improved.
 In addition, one can also questions the fact the presence of an ambient lighting term in this energy conservative context and he/she is right, this term is a complete hack to cope with the lack of indirect lighting computation. For real-time applications IBL can be used to better approximate this kind of lighting contribution while path tracing implicitly compute this contribution.&lt;/p&gt;
@@ -2065,7 +2069,7 @@ In addition, one can also questions the fact the presence of an ambient lighting
 &lt;li&gt;BSSRDF: Bidirectionnal Surface Scattering DF 8D: light exits at another location&lt;/li&gt;
 &lt;li&gt;BSDF: Bidirectionnal Scattering Distribution Function XD: General formulation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;references-&#34;&gt;References&lt;/h2&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;p&gt;Open GL Tutorials: 
 &lt;a href=&#34;https://learnopengl.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://learnopengl.com/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Siggraph Courses: 
@@ -2124,9 +2128,9 @@ MathJax.Hub.Config({
 &lt;p&gt;This tutorial is part of the ray-tracing course available 
 &lt;a href=&#34;../raytracing_practs&#34;&gt;here&lt;/a&gt;. /!\ This tutorial is using parts of the 
 &lt;a href=&#34;../pbr_intro&#34;&gt;PBR tutorial&lt;/a&gt; which should be completed before starting this one.&lt;/p&gt;
-&lt;h2 id=&#34;introduction-&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;In this tutorial, I will introduce another well known rendering approach which is very similar to ray tracing but operates in a slightly different way, especially as it treats surfaces as distance fields. Ray tracing is based on the principle that we can compute analytically ray-surface intersections, being with triangles or more complex surfaces. However, this can also be a limitation as we are bound to display only surfaces for which we are able to compute ray-surface intersection. Thus, Ray Marching comes into place and allows us to display any surface defined by an expression $f(x,y,z) = 0$ such that $\left\lVert \nabla f \right\rVert = 1$, in other words a distance field. More precisely, in our context the $f$ function can also represent negative distances. It is referred as a Signed Distance Function (SDF) which means that when $f(p) &amp;gt; 0$, $p = (x,y,z)$ lies outside the surface and when $ f(p) &amp;lt; 0 $ it lies inside the surface. Note the D for Distance in SDF which imposes the condition $\left\lVert \nabla f \right\rVert = 1$.&lt;/p&gt;
-&lt;h2 id=&#34;main-principle-&#34;&gt;Main Principle&lt;/h2&gt;
+&lt;h2 id=&#34;main-principle&#34;&gt;Main Principle&lt;/h2&gt;
 &lt;p&gt;The main principle of Ray Marching remains similar to Ray Tracing: for each pixel of the screen, we cast a ray spreading from the camera center to the pixel, however instead of computing ray surface intersections by solving an equation, we iterate through the generated ray step by step and check if we intersect a surface at each step by evaluating the scene SDF at the current location. More precisely, for a given ray $r(t) = \vec{d}t + c_{camera}$ and a given surface, we compute the SDF of the surface $f(r(t))$ and check if it equals 0. If not, we increase $t$ by a given amount $\delta_t$. Note that $t = 0 $ at the beginning of this process and that  $f(r(0))$ should be positive. In practice $f(r(t)) = 0$ never occurs in our programming world, instead we will check if $f(r(t)) \leq 0$ meaning that we went through the surface.&lt;/p&gt;
 
 
@@ -2168,15 +2172,15 @@ MathJax.Hub.Config({
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;center&#34;&gt;Union&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Intersection&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Substraction&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Smooth Union&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Union&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Intersection&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Substraction&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Smooth Union&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;center&#34;&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
 
 
 
@@ -2206,7 +2210,7 @@ MathJax.Hub.Config({
 
 &lt;/figure&gt;
 &lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
 
 
 
@@ -2236,7 +2240,7 @@ MathJax.Hub.Config({
 
 &lt;/figure&gt;
 &lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
 
 
 
@@ -2266,7 +2270,7 @@ MathJax.Hub.Config({
 
 &lt;/figure&gt;
 &lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
 
 
 
@@ -2299,7 +2303,7 @@ MathJax.Hub.Config({
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;marching-&#34;&gt;Marching&lt;/h2&gt;
+&lt;h2 id=&#34;marching&#34;&gt;Marching&lt;/h2&gt;
 &lt;p&gt;There are different ways of choosing the value of $\delta_t$ while going through a light ray: one is to increase $t$ by a constant small value until we intersect one surface. Another one is to compute the minimal distance we can travel without intersecting any surface by taking the minimum of all $f(r(t))$. In practice, this minimal distance is equal to $SDF_{scene}(r(t))$. This second approach is called Sphere (or Spherical) Marching and will be the approach we will use in this tutorial.&lt;/p&gt;
 &lt;p&gt;
 
@@ -2374,12 +2378,12 @@ MathJax.Hub.Config({
 &lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Once we computed the intersection point, we are ready to compute any lighting occuring at this point as well as casting new rays to simulate reflections or refractions.&lt;/p&gt;
-&lt;h2 id=&#34;coding-time-&#34;&gt;Coding Time&lt;/h2&gt;
+&lt;h2 id=&#34;coding-time&#34;&gt;Coding Time&lt;/h2&gt;
 &lt;p&gt;Now that I introduced the theory behind Ray Marching it is time to dig into actual coding. Like in previous ray tracing tutorials, we are working inside a fragment shader displaying a simple quad perfectly fitting our window. For each pixel we cast rays from a virtual camera to the current pixel whose screen coordinates are given by the in variable $fragCoord$.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;void main() 
 {   
-    Ray ray = generatePerspectiveRay(fragCoord);
-    outColor = vec4(march(ray),1);
+	Ray ray = generatePerspectiveRay(fragCoord);
+	outColor = vec4(march(ray),1);
 
 }
 &lt;/code&gt;&lt;/pre&gt;
@@ -2393,26 +2397,26 @@ MathJax.Hub.Config({
     Ray curr_ray = r;
     for(int i = 0 ; i &amp;lt;= nb_refl ; i++)
     {
-    ISObj io = rayMarch(curr_ray);
-    if(io.t &amp;gt;= 0)
-    {
-        PBRMat mat = PBRMat(vec3(.9,.1,.1),0.4,0.9,0.3);
-        vec3 N = normalize(computeSDFGrad(io,curr_ray.ro + io.d * curr_ray.rd));
+	ISObj io = rayMarch(curr_ray);
+	if(io.t &amp;gt;= 0)
+	{
+	    PBRMat mat = PBRMat(vec3(.9,.1,.1),0.4,0.9,0.3);
+	    vec3 N = normalize(computeSDFGrad(io,curr_ray.ro + io.d * curr_ray.rd));
 
-        HitSurface hs = HitSurface(curr_ray.ro + io.d*curr_ray.rd
-                                   ,N
-                                   ,mat
-                                   ) ;
-        vec3 color = directIllumination(hs,curr_ray,c_refl);
-        accum = accum + mask * color;
+	    HitSurface hs = HitSurface(curr_ray.ro + io.d*curr_ray.rd
+	                               ,N
+	                               ,mat
+	                               ) ;
+	    vec3 color = directIllumination(hs,curr_ray,c_refl);
+	    accum = accum + mask * color;
 
-        mask = mask*c_refl;
-        curr_ray  = Ray(hs.hit_point + 0.05*hs.normal,reflect(curr_ray.rd,hs.normal));
-    }
-    else if(i == 0) //did not intersect anything
-    {
-        accum = vec3(0.3,0.2,0.8);
-    }
+	    mask = mask*c_refl;
+	    curr_ray  = Ray(hs.hit_point + 0.05*hs.normal,reflect(curr_ray.rd,hs.normal));
+	}
+	else if(i == 0) //did not intersect anything
+	{
+	    accum = vec3(0.3,0.2,0.8);
+	}
 
     }
 
@@ -2432,27 +2436,27 @@ MathJax.Hub.Config({
     vec3 color = vec3(0);
     for(int i = 0 ; i &amp;lt; light_nbr ; i++)
     {
-    Ray l_ray = lightRay(hit.hit_point,lights[i]);
-    l_ray.ro = hit.hit_point + 0.01*hit.normal;
-    ISObj io;
+	Ray l_ray = lightRay(hit.hit_point,lights[i]);
+	l_ray.ro = hit.hit_point + 0.01*hit.normal;
+	ISObj io;
 
-    io = rayMarch(l_ray);
+	io = rayMarch(l_ray);
 	
-    float d_light = lightDist(hit.hit_point,lights[i]);
+	float d_light = lightDist(hit.hit_point,lights[i]);
 
-    if(io.t &amp;lt; 0 || (io.t &amp;gt;= 0 &amp;amp;&amp;amp; (io.d &amp;gt;= d_light)))
-    {
-        color += PBR(hit,r,lights[i]);
-    }
-    else
-    {
-        color +=  vec3(0.03) * hit.material.color * hit.material.ao;
-    }
+	if(io.t &amp;lt; 0 || (io.t &amp;gt;= 0 &amp;amp;&amp;amp; (io.d &amp;gt;= d_light)))
+	{
+	    color += PBR(hit,r,lights[i]);
+	}
+	else
+	{
+	    color +=  vec3(0.03) * hit.material.color * hit.material.ao;
+	}
 
 
-    vec3 Ve = normalize(r.ro - hit.hit_point);
-    vec3 H = normalize(Ve + l_ray.rd);
-    refl = length(fresnelSchlick(max(dot(H, Ve), 0.0),  mix(vec3(0.04), hit.material.color, hit.material.metallic)))*hit.material.ao;
+	vec3 Ve = normalize(r.ro - hit.hit_point);
+	vec3 H = normalize(Ve + l_ray.rd);
+	refl = length(fresnelSchlick(max(dot(H, Ve), 0.0),  mix(vec3(0.04), hit.material.color, hit.material.metallic)))*hit.material.ao;
     }
 
     return color;
@@ -2469,23 +2473,23 @@ MathJax.Hub.Config({
 
     for (int i = 0; i &amp;lt; nb_step; i++)
     {
-    ISObj io = sceneSDF(r.ro + depth * r.rd);
-    if (io.d &amp;lt;= march_accuracy)
-    {
-        return ISObj(depth,io.t,io.i);
-    }
+	ISObj io = sceneSDF(r.ro + depth * r.rd);
+	if (io.d &amp;lt;= march_accuracy)
+	{
+	    return ISObj(depth,io.t,io.i);
+	}
 
-    // Move along the view ray
-    //Spherical Marching
-    depth += io.d;
-    // Step by Step Marching
-    //depth += march_step_fact
+	// Move along the view ray
+	//Spherical Marching
+	depth += io.d;
+	// Step by Step Marching
+	//depth += march_step_fact
 
-    if (depth &amp;gt;= DIST_MAX)
-    {
-        // Gone too far; give up
-        return ISObj(DIST_MAX,-1,-1);
-    }
+	if (depth &amp;gt;= DIST_MAX)
+	{
+	    // Gone too far; give up
+	    return ISObj(DIST_MAX,-1,-1);
+	}
     }
     return ISObj(DIST_MAX,-1,-1);
     //return ISObj(depth,last_io.t,last_io.i);
@@ -2542,7 +2546,7 @@ struct Sphere
 const int sphere_nbr = 6;
 
 Sphere spheres[sphere_nbr] = Sphere[](Sphere(vec3(0.5,-2.5*cos(time*0.1),0),0.5f)
-    ,Sphere(vec3(0.7,-2.5*cos(time*0.2),0),0.5f)
+	,Sphere(vec3(0.7,-2.5*cos(time*0.2),0),0.5f)
 ,Sphere(vec3(0.9,-2.5*cos(time*0.3),0),0.5f)
 ,Sphere(vec3(-0.9,2.5*cos(time*0.4),0),0.5f)
 ,Sphere(vec3(-0.7,2.5*cos(time*0.5),0),0.5f)
@@ -2561,9 +2565,9 @@ Plane planes[plane_nbr] = Plane[](Plane(vec3(0,1,0),5.0f),Plane(vec3(0,-1,0),5.0
     ISObj nearest = ISObj(DIST_MAX,-1,-1);
     for(int j = 0 ; j &amp;lt; shop_root_nbr ;j++)
     {
-    float dist = ShapeSDF(shop_roots[j],point);
-    if(dist &amp;lt; nearest.d)
-        nearest = ISObj(dist,shop_type,shop_roots[j]);
+	float dist = ShapeSDF(shop_roots[j],point);
+	if(dist &amp;lt; nearest.d)
+	    nearest = ISObj(dist,shop_type,shop_roots[j]);
     }
     return nearest;
 }
@@ -2576,10 +2580,10 @@ float ShapeSDF(int sh_op_id, vec3 p)
 
     while(next_id != -1)
     {
-    float sdf_i = getBasicSDF(shops[next_id].shape.shape_type,shops[next_id].shape.shape_id,p);
-    sdf_f = OpSDF(sdf_f,sdf_i,shops[curr_id].op_type);
-    curr_id = next_id;
-    next_id = shops[next_id].next;
+	float sdf_i = getBasicSDF(shops[next_id].shape.shape_type,shops[next_id].shape.shape_id,p);
+	sdf_f = OpSDF(sdf_f,sdf_i,shops[curr_id].op_type);
+	curr_id = next_id;
+	next_id = shops[next_id].next;
     }
 
     return sdf_f;
@@ -2590,15 +2594,15 @@ float ShapeSDF(int sh_op_id, vec3 p)
 {
     if(type == plane_type)
     {
-        return SDFPlane(planes[id],p);
+	    return SDFPlane(planes[id],p);
     }
     else if(type == sphere_type)
     {
-    return SDFSphere(spheres[id],p);
+	return SDFSphere(spheres[id],p);
     }
     else if(type == box_type)
     {
-    return SDFBox(boxes[id],p);
+	return SDFBox(boxes[id],p);
     }
 
     return 0.0;
@@ -2628,19 +2632,19 @@ float OpSDF(in float s_sdf, in float e_sdf, int op_t)
 {
     if(op_t == 0)
     {
-    return opUnion(s_sdf,e_sdf);
+	return opUnion(s_sdf,e_sdf);
     }
     else if(op_t == 1)
     {
-    return opSubtraction(s_sdf,e_sdf);
+	return opSubtraction(s_sdf,e_sdf);
     }
     else if(op_t == 2)
     {
-    return opIntersection(s_sdf,e_sdf);
+	return opIntersection(s_sdf,e_sdf);
     }
     else if(op_t == 3)
     {
-    return opSmoothUnion(s_sdf,e_sdf,1.0f);
+	return opSmoothUnion(s_sdf,e_sdf,1.0f);
     }
 
     return 0.0;
@@ -2659,17 +2663,17 @@ float opSmoothUnion( float d1, float d2, float k )
     return mix( d2, d1, h ) - k*h*(1.0-h);
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;sdf-gradient-&#34;&gt;SDF gradient&lt;/h2&gt;
+&lt;h2 id=&#34;sdf-gradient&#34;&gt;SDF gradient&lt;/h2&gt;
 &lt;p&gt;We are one step away of displaying our first ray marched scene. Indeed, the only unknown left to compute is the normal at the intersection point which is especially used to compute the local illumination. In this context, as we apply SDF operators, we will build new scenes by combining primitive surfaces in different ways. Consequently, we cannot compute an analytical normal at the intersection point. Instead we use finite differences to compute an approximation of this normal which correspond to the gradient of the scene SDF at this point. In the 1D case, approximating such a gradient (derivative) is done as following $f&#39;(x) = \frac{f(x+\epsilon) - f(x - \epsilon)}{2\epsilon}$. As SDFs are 3D functions, this principle is extended to each dimension of the function: $$\nabla f = \frac{(f(p + (\epsilon,0,0)) - f(p - (\epsilon,0,0)), f(p + (0,\epsilon,0)) - f(p - (0,\epsilon,0)), f(p + (0,0,\epsilon)) - f(p - (0,0,\epsilon))) } {2(\epsilon,\epsilon,\epsilon)}$$&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;float getSDF(int type, int id,in vec3 p)
 {
     if(type != shop_type)
     {
-    return getBasicSDF(type,id,p);
+	return getBasicSDF(type,id,p);
     }
     else
     {
-    return ShapeSDF(id,p);
+	return ShapeSDF(id,p);
     }
 }
 
@@ -2693,14 +2697,14 @@ vec3 computeSDFGrad(in ISObj is,in vec3 p)
 
 
     return vec3(sdf_x_p - sdf_x_m
-            ,sdf_y_p - sdf_y_m
-            ,sdf_z_p - sdf_z_m)/(2.*EPS_GRAD);
+	        ,sdf_y_p - sdf_y_m
+	        ,sdf_z_p - sdf_z_m)/(2.*EPS_GRAD);
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Using the following lights in your scene you should now obtain a correctly shaded ray marched sphere.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;const int light_nbr = 2;
 Light lights[light_nbr] = Light[](Light(1,vec3(1,1,-1),vec3(-3,1,-3),80,vec3(1))
-    ,Light(1,normalize(vec3(-1,1,1)),vec3(3,1,3),80,vec3(1)));
+	,Light(1,normalize(vec3(-1,1,1)),vec3(3,1,3),80,vec3(1)));
 &lt;/code&gt;&lt;/pre&gt;
 
 
@@ -2738,12 +2742,12 @@ Light lights[light_nbr] = Light[](Light(1,vec3(1,1,-1),vec3(-3,1,-3),80,vec3(1))
 
 &lt;/figure&gt;
 
-&lt;h2 id=&#34;example--march-lava-lamp-&#34;&gt;Example : March Lava Lamp&lt;/h2&gt;
+&lt;h2 id=&#34;example--march-lava-lamp&#34;&gt;Example : March Lava Lamp&lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s now build a more complex scene using only one ShapeOp chained list. The main idea here is to display a kind of lava lamp using spheres and two boxes.
 This can be easily achieved by using the smooth union operator which interpolates between two SDF that are near each other.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;const int shop_nbr = 10;
 ShapeOp shops[shop_nbr] = ShapeOp[](ShapeOp(Shape(1,0),3,1)
-    ,ShapeOp(Shape(1,1),3,2)
+	,ShapeOp(Shape(1,1),3,2)
 ,ShapeOp(Shape(1,2),3,3)
 ,ShapeOp(Shape(1,3),3,4)
 ,ShapeOp(Shape(1,4),3,5)
@@ -2791,16 +2795,16 @@ ShapeOp shops[shop_nbr] = ShapeOp[](ShapeOp(Shape(1,0),3,1)
 
 &lt;p&gt;Lets also put a cube shaped hole inside this lamp using the substract operator.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;const int shop_nbr = 10;
-    ShapeOp shops[shop_nbr] = ShapeOp[](ShapeOp(Shape(1,0),3,1)
-        ,ShapeOp(Shape(1,1),3,2)
-    ,ShapeOp(Shape(1,2),3,3)
-    ,ShapeOp(Shape(1,3),3,4)
-    ,ShapeOp(Shape(1,4),3,5)
-    ,ShapeOp(Shape(1,5),3,6)
-    ,ShapeOp(Shape(2,0),3,7)
-    ,ShapeOp(Shape(2,1),1,8)
-    ,ShapeOp(Shape(2,2),1,-1)
-    ,ShapeOp(Shape(0,0),0,-1));
+	ShapeOp shops[shop_nbr] = ShapeOp[](ShapeOp(Shape(1,0),3,1)
+		,ShapeOp(Shape(1,1),3,2)
+	,ShapeOp(Shape(1,2),3,3)
+	,ShapeOp(Shape(1,3),3,4)
+	,ShapeOp(Shape(1,4),3,5)
+	,ShapeOp(Shape(1,5),3,6)
+	,ShapeOp(Shape(2,0),3,7)
+	,ShapeOp(Shape(2,1),1,8)
+	,ShapeOp(Shape(2,2),1,-1)
+	,ShapeOp(Shape(0,0),0,-1));
 &lt;/code&gt;&lt;/pre&gt;
 
 
@@ -2839,7 +2843,7 @@ ShapeOp shops[shop_nbr] = ShapeOp[](ShapeOp(Shape(1,0),3,1)
 &lt;/figure&gt;
 
 &lt;p&gt;Now that you can render more complex scenes and I invite you to test all kind of scene configurations by playing with different primitives and different operators.&lt;/p&gt;
-&lt;h2 id=&#34;bonus-effect-ambient-occulsion-&#34;&gt;Bonus Effect: Ambient Occulsion&lt;/h2&gt;
+&lt;h2 id=&#34;bonus-effect-ambient-occulsion&#34;&gt;Bonus Effect: Ambient Occulsion&lt;/h2&gt;
 &lt;p&gt;Rendering 3D scenes using ray marching also offer other advantages. Additional rendering effect like Ambient Occlusion can be computed with a reduced cost.
 Ambient Occlusion is the equivalent of ambient lighting but for shadowing, it describes which parts of the scene that are likely to not be lighted because of the geometry of its surroundings, preventing light ray to reach those areas. This effect can be simply be noticed at the edges and corners of your room where lights hardly strike those areas.
 Ray Marching offers us a simple way to approximate this ambient occlusion term. The main idea is to cast an ambient occlusion ray from the intersection point $p$ in the normal direction $\vec{n}$ and march through this ray step by step with a relatively small $\delta_t$. Then at each step, we compute the scene SDF and compare its value to the distance with respect to the intersection point which is equal to $i \delta_t$, $i$ being the number of the current step. In the case where the intersection point lies on a convex surface like a sphere we expect this distance and the scene SDF to be the same. However, it is far from being true in the general case, meaning that the scene SDF can be lower than $i \delta_t$ at some steps, being nearer to other surfaces.
@@ -2849,8 +2853,8 @@ This simulate the fact that some areas around the intersection point can occlude
     float occlusion = 1.0f;
     while(step_nbr &amp;gt; 0.0)
     {
-    occlusion -= pow(step_nbr * step_dist - (sceneSDF( point + normal * step_nbr * step_dist)).d,2) / step_nbr;
-    step_nbr--;
+	occlusion -= pow(step_nbr * step_dist - (sceneSDF( point + normal * step_nbr * step_dist)).d,2) / step_nbr;
+	step_nbr--;
     }
 
     return occlusion;
@@ -2859,26 +2863,26 @@ This simulate the fact that some areas around the intersection point can occlude
 
 vec3 march(in Ray r)
 {
-    ...
-    for(int i = 0 ; i &amp;lt;= nb_refl ; i++)
-    {
-        ISObj io = rayMarch(curr_ray);
-        if(io.t &amp;gt;= 0)
-        {
-            ...
-            accum = accum + mask * color * pow(AmbientOcclusion(hs.hit_point,hs.normal,0.015,20),40);
+	...
+	for(int i = 0 ; i &amp;lt;= nb_refl ; i++)
+	{
+		ISObj io = rayMarch(curr_ray);
+		if(io.t &amp;gt;= 0)
+		{
+			...
+			accum = accum + mask * color * pow(AmbientOcclusion(hs.hit_point,hs.normal,0.015,20),40);
 
-            ...
-        }
-        else if(i == 0) //did not intersect anything
-        {
-            accum = vec3(0.3,0.2,0.8);
-        }
+			...
+		}
+		else if(i == 0) //did not intersect anything
+		{
+			accum = vec3(0.3,0.2,0.8);
+		}
 
-    }
-    ...
+	}
+	...
 
-    return accum;
+	return accum;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It is important to note that when computing the ambient occlusion term, the total travel distance should remain as short as possible because. Indeed, like mentioned earlier, the farther you travel through this ray, the more artifact you are likely to get because surfaces that are too far away from the intersection point might contribute to the occlusion term while not being part of its surroundings. With the parameters I used, you should have an ambient occlusion terms like depicted below. Note that I amplified its effect using a power function with a relatively high factor.&lt;/p&gt;
@@ -2974,9 +2978,9 @@ vec3 march(in Ray r)
 
 &lt;/figure&gt;
 
-&lt;h2 id=&#34;what-is-next-&#34;&gt;What is next&lt;/h2&gt;
+&lt;h2 id=&#34;what-is-next&#34;&gt;What is next&lt;/h2&gt;
 &lt;p&gt;This tutorial is a brief introduction to Ray Marching, there are still many things to cover. At least, three important aspects are to be studied, the first one being terrain marching, the second one fractal marching and the last one being the use of impostors in real-time rendering pipelines that are rendered using raymarching. In a future update, I will probably add a section about terrain marching, stay tuned.&lt;/p&gt;
-&lt;h2 id=&#34;references-&#34;&gt;References&lt;/h2&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;p&gt;Open GL Tutorials: 
 &lt;a href=&#34;https://learnopengl.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://learnopengl.com/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Ray Marching Game: 

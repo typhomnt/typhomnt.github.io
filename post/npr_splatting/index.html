@@ -214,8 +214,8 @@
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_box_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_2.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_box_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_3.png">
 
   <link rel="canonical" href="http://typhomnt.github.io/post/npr_splatting/">
 
@@ -238,8 +238,8 @@
   <meta property="og:site_name" content="Maxime Garcia">
   <meta property="og:url" content="http://typhomnt.github.io/post/npr_splatting/">
   <meta property="og:title" content="Coherent Mark-based Stylization of 3D Scenes at the Compositing Stage | Maxime Garcia">
-  <meta property="og:description" content="A novel temporally coherent stylized rendering technique working entirely at the compositing stage."><meta property="og:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png">
-  <meta property="twitter:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="A novel temporally coherent stylized rendering technique working entirely at the compositing stage."><meta property="og:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_3.png">
+  <meta property="twitter:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_3.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2019-02-20T16:22:09&#43;01:00">
@@ -280,7 +280,7 @@
     "name": "Maxime Garcia",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_2.png"
+      "url": "http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_3.png"
     }
   },
   "description": "A novel temporally coherent stylized rendering technique working entirely at the compositing stage."
@@ -663,7 +663,7 @@ The source code is avaible
 <a href="http://jcgt.org/published/0004/04/03/" target="_blank" rel="noopener">here</a>.
 For windows users, we created an archive containing an executable that you can use right out of the box.</p>
 <p>This post is divided into three parts. First, I will describe the main principle behing our technique, then I will explain how to compile and use the application, then I will detail it works in the code.</p>
-<h3 id="main-principle-">Main principle</h3>
+<h3 id="main-principle">Main principle</h3>
 <p>In the ocean of NPR techniques, we can distinguish two different families when it come to stylizing color regions: texture-based and mark-based approaches.
 The first embeds marks in an image which is then mapped or pached either onto the 3D scene or over the entire screen. Here are some reference of previous research works falling into that category.
 More concretly, this kind of technique is quite common when using 3D software like Maya or Blender.
@@ -671,7 +671,7 @@ The later consists in attaching 2D or 3D marks (brush strokes) to anchor points 
 <p>Our method belongs to the familly of mark-based methods but borrows ideas from texture-based methods.
 Moreover, it consists in dynamically generating a motion-coherent 3D anchor point distribution that are drawn as billboard brush strokes.
 In order to ensure temporal continuity as well as motion coherence at the compositing stage, the anchor point generation is based on implicit Voronoi noise generated from G-Buffers. This allows our technique to operate  regardless of the geometric representation or animation technique.</p>
-<h4 id="anchor-point-generation-">Anchor Point Generation</h4>
+<h4 id="anchor-point-generation">Anchor Point Generation</h4>
 <p>Our anchor point generation algorithm is two folds: a first process generates anchor points around the objects based on a 3D Worley noise which takes 3D positions stored in the G-Buffers as input. Then, we group together all pixels that generated the same anchor point and compute its final position in screen-space as the average of the screen-space position of these pixels. To ensure a quasi constant density of the points, especially when zooming in or out, we introduce a fractalization process which generate several layers of points. Moreover, at each pixel of the position G-Buffer, we generate several points using the same process as earlier but with a different frequency for each layer. For each layer its sampling frequency is related to the gradient of the position at the considered pixel such that when the gradient is low, meaning that the surface is flat, we increase the sampling frequency and increase it other wise. The intuition behind this process is to sample more points when the surface is flat because at a given frequency of the Worley noise, more points are generated when the position varies, the surface of the object intersecting more virtual 3D cells than when it is flat.</p>
 <p>Let me show you the difference of our anchor point genereation process with and without the fractalization :</p>
 <p><video autoplay loop muted playsinline>]
@@ -680,10 +680,10 @@ In order to ensure temporal continuity as well as motion coherence at the compos
 <p><video autoplay loop muted playsinline>]
 <source src="/Videos/SplatNPR/Splat_Generation_Animation_Sub.mp4" type="video/mp4">
 </video></p>
-<h4 id="improve-temporal-continuity-">Improve Temporal Continuity</h4>
+<h4 id="improve-temporal-continuity">Improve Temporal Continuity</h4>
 <p>Until this stage we focused</p>
-<h3 id="use-the-application-">Use the application</h3>
-<h3 id="understanding-the-code-">Understanding the code</h3>
+<h3 id="use-the-application">Use the application</h3>
+<h3 id="understanding-the-code">Understanding the code</h3>
 
               </div>
               
@@ -807,12 +807,12 @@ In order to ensure temporal continuity as well as motion coherence at the compos
     <div class="media author-card content-widget-hr">
       
         
-        <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu14fa9686a237893a821adc4e52dd5e2c_152507_270x270_fill_box_center_2.png" alt="">
+        <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu14fa9686a237893a821adc4e52dd5e2c_152507_270x270_fill_box_center_3.png" alt="">
       
 
       <div class="media-body">
         <h5 class="card-title"><a href="http://typhomnt.github.io/"></a></h5>
-        <h6 class="card-subtitle">3D Expert. Computer graphics R&amp;D Freenlance.</h6>
+        <h6 class="card-subtitle">3D Expert </br> Computer Graphics R&amp;D Freelance</h6>
         <p class="card-text">My research interests include character animation and non-photorealistic rendering.</p>
         <ul class="network-icon" aria-hidden="true">
   
@@ -1005,7 +1005,7 @@ In order to ensure temporal continuity as well as motion coherence at the compos
     
     
     
-    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+    <script src="/js/academic.min.cbb2418f8e248a2e58f5a15a2abbfed0.js"></script>
 
     
 

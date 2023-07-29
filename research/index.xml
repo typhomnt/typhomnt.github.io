@@ -7,7 +7,7 @@
     <description>Publications</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 Feb 2019 16:22:09 +0100</lastBuildDate>
     <image>
-      <url>http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png</url>
+      <url>http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_3.png</url>
       <title>Publications</title>
       <link>http://typhomnt.github.io/research/</link>
     </image>
@@ -20,7 +20,7 @@
       <description>&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/NPR/splat_teaser.jpg&#34; alt=&#34;Teaser&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Comptuer Graphics Forum, Eurographics 2021. Article available 
 &lt;a href=&#34;https://hal.inria.fr/hal-03143244&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;authors-&#34;&gt;Authors&lt;/h2&gt;
+&lt;h2 id=&#34;authors&#34;&gt;Authors&lt;/h2&gt;
 &lt;p&gt;Maxime Garcia
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
 &lt;p&gt;Romain Vergne
@@ -33,19 +33,19 @@
 (Laboratoire Cogitamus)&lt;/p&gt;
 &lt;p&gt;Joelle Thollot
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
-&lt;h3 id=&#34;abstract-&#34;&gt;Abstract&lt;/h3&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
 &lt;p&gt;We present a novel temporally coherent stylized rendering technique working entirely at the compositing stage. We first generate a distribution of 3D anchor points using an implicit grid based on the local object positions stored in a G-buffer, hence following object motion. We then draw splats in screen space anchored to these points so as to be motion coherent. To increase the perceived flatness of the style, we adjust the anchor points density using a fractalization mechanism. Sudden changes are prevented by controlling the anchor points opacity and introducing a new order-independent blending function. We demonstrate the versatility of our method by showing a large variety of styles thanks to the freedom offered by the splats content and their attributes that can be controlled by any G-buffer.&lt;/p&gt;
-&lt;h4 id=&#34;eurographics-fast-forward-&#34;&gt;Eurographics Fast Forward&lt;/h4&gt;
+&lt;h4 id=&#34;eurographics-fast-forward&#34;&gt;Eurographics Fast Forward&lt;/h4&gt;
 &lt;video controls playsinline&gt;
 	&lt;source src=&#34;http://typhomnt.github.io/Videos/SplatNPR/FF_Version_2.mp4&#34; type=&#34;video/mp4&#34;&gt;
 &lt;/video&gt;
 &lt;p&gt;Watch it in full screen for a better experience.&lt;/p&gt;
 &lt;p&gt;Models: Female Orca by neurodolphin and Shiny Fish by GenEugen on Sketchfab.&lt;/p&gt;
-&lt;h4 id=&#34;main-video-&#34;&gt;Main Video&lt;/h4&gt;
+&lt;h4 id=&#34;main-video&#34;&gt;Main Video&lt;/h4&gt;
 &lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/466IoPKs0p0&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
-&lt;h4 id=&#34;supplementals-&#34;&gt;Supplementals&lt;/h4&gt;
+&lt;h4 id=&#34;supplementals&#34;&gt;Supplementals&lt;/h4&gt;
 &lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/sxU_ZEjwwjI&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
-&lt;h4 id=&#34;app-and-turorial-&#34;&gt;App and Turorial&lt;/h4&gt;
+&lt;h4 id=&#34;app-and-turorial&#34;&gt;App and Turorial&lt;/h4&gt;
 &lt;p&gt;Available soon !&lt;/p&gt;
 </description>
     </item>
@@ -56,14 +56,14 @@
       <pubDate>Wed, 20 Feb 2019 16:22:09 +0100</pubDate>
       <guid>http://typhomnt.github.io/research/recognition_laban_hand/</guid>
       <description>&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Laban_Classification/effort_cube.jpg&#34; alt=&#34;Teaser&#34;&gt;&lt;/p&gt;
-&lt;p&gt;MOCO&amp;rsquo;20 - 7th International Conference on Movement and Computing, Jul 2020, Jersey City/ Virtual, United States. Article available 
+&lt;p&gt;MOCO&#39;20 - 7th International Conference on Movement and Computing, Jul 2020, Jersey City/ Virtual, United States. Article available 
 &lt;a href=&#34;https://hal.inria.fr/hal-02899999&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;authors-&#34;&gt;Authors&lt;/h2&gt;
+&lt;h2 id=&#34;authors&#34;&gt;Authors&lt;/h2&gt;
 &lt;p&gt;Maxime Garcia
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
 &lt;p&gt;Remi Ronfard
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
-&lt;h3 id=&#34;abstract-&#34;&gt;Abstract&lt;/h3&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
 &lt;p&gt;In this paper, we conduct a study for recognizing motion qualities in hand gestures using virtual reality trackers attached to the hand. From this 6D signal, we extract Euclidean, equi-affine and moving frame features and compare their effectiveness in the task of recognizing Laban Effort qualities. Our experimental results reveal that equi-affine features are highly discriminant features for this task. We also compare two classification methods on this task. In the first method, we trained separate HMM models for the 6 Laban Effort qualities (light, strong, sudden, sustained, direct, indirect). In the second method, we trained separate HMM models for the 8 Laban motion verbs (dab, glide, float, flick, thrust, press, wring, slash) and combined them to recognize individual qualities. In our experiments, the second method gives improved results. Together, those findings suggest that low-dimensional signals from VR trackers can be used to predict motion qualities with reasonable precision.&lt;/p&gt;
 </description>
     </item>
@@ -76,14 +76,14 @@
       <description>&lt;p&gt;&lt;img src=&#34;http://typhomnt.github.io/Images/Animation_Transfer/SMD_Teaser.png&#34; alt=&#34;Teaser&#34;&gt;&lt;/p&gt;
 &lt;p&gt;ACM Motion, Interaction and Games 2019 (MIG &amp;lsquo;19). Article available 
 &lt;a href=&#34;https://hal.archives-ouvertes.fr/hal-02303803/document&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;authors-&#34;&gt;Authors&lt;/h2&gt;
+&lt;h2 id=&#34;authors&#34;&gt;Authors&lt;/h2&gt;
 &lt;p&gt;Maxime Garcia
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
 &lt;p&gt;Remi Ronfard
 (Inria / LJK / Universite Grenoble Alpes)&lt;/p&gt;
 &lt;p&gt;Marie-Paule Cani
 (Ecole Polythecnique / LIX)&lt;/p&gt;
-&lt;h3 id=&#34;abstract-&#34;&gt;Abstract&lt;/h3&gt;
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
 &lt;p&gt;We present a method for easily drafting expressive character animation by playing with instrumented rigid objects. We parse the input 6D trajectories (position and orientation over time) – called spatial motion doodles – into sequences of actions and convert them into detailed character animations using a dataset of parameterized motion clips which are automatically fitted to the doodles in terms of global trajectory and timing. Moreover, we capture the expressiveness of user-manipulation by analyzing Laban effort qualities in the input spatial motion doodles and transferring them to the synthetic motions we generate. We validate the ease of use of our system and the expressiveness of the resulting animations through a series of user studies, showing the interest of our approach for interactive digital storytelling applications dedicated to children and non-expert users, as well as for providing fast drafting tools for animators.&lt;/p&gt;
 &lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/0xG2dlGg_9M&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
 &lt;center&gt;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/5BDqJQ6XK_k&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;

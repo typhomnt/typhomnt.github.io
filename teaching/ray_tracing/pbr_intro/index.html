@@ -217,8 +217,8 @@
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_box_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_2.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_box_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_box_center_3.png">
 
   <link rel="canonical" href="http://typhomnt.github.io/teaching/ray_tracing/pbr_intro/">
 
@@ -241,8 +241,8 @@
   <meta property="og:site_name" content="Maxime Garcia">
   <meta property="og:url" content="http://typhomnt.github.io/teaching/ray_tracing/pbr_intro/">
   <meta property="og:title" content="An Introduction to Physically Based Rendering | Maxime Garcia">
-  <meta property="og:description" content="Introduction to real-time physically based rendering."><meta property="og:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png">
-  <meta property="twitter:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_2.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="Introduction to real-time physically based rendering."><meta property="og:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_3.png">
+  <meta property="twitter:image" content="http://typhomnt.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_box_center_3.png"><meta property="og:locale" content="en-us">
   
     
     
@@ -615,7 +615,7 @@
                 <p>This tutorial is inspired from 
 <a href="https://learnopengl.com/PBR/Theory" target="_blank" rel="noopener">https://learnopengl.com/PBR/Theory</a> and adapted for the ray-tracing course available 
 <a href="../raytracing_practs">here</a>.</p>
-<h2 id="introduction-">Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <p>A big challenge in computer graphics is to design shading models mimicking real-life lighting behaviour while allowing intuitive control of object materials. This control is crucial for artists who are creating assets that have to be integrated in a rendering pipeline. For real-time applications like video games, the question of computation time and memory cost is also essential; such models must be flexible enough and allow affordable approximations.</p>
 <p>In this tutorial, we are interested in Physically Based Rendering (PBR) models which aim at simulating light behaviour in a more realistic way, approximating light related equations (models like the Phong model are very simplistic in comparison).
 One important aspect of those models is their energy conservative property stating that when interacting with a surface, the amount of outgoing light is equal to the amount of incoming light. More precisely, the amount of light absorbed, scattered and diffused by object surfaces is equal to the amount of light hitting the surface. The figure below illustrates these phenomena.</p>
@@ -650,7 +650,7 @@ One important aspect of those models is their energy conservative property stati
 </figure>
 
 <!-- <p align="center"><img src="/Images/PBR_Intro/LightInteraction.png" alt="LightInteract" style="width:700px;"/></p> -->
-<h2 id="surface-representation-micro-facet-model-">Surface Representation: Micro-Facet model</h2>
+<h2 id="surface-representation-micro-facet-model">Surface Representation: Micro-Facet model</h2>
 <p>Simulating this behaviour is highly correlated with how we represent object surfaces. Indeed, light interaction with object surfaces is modeled by the Snell-Descartes law which describes how incident light gets refracted and reflected on a flat surface.</p>
 
 
@@ -687,13 +687,13 @@ One important aspect of those models is their energy conservative property stati
 <table>
 <thead>
 <tr>
-<th align="center">Rough Surface</th>
-<th align="center">Smooth Surface</th>
+<th style="text-align:center">Rough Surface</th>
+<th style="text-align:center">Smooth Surface</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">
+<td style="text-align:center">
 
 
 
@@ -729,7 +729,7 @@ One important aspect of those models is their energy conservative property stati
 
 </figure>
 </td>
-<td align="center">
+<td style="text-align:center">
 
 
 
@@ -772,18 +772,18 @@ One important aspect of those models is their energy conservative property stati
 <table>
 <thead>
 <tr>
-<th align="center">Rough Surface</th>
-<th align="center">Smooth Surface</th>
+<th style="text-align:center">Rough Surface</th>
+<th style="text-align:center">Smooth Surface</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="/Images/PBR_Intro/roughsurface.png" alt=""></td>
-<td align="center"><img src="/Images/PBR_Intro/smoothsurface.png" alt=""></td>
+<td style="text-align:center"><img src="/Images/PBR_Intro/roughsurface.png" alt=""></td>
+<td style="text-align:center"><img src="/Images/PBR_Intro/smoothsurface.png" alt=""></td>
 </tr>
 </tbody>
 </table>
-<h2 id="light-equation-">Light Equation</h2>
+<h2 id="light-equation">Light Equation</h2>
 <p>Having stated all this principles, our main goal remains unchanged, compute the color received by the eye (camera) for each pixel of the output image displayed on our screen. More specifically, we are interested in the color and intensity of light that either gets directly reflected from the surface to the eye or that gets refracted and then re-emitted by the object through diffusion (considering that all the light that gets absorbed is lost). On the other hand, in this tutorial we neglect the effect of scattering which gives more realistic results (especially useful when rendering skin) but is more costly to compute.</p>
 
 
@@ -855,7 +855,7 @@ One important aspect of those models is their energy conservative property stati
 <p>The incoming reflectance $L_i(p,p-c_l)$ equals to the intensity of the light source $I$, multiplied by its color $C$, and weighted by an attenuation factor which depends on the distance to the source.
 In our case, we will consider that the intensity of light decrease with the square distance to the source:</p>
 <p>$$L_i(p,p-c_l) = \frac{IC}{{\left\lVert p - c_l\right\rVert}^2} $$</p>
-<h2 id="the-bidirectional-reflective-distribution-function-brdf-">The Bidirectional Reflective Distribution Function (BRDF)</h2>
+<h2 id="the-bidirectional-reflective-distribution-function-brdf">The Bidirectional Reflective Distribution Function (BRDF)</h2>
 <p>The only unknown left is the $f_r$ function that controls the amount of reflected light with respect to materials properties. This function is called a BRDF which stands for Bidirectional Reflective Distribution Function. Several functions were proposed to simulate real-life materials behavior, all of them respect the energy conservation law, meaning that the amount of outgoing light do not exceed the amount of incoming light and above all the later is divided between reflected and refracted light. Another important property of the BRDF functions is that there are intresectly symmetric with respect to incoming and outgoing light because of the principle of reversibility of light.
 In our case, we will use the Cook-Torrance BRDF model composed of a diffuse and a specular part:</p>
 <p>$$f_r = k_d f_l + k_s f_c$$</p>
@@ -1056,14 +1056,14 @@ D represent the amount of microfacet that are aligned with the half vector $h$. 
 <table>
 <thead>
 <tr>
-<th align="center">Shadowing</th>
-<th align="center">Masking</th>
+<th style="text-align:center">Shadowing</th>
+<th style="text-align:center">Masking</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><img src="/Images/PBR_Intro/shadowing.png" alt=""></td>
-<td align="center"><img src="/Images/PBR_Intro/masking.png" alt=""></td>
+<td style="text-align:center"><img src="/Images/PBR_Intro/shadowing.png" alt=""></td>
+<td style="text-align:center"><img src="/Images/PBR_Intro/masking.png" alt=""></td>
 </tr>
 </tbody>
 </table>
@@ -1110,7 +1110,7 @@ D represent the amount of microfacet that are aligned with the half vector $h$. 
 
 <!--  <div style="width:image width px; font-size:100%; text-align:center;"><p align="center"> <img src="/Images/PBR_Intro/Geometry_Vis.png" alt="GeometryEg" style="width:700px;"/></p>Geometry function computed on our test scene (left: rough surface. right: smooth surface).</div> -->
 <p>In this tutorial we made choices for approximation functions but several others can be found in the literature (see <strong>References</strong> at the bottom of the page), I invite you to take a look at BRDF comparison articles.</p>
-<h2 id="coding-time-">Coding Time</h2>
+<h2 id="coding-time">Coding Time</h2>
 <p>We are now ready to dive into the code. The base code can be found 
 <a href="/Files/MSIAM_Code.zip">here</a>.
 First, lets go back to our main function. We are working inside a fragment shader displaying a simple quad perfectly fitting our window. For each pixel we cast rays from a virtual camera to the current pixel whose screen coordinates are given by the in variable $fragCoord$.</p>
@@ -1488,7 +1488,7 @@ vec3 fresnelSchlick(float cosTheta, vec3 F0)
 </figure>
 
 <!-- <div style="width:image width px; font-size:100%; text-align:center;"><p align="center"> <img src="/Images/PBR_Intro/metal_refl.png" alt="MetalRefl" style="width:700px;"/></p>Metallic material with reflection (metalness = 1)</div> -->
-<h2 id="one-last-step-hdr-and-gamma-correction-">One last step: HDR and Gamma correction</h2>
+<h2 id="one-last-step-hdr-and-gamma-correction">One last step: HDR and Gamma correction</h2>
 <p>So far we are able to render scenes in a more realistic way. Still, you can notice that if you choose a high intensity for your lights, the results also gets highly saturated, which is already the case in the above examples. This situation is to be expected because radiance can have value bigger than 1. Consequently, we need to find a way to account for High Dynamic Range (HDR) of radiance and process the computed values such that everything is remapped between 0 and 1. I won&rsquo;t enter into details here as it is not the subject of this tutorial. We basically use the Reinhard operator to correct our input colors, remapping them inside the $[0;1]^3$ space with the function $C = \frac{C}{C+1}$.</p>
 <p>Finally, we also need to take into account the color shift that screens produce in response to color values and depending on what we call their gamma value defining this response. Hence, we proceed to a gamma correction of the output colors which rectifies the shift. Again this will be covered in another tutorial, however be careful that this gamma value depends on the monitor configuration you are using.</p>
 <pre><code>vec3 trace()
@@ -1690,7 +1690,7 @@ vec3 fresnelSchlick(float cosTheta, vec3 F0)
 </figure>
 
 <!-- <div style="width:image width px; font-size:100%; text-align:center;"><p align="center"> <img src="/Images/PBR_Intro/Final_Eg.png" alt="FinalEg" style="width:700px;"/></p>Various materials, Gamma = 1</div> -->
-<h2 id="and-then--whats-next--">And then ? What&rsquo;s Next ?</h2>
+<h2 id="and-then--whats-next-">And then ? What&rsquo;s Next ?</h2>
 <p>Rendering is a huge topic and we covered a very small part of it. What is next entirely depends on which direction you want to pursue this journey; you could go into path tracing and ignore real-time approximations or on the contrary go for more real-time rendering effects like Image Based Lighting (IBL), Screen Space Ambient Occlusion (SSAO), Screen Space Reflections (SSR) and so on.</p>
 <p>However, There is one aspect that should be improved in our current raytracing context which is the way we handle reflections. Indeed, currently in our ray-tracing context we cast only one reflected ray from intersection point. While it is accurate to do so for smooth surfaces, it is totally wrong for rough surfaces as we should cast several rays from the each intersection point and average the results in order to get the blurred reflections like I mentioned at the beginning of the tutorial. This is something you could try to implement in a naive manner and see how reflections are improved.
 In addition, one can also questions the fact the presence of an ambient lighting term in this energy conservative context and he/she is right, this term is a complete hack to cope with the lack of indirect lighting computation. For real-time applications IBL can be used to better approximate this kind of lighting contribution while path tracing implicitly compute this contribution.</p>
@@ -1701,7 +1701,7 @@ In addition, one can also questions the fact the presence of an ambient lighting
 <li>BSSRDF: Bidirectionnal Surface Scattering DF 8D: light exits at another location</li>
 <li>BSDF: Bidirectionnal Scattering Distribution Function XD: General formulation</li>
 </ul>
-<h2 id="references-">References</h2>
+<h2 id="references">References</h2>
 <p>Open GL Tutorials: 
 <a href="https://learnopengl.com/" target="_blank" rel="noopener">https://learnopengl.com/</a></p>
 <p>Siggraph Courses: 
@@ -1841,12 +1841,12 @@ In addition, one can also questions the fact the presence of an ambient lighting
     <div class="media author-card content-widget-hr">
       
         
-        <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu14fa9686a237893a821adc4e52dd5e2c_152507_270x270_fill_box_center_2.png" alt="">
+        <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu14fa9686a237893a821adc4e52dd5e2c_152507_270x270_fill_box_center_3.png" alt="">
       
 
       <div class="media-body">
         <h5 class="card-title"><a href="http://typhomnt.github.io/"></a></h5>
-        <h6 class="card-subtitle">3D Expert. Computer graphics R&amp;D Freenlance.</h6>
+        <h6 class="card-subtitle">3D Expert </br> Computer Graphics R&amp;D Freelance</h6>
         <p class="card-text">My research interests include character animation and non-photorealistic rendering.</p>
         <ul class="network-icon" aria-hidden="true">
   
@@ -2039,7 +2039,7 @@ In addition, one can also questions the fact the presence of an ambient lighting
     
     
     
-    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+    <script src="/js/academic.min.cbb2418f8e248a2e58f5a15a2abbfed0.js"></script>
 
     
 
